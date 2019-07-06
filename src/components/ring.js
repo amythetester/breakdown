@@ -6,14 +6,8 @@ class Ring extends Component {
         return (
             <body>
 
-                <div class="pulsatingCircle">
-                
-                    <span class="firstCircle"></span>
-                    
-                    <span class="secondCircle"></span>
-                    
-                    <span class="thirdCircle"></span>
-                    
+                <div className="pulsatingCircle">              
+                    <span className="circle"></span>                 
                 </div>
             </body>
         );
