@@ -5,7 +5,7 @@ import Ring from './components/ring.js'
 function App() {
   return (
     <div className="App">
-      <Ring />
+        <Ring />
     </div>
   );
 }

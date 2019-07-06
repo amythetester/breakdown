@@ -4,12 +4,18 @@ import React, {Component} from  'react';
 class Ring extends Component {
     render() {
         return (
-            <body>
-
-                <div className="pulsatingCircle">              
-                    <span className="circle"></span>                 
-                </div>
-            </body>
+            <section className="pulse">
+                <header>
+                    <h1 className="breathe">
+                        Let's start by breathing.
+                    </h1>
+                </header>
+                <body>
+                    <section className="pulsatingCircle">              
+                        <span className="circle"></span>                 
+                    </section>
+                </body>
+            </section>
         );
     }
 };
