@@ -4,8 +4,8 @@ import Ring from './components/ring.js'
 
 function App() {
   return (
-    <div className="App">
-      <Ring />
+    <div className="App fade-in">
+        <Ring />
     </div>
   );
 }
