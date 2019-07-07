@@ -5,7 +5,6 @@ class Ring extends Component {
     render() {
         return (
             <body>
-
                 <div className="pulsatingCircle">              
                     <span className="circle"></span>                 
                 </div>
