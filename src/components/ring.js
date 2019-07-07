@@ -8,6 +8,7 @@ class Ring extends Component {
                 <header>
                     <h1 className="breathe">
                         Let's start by breathing.
+                        <div className="fadingEffect"></div>
                     </h1>
                 </header>
                 <body>
