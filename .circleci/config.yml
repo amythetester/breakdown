@@ -30,6 +30,9 @@ jobs:
       - image: circleci/python:3.7-stretch-node
     steps:
       - run:
+          name: List files
+          command: ls -al . && ls -al /tmp
+      - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
