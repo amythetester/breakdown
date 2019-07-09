@@ -37,7 +37,7 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync ./breakdown/build/ s3://breakdownstress --delete
+          command: aws s3 cp ./build/ s3://breakdownstress --recursive
 
 workflows:
   version: 2
