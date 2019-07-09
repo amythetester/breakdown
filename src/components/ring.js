@@ -1,5 +1,5 @@
 import './ring.css';
-import React, {Component} from  'react';
+import React, {Component} from 'react';
 
 class Ring extends Component {
     render() {
