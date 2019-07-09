@@ -11,42 +11,42 @@ orbs:
 #   # Name the workflow "Welcome"
 #   Welcome:
 #     # Run the welcome/run job in its own container
-jobs:
-  build:
-    working_directory: ~/breakdown
-    docker:
-      - image: circleci/python:3.7-stretch-node
-    steps:
-      - checkout
-      - run:
-          name: Install npm
-          command: npm ci
-      - run:
-          name: Run build
-          command: npm run build
-  deploy:
-    working_directory: /tmp/breakdown
-    docker:
-      - image: circleci/python:3.7-stretch-node
-    steps:
-      - run:
-          name: List files
-          command: ls -al . && ls -al /tmp
-      - run:
-          name: Install awscli
-          command: sudo pip install awscli
-      - run:
-          name: Deploy to S3
-          command: aws s3 cp ./build/ s3://breakdownstress --recursive
+# jobs:
+#   build:
+#     working_directory: ~/breakdown
+#     docker:
+#       - image: circleci/python:3.7-stretch-node
+#     steps:
+#       - checkout
+#       - run:
+#           name: Install npm
+#           command: npm ci
+#       - run:
+#           name: Run build
+#           command: npm run build
+#   deploy:
+#     working_directory: /tmp/breakdown
+#     docker:
+#       - image: circleci/python:3.7-stretch-node
+#     steps:
+#       - run:
+#           name: List files
+#           command: ls -al . && ls -al /tmp
+#       - run:
+#           name: Install awscli
+#           command: sudo pip install awscli
+#       - run:
+#           name: Deploy to S3
+#           command: aws s3 cp ./build/ s3://breakdownstress --recursive
 
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+# workflows:
+#   version: 2
+#   build-deploy:
+#     jobs:
+#       - build
+#       - deploy:
+#           requires:
+#             - build
+#           filters:
+#             branches:
+#               only: master
