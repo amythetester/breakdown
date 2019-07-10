@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Ring from './components/ring.js'
 import Welcome from './components/welcome.js'
 import Question from './components/question.js'
+import Cloud from './components/cloud.js'
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
         <Route
           path="/question"
           render={() => <Question />}
+        />
+        <Route
+          path="/cloud"
+          render={() => <Cloud />}
         />
       </Router>
     </div>

@@ -1,5 +1,6 @@
 import './question.css';
 import React, {Component} from 'react';
+import { Link } from "react-router-dom";
 
 class Question extends Component {
     render() {
@@ -14,7 +15,7 @@ class Question extends Component {
                     </div>
                     <div className="space"></div>
                     <div>
-                        <input type="submit" value="Continue" className="btn btn-lg" id="continue" />
+                         <Link to="/cloud"><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
                     </div>
                     <div className="space"></div>
                 </form>
