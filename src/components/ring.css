@@ -1,7 +1,24 @@
 .breathe {
-    color: white;
+    color: black;
+    opacity: 0;
     display: flex;
     justify-content: center;
+}
+
+.textFadingEffect {
+    -webkit-animation: textFadeIn 10s ease 6s 1 alternate; 
+    animation: textFadeIn 10s ease 6s 1 alternate;
+}
+
+@keyframes textFadeIn {
+    0% {color:black; opacity:1;}
+    50% {color: white; opacity:1;}
+    100% {color:black; opacity:0;}
+}
+
+@-webkit-keyframes textFadeIn {
+    from {color:black;}
+    to {color: white;}
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -10,27 +27,19 @@
     top:0; bottom:0; right:0;
     width:100%;
     background:black;
-    -webkit-animation: fadeIn 8s ease 1 alternate; /* Safari and Chrome */
+    -webkit-animation: fadeIn 8s ease 1 alternate; 
     animation: fadeIn 8s ease 1 alternate;
 }
 
 @keyframes fadeIn{
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
+    from {background-color:white;}
+    to {background-color: black;}
+}
   
-  @-webkit-keyframes fadeIn {
-      0% {
-        opacity:0;
-      }
-      100% {
-        opacity:1;
-      }
-  }
+@-webkit-keyframes fadeIn {
+    from {background-color: white;}
+    to {background-color: black;}
+}
 
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */

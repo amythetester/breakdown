@@ -5,7 +5,7 @@ class Ring extends Component {
     render() {
         return (
             <section className="pulse fadingEffect">
-                <h1 className="breathe">
+                <h1 className="breathe textFadingEffect">
                     Let's start by breathing...
                 </h1>
                 <section className="pulsatingCircle">              

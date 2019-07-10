@@ -18,7 +18,7 @@ function App() {
         />
         <Route
           path="/ring"
-          render={() => <Ring className="ring"/>}
+          render={() => <Ring />}
         />
       </Router>
     </div>
