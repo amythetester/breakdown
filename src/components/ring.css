@@ -8,15 +8,12 @@
     top:0; bottom:0; right:0;
     width:100%;
     background:black;
-    -webkit-animation: textFadeIn 8s ease 5s 1 alternate; /* Safari and Chrome */
-    animation: textFadeIn 8s ease 5s 1 alternate;
+    -webkit-animation: textFadeIn 8s ease 1 alternate; /* Safari and Chrome */
+    animation: textFadeIn 8s ease 1 alternate;
 }
 
 @keyframes textFadeIn{
     0% {
-      opacity:1;
-    }
-    50% {
       opacity:0;
     }
     100% {
@@ -26,10 +23,7 @@
   
   @-webkit-keyframes textFadeIn {
       0% {
-        opacity:1;
-      }
-      50% {
-          opacity:0;
+        opacity:0;
       }
       100% {
         opacity:1;

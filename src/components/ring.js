@@ -11,11 +11,10 @@ class Ring extends Component {
                         <div className="fadingEffect"></div>
                     </h1>
                 </header>
-                <body>
+                
                     <section className="pulsatingCircle">              
                         <span className="circle"></span>                 
                     </section>
-                </body>
             </section>
         );
     }
