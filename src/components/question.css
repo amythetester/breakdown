@@ -1,34 +1,50 @@
+#background {
+  background-color: black;
+}
+
 .question {
-  position:absolute;
-  top:0; bottom:0; right:0;
-  width:100%;
   background:black;
-  color: black;
-  opacity: 0;
+  color: white;
   display: flex;
   justify-content: center;
+  padding-top: 2em;
+}
+
+#input {
+  background:black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  margin: 6em;
+}
+
+textarea {
+  background-color:black;
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-color: lightgoldenrodyellow;
+}
+
+#continue {
+  background-color: lightgoldenrodyellow;
+  margin: 2em;
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-.questionFadingEffect {
-  -webkit-animation: textFadeIn 10s ease 6s 1 alternate; 
-  animation: textFadeIn 10s ease 6s 1 alternate;
+.questionFadein {
+  -webkit-animation: questionFadeIn 10s ease 1 alternate; 
+  animation: questionFadeIn 10s ease 1 alternate;
 }
 
 @keyframes questionFadeIn{
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
+  from {color:black;}
+  to {color: white;}
   }
   
   @-webkit-keyframes questionFadeIn {
-      0% {
-        opacity:1;
-      }
-      100% {
-        opacity:0;
-      }
+    from {color:black;}
+    to {color: white;}
   }
