@@ -1,5 +1,7 @@
 .breathe {
     color: white;
+    display: flex;
+    justify-content: center;
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -8,11 +10,11 @@
     top:0; bottom:0; right:0;
     width:100%;
     background:black;
-    -webkit-animation: textFadeIn 8s ease 1 alternate; /* Safari and Chrome */
-    animation: textFadeIn 8s ease 1 alternate;
+    -webkit-animation: fadeIn 8s ease 1 alternate; /* Safari and Chrome */
+    animation: fadeIn 8s ease 1 alternate;
 }
 
-@keyframes textFadeIn{
+@keyframes fadeIn{
     0% {
       opacity:0;
     }
@@ -21,7 +23,7 @@
     }
   }
   
-  @-webkit-keyframes textFadeIn {
+  @-webkit-keyframes fadeIn {
       0% {
         opacity:0;
       }

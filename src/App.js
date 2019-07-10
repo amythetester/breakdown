@@ -18,7 +18,7 @@ function App() {
         />
         <Route
           path="/ring"
-          render={() => <Ring className="App fade-in"/>}
+          render={() => <Ring className="ring"/>}
         />
       </Router>
     </div>
