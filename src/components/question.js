@@ -12,9 +12,11 @@ class Question extends Component {
                     <div>
                         <textarea type="text" name="current" rows="15" cols="100" />
                     </div>
+                    <div className="space"></div>
                     <div>
                         <input type="submit" value="Continue" className="btn btn-lg" id="continue" />
                     </div>
+                    <div className="space"></div>
                 </form>
             </section>
         );

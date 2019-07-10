@@ -16,7 +16,7 @@
   align-items: center;
   flex-direction: column;
   border-radius: 0.25rem;
-  margin: 6em;
+  padding: 6em;
 }
 
 textarea {
@@ -26,11 +26,15 @@ textarea {
   border-left-width: 2px;
   border-top-width: 2px;
   border-color: lightgoldenrodyellow;
+  color: white;
 }
 
 #continue {
   background-color: lightgoldenrodyellow;
-  margin: 2em;
+}
+
+.space {
+  padding-bottom: 3em;
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
