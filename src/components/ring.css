@@ -3,6 +3,7 @@
     opacity: 0;
     display: flex;
     justify-content: center;
+    margin: 0, 0, 300px, 0;
 }
 
 .textFadingEffect {
@@ -17,8 +18,9 @@
 }
 
 @-webkit-keyframes textFadeIn {
-    from {color:black;}
-    to {color: white;}
+    0% {color:black; opacity:1;}
+    50% {color: white; opacity:1;}
+    100% {color:black; opacity:0;}
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -32,38 +34,36 @@
 }
 
 @keyframes fadeIn{
-    from {background-color:white;}
-    to {background-color: black;}
+    from {background:white;}
+    to {background: black;}
 }
   
 @-webkit-keyframes fadeIn {
-    from {background-color: white;}
-    to {background-color: black;}
+    from {background: white;}
+    to {background: black;}
 }
 
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
-
 .pulsatingCircle{
     display:flex;
     justify-content: center;
     align-items: center;
-    margin:300px auto;
-    transform:scale(5,5);
-    -webkit-transform:scale(5,5);
+    margin: auto;
 }
 
 .circle{
     display:flex;
     justify-content: center;
+    align-items: center;
     border-radius:50%;
-    width:100px;
-    height:100px;
-    border:5px solid lightgoldenrodyellow;
+    width:500px;
+    height:500px;
+    border:25px solid lightgoldenrodyellow;
     opacity:0;
     /* rate of inflation/deflation */
-    animation:9s pulseIn 10s ease-in-out infinite;
-    -webkit-animation:9s pulseIn 10s ease-in-out infinite	
+    animation:9s pulseIn 10s ease-in-out 10 alternate;
+    -webkit-animation:9s pulseIn 10s ease-in-out 10 alternate	
 }
 
 @keyframes pulseIn{
