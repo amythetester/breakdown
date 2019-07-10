@@ -1,15 +1,18 @@
-.breathe {
-    color: white;
-}
-
-/* idea from https://jsfiddle.net/gionaf/SNycF/ */
-.questionFadingEffect {
+.question {
   position:absolute;
   top:0; bottom:0; right:0;
   width:100%;
   background:black;
-  -webkit-animation: questionFadeIn 8s ease 5s; /* Safari and Chrome */
-  animation: questionFadeIn 8s ease 5s;
+  color: black;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* idea from https://jsfiddle.net/gionaf/SNycF/ */
+.questionFadingEffect {
+  -webkit-animation: textFadeIn 10s ease 6s 1 alternate; 
+  animation: textFadeIn 10s ease 6s 1 alternate;
 }
 
 @keyframes questionFadeIn{

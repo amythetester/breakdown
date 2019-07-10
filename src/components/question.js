@@ -4,11 +4,10 @@ import React, {Component} from 'react';
 class Question extends Component {
     render() {
         return (
-            <section className="pulse">
+            <section>
                 <header>
-                    <h1 className="breathe">
+                    <h1 className="question">
                         What's on your mind?
-                        {/* <div className="fadingEffect"></div> */}
                     </h1>
                 </header>
                 <body>

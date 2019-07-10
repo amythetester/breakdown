@@ -3,12 +3,12 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Ring from './components/ring.js'
 import Welcome from './components/welcome.js'
+import Question from './components/question.js'
 
 function App() {
   return (
     <div>
       <Router>
-        
         <Route
           exact path="/"
           render={() => <div><nav className="nav navbar navbar-dark bg-dark">
@@ -19,6 +19,10 @@ function App() {
         <Route
           path="/ring"
           render={() => <Ring />}
+        />
+        <Route
+          path="/question"
+          render={() => <Question />}
         />
       </Router>
     </div>

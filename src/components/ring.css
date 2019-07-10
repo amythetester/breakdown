@@ -17,8 +17,9 @@
 }
 
 @-webkit-keyframes textFadeIn {
-    from {color:black;}
-    to {color: white;}
+    0% {color:black; opacity:1;}
+    50% {color: white; opacity:1;}
+    100% {color:black; opacity:0;}
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -62,8 +63,8 @@
     border:5px solid lightgoldenrodyellow;
     opacity:0;
     /* rate of inflation/deflation */
-    animation:9s pulseIn 10s ease-in-out infinite;
-    -webkit-animation:9s pulseIn 10s ease-in-out infinite	
+    animation:9s pulseIn 10s ease-in-out 10 alternate;
+    -webkit-animation:9s pulseIn 10s ease-in-out 10 alternate	
 }
 
 @keyframes pulseIn{
