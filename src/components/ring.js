@@ -4,18 +4,13 @@ import React, {Component} from  'react';
 class Ring extends Component {
     render() {
         return (
-            <section className="pulse">
-                <header>
-                    <h1 className="breathe">
-                        Let's start by breathing.
-                        <div className="fadingEffect"></div>
-                    </h1>
-                </header>
-                <body>
-                    <section className="pulsatingCircle">              
-                        <span className="circle"></span>                 
-                    </section>
-                </body>
+            <section className="pulse fadingEffect">
+                <h1 className="breathe textFadingEffect">
+                    Let's start by breathing...
+                </h1>
+                <section className="pulsatingCircle">              
+                    <span className="circle"></span>                 
+                </section>
             </section>
         );
     }
