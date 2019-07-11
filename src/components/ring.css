@@ -52,14 +52,13 @@
     margin: auto;
 }
 
-.circle{
+.yellowCircle{
     display:flex;
     justify-content: center;
     align-items: center;
     border-radius:50%;
     width:500px;
     height:500px;
-    border:25px solid lightgoldenrodyellow;
     opacity:0;
     /* rate of inflation/deflation */
     animation:9s pulseIn 10s ease-in-out 10 alternate;
@@ -70,14 +69,17 @@
     0%{
         opacity:0.5;
         transform:scale(0.1,0.1);
+        border:25px solid lightgoldenrodyellow;
     }
     50%{
         opacity:1;
         transform:scale(1,1);
+        border:25px solid lightgoldenrodyellow;
     }
     100%{
         opacity:0.5;
         transform:scale(0.1,0.1);
+        border:25px solid lightgoldenrodyellow;
     }
 }
 
@@ -85,13 +87,73 @@
     0%{
         opacity:0.5;
         -webkit-transform:scale(0.1,0.1);
+        border:25px solid lightgoldenrodyellow;
     }
     50%{
         opacity:1;
         -webkit-transform:scale(1,1);
+        border:25px solid lightgoldenrodyellow;
     }
     100%{
         opacity:0.5;
         -webkit-transform:scale(0.1,0.1);
+        border:25px solid lightgoldenrodyellow;
+    }
+}
+
+/* breathe out circle */
+.fireCircle{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    width:500px;
+    height:500px;
+    opacity:0;
+    /* rate of inflation/deflation */
+    animation:9s firePulseIn 10s ease-in-out 10 alternate;
+    -webkit-animation:9s firePulseIn 10s ease-in-out 10 alternate	
+}
+
+@keyframes firePulseIn{
+    0% {
+        opacity:0.5;
+        -webkit-transform:scale(0.1,0.1);
+        border:25px solid white;
+    }
+    25% {
+        opacity:1;
+        border:25px solid orange;
+    }
+    50% {
+        opacity:0.5;
+        -webkit-transform:scale(1,1);
+        border:25px solid red;
+    }
+    75% {
+        opacity:1;
+        border:25px solid orange;
+    }
+    100% {
+        opacity:0.5;
+        -webkit-transform:scale(0.1,0.1);
+        border:25px solid white;
+    }
+}
+
+@-webkit-keyframes firePulseIn{
+    0% {
+        opacity:0.5;
+        -webkit-transform:scale(0.1,0.1);
+        border:25px solid white;
+      }
+    50% {
+        opacity:1;
+        border:25px solid orange;
+    }
+    100% {
+        opacity:0.5;
+        -webkit-transform:scale(1,1);
+        border:25px solid red;
     }
 }

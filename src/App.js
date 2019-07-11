@@ -19,7 +19,7 @@ function App() {
         />
         <Route
           path="/ring"
-          render={() => <Ring />}
+          render={() => <Ring question="Let's start by breathing..." circle="yellowCircle"/>}
         />
         <Route
           path="/question"
@@ -31,7 +31,7 @@ function App() {
         />
         <Route
           path="/breath-out"
-          render={() => <Ring />}
+          render={() => <Ring question="Time to breathe those words out..." circle="fireCircle"/>}
         />
       </Router>
     </div>

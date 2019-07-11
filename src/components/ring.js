@@ -2,14 +2,22 @@ import './ring.css';
 import React, {Component} from  'react';
 
 class Ring extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            fadeOut: "",
+          };
+    };
+    
     render() {
         return (
             <section className="pulse fadingEffect">
                 <h1 className="breathe textFadingEffect">
-                    Let's start by breathing...
+                    {this.props.question}
                 </h1>
                 <section className="pulsatingCircle">              
-                    <span className="circle"></span>                 
+                    <span className={this.props.circle}></span>                 
                 </section>
             </section>
         );
