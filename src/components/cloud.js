@@ -10,7 +10,7 @@ class Cloud extends Component {
                     Are there any words you wish to remove?
                 </h1>
                 <div>
-                    <Link to="/breath-out"><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
+                    <Link to="/breathe-out-ring"><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
                 </div>
             </section>
         );
