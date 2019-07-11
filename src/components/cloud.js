@@ -7,10 +7,10 @@ class Cloud extends Component {
         return (
             <section>
                 <h1 className="question">
-                    Are there any words you wish to remove?
+                    {this.props.question}
                 </h1>
                 <div>
-                    <Link to="/breathe-out-ring"><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
+                    <Link to={this.props.linkTo}><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
                 </div>
             </section>
         );
