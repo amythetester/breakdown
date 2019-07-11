@@ -14,24 +14,40 @@ function App() {
           exact path="/"
           render={() => <div><nav className="nav navbar navbar-dark bg-dark">
           <Link to="/" className="navbar-brand">Breakdown</Link>
-          <Link to="/ring"><button className="btn btn-dark nav-item nav-link" type="submit">Begin</button></Link>
+          <Link to="/breathe"><button className="btn btn-dark nav-item nav-link" type="submit">Begin</button></Link>
         </nav> <Welcome /></div>}
         />
         <Route
-          path="/ring"
-          render={() => <Ring question="Let's start by breathing..." circle="yellowCircle"/>}
+          path="/breathe-ring"
+          render={() => <Ring text="Let's start by breathing..." circle="yellowCircle"/>}
         />
         <Route
-          path="/question"
-          render={() => <Question />}
+          path="/mind-question"
+          render={() => <Question question="What's on your mind?"/>}
         />
         <Route
-          path="/cloud"
+          path="/mind-cloud"
           render={() => <Cloud />}
         />
         <Route
-          path="/breath-out"
-          render={() => <Ring question="Time to breathe those words out..." circle="fireCircle"/>}
+          path="/breathe-out-ring"
+          render={() => <Ring text="Time to breathe those words out..." circle="fireCircle"/>}
+        />
+        <Route
+          path="/feel-question"
+          render={() => <Question question="How would you like to feel?"/>}
+        />
+        <Route
+          path="/feel-cloud"
+          render={() => <Cloud />}
+        />
+        <Route
+          path="/growth-question"
+          render={() => <Question question="Who would you like to be?"/>}
+        />
+        <Route
+          path="/growth-cloud"
+          render={() => <Cloud />}
         />
       </Router>
     </div>

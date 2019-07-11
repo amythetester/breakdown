@@ -14,7 +14,7 @@ class Ring extends Component {
         return (
             <section className="fadingEffect center">
                 <h1 className="text textFadingEffect">
-                    {this.props.question}
+                    {this.props.text}
                 </h1>
                 <section className="pulsatingCircle">              
                     <span className={this.props.circle}></span>                 
