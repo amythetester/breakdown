@@ -27,7 +27,7 @@ function App() {
         />
         <Route
           path="/mind-cloud"
-          render={() => <Cloud />}
+          render={() => <Cloud question="Are there any words you wish to remove?" linkTo="/breathe-out-ring"/>}
         />
         <Route
           path="/breathe-out-ring"
@@ -39,7 +39,7 @@ function App() {
         />
         <Route
           path="/feel-cloud"
-          render={() => <Cloud />}
+          render={() => <Cloud question="" linkTo="/growth-question"/>}
         />
         <Route
           path="/growth-question"
@@ -47,7 +47,7 @@ function App() {
         />
         <Route
           path="/growth-cloud"
-          render={() => <Cloud />}
+          render={() => <Cloud question="" linkTo=""/>}
         />
       </Router>
     </div>
