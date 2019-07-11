@@ -29,6 +29,10 @@ function App() {
           path="/cloud"
           render={() => <Cloud />}
         />
+        <Route
+          path="/breath-out"
+          render={() => <Ring />}
+        />
       </Router>
     </div>
   );
