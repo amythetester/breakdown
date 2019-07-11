@@ -23,7 +23,7 @@ class Question extends Component {
                     </div>
                     <div className="space"></div>
                     <div>
-                         <Link to="/mind-cloud"><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
+                         <Link to={this.props.linkTo}><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
                     </div>
                     <div className="space"></div>
                 </form>

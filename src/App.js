@@ -23,7 +23,7 @@ function App() {
         />
         <Route
           path="/mind-question"
-          render={() => <Question question="What's on your mind?"/>}
+          render={() => <Question question="What's on your mind?" linkTo="/mind-cloud"/>}
         />
         <Route
           path="/mind-cloud"
@@ -35,7 +35,7 @@ function App() {
         />
         <Route
           path="/feel-question"
-          render={() => <Question question="How would you like to feel?"/>}
+          render={() => <Question question="How would you like to feel?" linkTo="/feel-cloud"/>}
         />
         <Route
           path="/feel-cloud"
@@ -43,7 +43,7 @@ function App() {
         />
         <Route
           path="/growth-question"
-          render={() => <Question question="Who would you like to be?"/>}
+          render={() => <Question question="Who would you like to be?" linkTo="/growth-cloud"/>}
         />
         <Route
           path="/growth-cloud"
