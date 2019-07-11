@@ -1,3 +1,11 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .breathe {
     color: black;
     opacity: 0;

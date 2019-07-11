@@ -12,7 +12,7 @@ class Ring extends Component {
     
     render() {
         return (
-            <section className="pulse fadingEffect">
+            <section className="fadingEffect center">
                 <h1 className="breathe textFadingEffect">
                     {this.props.question}
                 </h1>
