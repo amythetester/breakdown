@@ -7,13 +7,13 @@ class Ring extends Component {
 
         this.state = {
             fadeOut: "",
-          };
+        };
     };
     
     render() {
         return (
             <section className="fadingEffect center">
-                <h1 className="breathe textFadingEffect">
+                <h1 className="text textFadingEffect">
                     {this.props.question}
                 </h1>
                 <section className="pulsatingCircle">              
