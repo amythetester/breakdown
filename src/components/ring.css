@@ -52,6 +52,7 @@
     margin: auto;
 }
 
+/* breathing circle */
 .yellowCircle{
     display:flex;
     justify-content: center;
@@ -146,14 +147,23 @@
         opacity:0.5;
         -webkit-transform:scale(0.1,0.1);
         border:25px solid white;
-      }
+    }
+    25% {
+        opacity:1;
+        border:25px solid orange;
+    }
     50% {
+        opacity:0.5;
+        -webkit-transform:scale(1,1);
+        border:25px solid red;
+    }
+    75% {
         opacity:1;
         border:25px solid orange;
     }
     100% {
         opacity:0.5;
-        -webkit-transform:scale(1,1);
-        border:25px solid red;
+        -webkit-transform:scale(0.1,0.1);
+        border:25px solid white;
     }
 }
