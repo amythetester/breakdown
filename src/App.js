@@ -19,7 +19,7 @@ function App() {
         />
         <Route
           path="/breathe-ring"
-          render={() => <Ring text="Let's start by breathing..." circle="yellowCircle" toQuestion="breath-ring"/>}
+          render={() => <Ring text="Let's start by breathing..." circle="yellowCircle" toQuestion="breathe-ring"/>}
         />
         <Route
           path="/mind-question"
@@ -43,7 +43,7 @@ function App() {
         />
         <Route
           path="/growth-question"
-          render={() => <Question question="Who would you like to be?" linkTo="/growth-cloud"/>}
+          render={() => <Question question="What would you like to see change in the future?" linkTo="/growth-cloud"/>}
         />
         <Route
           path="/growth-cloud"
