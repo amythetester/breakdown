@@ -1,16 +1,35 @@
 import './ring.css';
 import React, {Component} from  'react';
+import { Redirect } from "react-router-dom";
 
 class Ring extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            fadeOut: "",
+            toQuestion: this.props.toQuestion
         };
     };
+
+    componentDidMount(){
+        if (this.state.toQuestion === "breathe-ring") {
+            setTimeout(() => this.setState(() => ({toQuestion: "mind"})), 100000)
+        }
+
+        if (this.state.toQuestion === "fire-ring") {
+            setTimeout(() => this.setState(() => ({toQuestion: "feel"})), 100000)
+        }
+    }
     
     render() {
+        if (this.state.toQuestion === "mind") {
+            return <Redirect to='/mind-question' />
+        }
+
+        if (this.state.toQuestion === "feel") {
+            return <Redirect to='/feel-question' />
+        }
+
         return (
             <section className="fadingEffect center">
                 <h1 className="text textFadingEffect">

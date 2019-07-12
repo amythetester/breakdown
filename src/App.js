@@ -14,12 +14,12 @@ function App() {
           exact path="/"
           render={() => <div><nav className="nav navbar navbar-dark bg-dark">
           <Link to="/" className="navbar-brand">Breakdown</Link>
-          <Link to="/breathe"><button className="btn btn-dark nav-item nav-link" type="submit">Begin</button></Link>
+          <Link to="/breathe-ring"><button className="btn btn-dark nav-item nav-link" type="submit">Begin</button></Link>
         </nav> <Welcome /></div>}
         />
         <Route
           path="/breathe-ring"
-          render={() => <Ring text="Let's start by breathing..." circle="yellowCircle"/>}
+          render={() => <Ring text="Let's start by breathing..." circle="yellowCircle" toQuestion="breathe-ring"/>}
         />
         <Route
           path="/mind-question"
@@ -31,7 +31,7 @@ function App() {
         />
         <Route
           path="/breathe-out-ring"
-          render={() => <Ring text="Time to breathe those words out..." circle="fireCircle"/>}
+          render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" toQuestion="fire-ring"/>}
         />
         <Route
           path="/feel-question"
@@ -43,7 +43,7 @@ function App() {
         />
         <Route
           path="/growth-question"
-          render={() => <Question question="Who would you like to be?" linkTo="/growth-cloud"/>}
+          render={() => <Question question="What would you like to see change in the future?" linkTo="/growth-cloud"/>}
         />
         <Route
           path="/growth-cloud"
