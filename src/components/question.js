@@ -1,6 +1,6 @@
 import './question.css';
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Question extends Component {
     constructor(props) {
@@ -9,23 +9,29 @@ class Question extends Component {
         this.state = {
             answer: "",
             letterFrequency: {},
+            redirect: false,
         };
     };
 
     frequency = () => {
+        const finalFrequency = {};
         const strAnswer = this.state.answer;
         const arrAnswer = strAnswer.split(' ');
         console.log(arrAnswer);
-        const finalFrequency = {};
-        arrAnswer.forEach(function(word){
-            if (finalFrequency.word === false) {
-                finalFrequency.word = 1;
+        arrAnswer.forEach(function(word) {
+            if (finalFrequency[word] == null) {
+                finalFrequency[word] = 1;
             } else {
-                finalFrequency.word += 1;
+                finalFrequency[word] += 1;
             }
         });
         console.log(finalFrequency);
         this.setState({letterFrequency: finalFrequency});
+
+        // this.props.wordCloudCallback({
+        //     frequency: this.state.letterFrequency,
+        //     answer: this.state.answer,
+        // });
     }
 
     onChangeHandler = (event) => {
@@ -36,21 +42,19 @@ class Question extends Component {
       }
     
     handleSubmit = (event) => {
-    event.preventDefault();
-    this.frequency();
-    this.props.wordCloudCallback({
-        frequency: this.state.letterFrequency,
-        answer: this.state.answer,
-    });
-    console.log(this.state.letterFrequency);
-    this.setState({
-        answer: "",
-        letterFrequency: {},
-    });
+        event.preventDefault();
+        this.frequency();
+        
+        console.log(this.state.letterFrequency);
+        this.setState({
+            letterFrequency: {},
+            redirect: true
+        });
     }
     
     render() {
-        return (
+        if (this.state.redirect) return <Redirect to={this.props.linkTo} />;
+        else return (
             <section id="background" className="questionFadeIn">
                 <h1 className="question">
                     {this.props.question}
@@ -61,7 +65,7 @@ class Question extends Component {
                     </div>
                     <div className="space"></div>
                     <div>
-                         <Link to={this.props.linkTo}><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
+                       <button type="submit" className="btn btn-lg" id="continue">Continue</button>
                     </div>
                     <div className="space"></div>
                 </form>
