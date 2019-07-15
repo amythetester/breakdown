@@ -44,7 +44,8 @@ class Question extends Component {
     });
     console.log(this.state.letterFrequency);
     this.setState({
-        letterFrequency: {}
+        answer: "",
+        letterFrequency: {},
     });
     }
     
@@ -54,7 +55,7 @@ class Question extends Component {
                 <h1 className="question">
                     {this.props.question}
                 </h1>
-                <form id="input" onSubmit={this.handleSubmit}>
+                <form id="input" onSubmit={event => this.handleSubmit(event)}>
                     <div>
                         <textarea type="text" name="answer" rows="15" cols="100" onChange={this.onChangeHandler} />
                     </div>

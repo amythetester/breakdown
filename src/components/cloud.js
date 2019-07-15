@@ -7,12 +7,14 @@ class Cloud extends Component {
         super(props);
 
         this.state = {
-            letterFrequency: this.props.wordCloud,
+            letterFrequency: {the:2, try:1, again:3} //this.props.wordCloud,
         };
     };
 
     renderWordCloud = () => {
-        
+        return(
+            this.state.letterFrequency
+        );
     }
 
     render() {
@@ -22,7 +24,7 @@ class Cloud extends Component {
                     {this.props.question}
                 </h1>
                 <div>
-
+                    {this.renderWordCloud}
                 </div>
                 <div>
                     <Link to={this.props.linkTo}><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
