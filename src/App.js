@@ -16,8 +16,11 @@ class App extends Component {
     };
   }
 
-  wordCloud = () => {
-    
+  initalWordCloud = (props) => {
+    this.setState({
+      initialInput: props.answer,
+      initialLetterFrequency: props.frequency
+    });
   }
 
   render() {
@@ -37,11 +40,11 @@ class App extends Component {
           />
           <Route
             path="/mind-question"
-            render={() => <Question question="What's on your mind?" linkTo="/mind-cloud" wordCloudCallback={this.wordCloud}/>}
+            render={() => <Question question="What's on your mind?" linkTo="/mind-cloud" wordCloudCallback={this.initialWordCloud}/>}
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Are there any words you wish to remove?" linkTo="/breathe-out-ring" />}
+            render={() => <Cloud question="Are there any words you wish to remove?" linkTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency}/>}
           />
           <Route
             path="/breathe-out-ring"

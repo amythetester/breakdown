@@ -7,10 +7,26 @@ class Question extends Component {
         super(props);
 
         this.state = {
-            input: "",
+            answer: "",
             letterFrequency: {},
         };
     };
+
+    frequency = () => {
+        const strAnswer = this.state.answer;
+        const arrAnswer = strAnswer.split(' ');
+        console.log(arrAnswer);
+        const finalFrequency = {};
+        arrAnswer.forEach(function(word){
+            if (finalFrequency.word === false) {
+                finalFrequency.word = 1;
+            } else {
+                finalFrequency.word += 1;
+            }
+        });
+        console.log(finalFrequency);
+        this.setState({letterFrequency: finalFrequency});
+    }
 
     onChangeHandler = (event) => {
         const field = {}
@@ -21,11 +37,14 @@ class Question extends Component {
     
     handleSubmit = (event) => {
     event.preventDefault();
+    this.frequency();
     this.props.wordCloudCallback({
-        letterFrequency: this.state.letterFrequency
+        frequency: this.state.letterFrequency,
+        answer: this.state.answer,
     });
+    console.log(this.state.letterFrequency);
     this.setState({
-        letterFrequency: ''
+        letterFrequency: {}
     });
     }
     
@@ -37,7 +56,7 @@ class Question extends Component {
                 </h1>
                 <form id="input" onSubmit={this.handleSubmit}>
                     <div>
-                        <textarea type="text" name="current" rows="15" cols="100" onChange={this.onChangeHandler} />
+                        <textarea type="text" name="answer" rows="15" cols="100" onChange={this.onChangeHandler} />
                     </div>
                     <div className="space"></div>
                     <div>
