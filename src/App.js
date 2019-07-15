@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   initalWordCloud = (props) => {
+    console.log(`***I'm the Props!!!**** ${props}`)
     this.setState({
       initialInput: props.answer,
       initialLetterFrequency: props.frequency
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <div>
         <Router>
+          {console.log("I'm a console log")}
           <Route
             exact path="/"
             render={() => <div><nav className="nav navbar navbar-dark bg-dark">
