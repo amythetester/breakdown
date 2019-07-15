@@ -7,9 +7,27 @@ class Question extends Component {
         super(props);
 
         this.state = {
-            unknown: "",
+            input: "",
+            letterFrequency: {},
         };
     };
+
+    onChangeHandler = (event) => {
+        const field = {}
+        field[event.target.name] = event.target.value;
+    
+        this.setState(field);
+      }
+    
+    handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.wordCloudCallback({
+        letterFrequency: this.state.letterFrequency
+    });
+    this.setState({
+        letterFrequency: ''
+    });
+    }
     
     render() {
         return (
@@ -17,9 +35,9 @@ class Question extends Component {
                 <h1 className="question">
                     {this.props.question}
                 </h1>
-                <form id="input">
+                <form id="input" onSubmit={this.handleSubmit}>
                     <div>
-                        <textarea type="text" name="current" rows="15" cols="100" />
+                        <textarea type="text" name="current" rows="15" cols="100" onChange={this.onChangeHandler} />
                     </div>
                     <div className="space"></div>
                     <div>
