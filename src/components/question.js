@@ -8,7 +8,6 @@ class Question extends Component {
 
         this.state = {
             answer: "",
-            letterFrequency: {},
             redirect: false,
         };
     };
@@ -26,12 +25,7 @@ class Question extends Component {
             }
         });
         console.log(finalFrequency);
-        this.setState({letterFrequency: finalFrequency});
-
-        // this.props.wordCloudCallback({
-        //     frequency: this.state.letterFrequency,
-        //     answer: this.state.answer,
-        // });
+        return finalFrequency;
     }
 
     onChangeHandler = (event) => {
@@ -43,11 +37,15 @@ class Question extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        this.frequency();
+        const finalFrequency = this.frequency();
         
-        console.log(this.state.letterFrequency);
+        this.props.wordCloudCallback({
+            frequency: finalFrequency,
+            answer: this.state.answer,
+        });
+
+        console.log(finalFrequency);
         this.setState({
-            letterFrequency: {},
             redirect: true
         });
     }

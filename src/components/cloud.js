@@ -9,12 +9,15 @@ class Cloud extends Component {
         super(props);
 
         this.state = {
-            letterFrequency: {the:2, try:1, again:3} //this.props.wordCloud,
+            
         };
     };
 
-    renderWordCloud = () => {
-
+    renderWords = () => {
+        const words = Object.keys(this.props.wordCloud);
+        return words.map(function(word) {
+            return (<div>{word}</div>)
+        });
     }
 
     render() {
@@ -30,18 +33,12 @@ class Cloud extends Component {
                         style={{
                         fontSize: 30,
                         color: () => randomColor({
-                            hue: 'blue'
+                            luminosity: 'bright',
+                            hue: 'blue',
                         }),
                         padding: 5,
                         }}>
-                        <div>I</div>
-                        <div>try</div>
-                        <div>hard</div>
-                        <div>but</div>
-                        <div>sometimes</div>
-                        <div>I</div>
-                        <div>still</div>
-                        <div>fail</div>
+                        {this.renderWords()}
                     </TagCloud>
                     </div>
                 </section>

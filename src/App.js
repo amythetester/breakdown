@@ -16,11 +16,10 @@ class App extends Component {
     };
   }
 
-  initalWordCloud = (props) => {
-    console.log(`***I'm the Props!!!**** ${props}`)
+  initialWordCloud = ({answer, frequency}) => {
     this.setState({
-      initialInput: props.answer,
-      initialLetterFrequency: props.frequency
+      initialInput: answer,
+      initialLetterFrequency: frequency
     });
   }
 
