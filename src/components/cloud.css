@@ -1,25 +1,28 @@
 /* inspired by https://stackblitz.com/edit/react-tag-cloud?file=App.js */
+.center {
+    display:flex;
+    flex-direction: column;
+}
+
 .app-outer {
-	align-items: center; 
-	bottom: 0;
-	display: flex;
+    display: flex;
 	flex-direction: column;
 	justify-content: center;
-	left: 0;
-	padding: 150px 0;
-	position: absolute;
+    align-items: center; 
+    position: absolute;
+	bottom: 0;
 	right: 0;
-    top: 0;
-   
-    
+    top: 0;  
+	left: 0;
+	padding: 150px 0;  
 }
 
 .app-inner {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	max-width: 1000px;
     width: 100%;
+    max-width: 1000px;
     background-color: black;
 }
 
@@ -34,5 +37,4 @@
 
 .tag-item-wrapper {
     cursor: pointer;
-   
 }

@@ -7,7 +7,8 @@ class Ring extends Component {
         super(props);
 
         this.state = {
-            toQuestion: this.props.toQuestion
+            toQuestion: this.props.toQuestion,
+            pulseWords: ['fail', 'no time']
         };
     };
 
@@ -19,6 +20,10 @@ class Ring extends Component {
         if (this.state.toQuestion === "fire-ring") {
             setTimeout(() => this.setState(() => ({toQuestion: "feel"})), 100000)
         }
+    }
+
+    rotateWords = () => {
+
     }
     
     render() {
@@ -36,7 +41,7 @@ class Ring extends Component {
                     {this.props.text}
                 </h1>
                 <section className="pulsatingCircle">              
-                    <span className={this.props.circle}></span>                 
+                    <span className={this.props.circle}>Word</span>               
                 </section>
             </section>
         );
