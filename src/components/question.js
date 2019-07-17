@@ -16,7 +16,8 @@ class Question extends Component {
     frequency = () => {
         const finalFrequency = {};
         const strAnswer = this.state.answer.toLowerCase();
-        const arrAnswer = strAnswer.split(' ');
+        const cleanAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!]/gi, ' ');
+        const arrAnswer = cleanAnswer.split(' ');
         console.log(arrAnswer);
         arrAnswer.forEach(function(word) {
             if (finalFrequency[word] == null) {
