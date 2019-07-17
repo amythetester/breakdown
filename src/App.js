@@ -37,7 +37,7 @@ class App extends Component {
           />
           <Route
             path="/breathe-ring"
-            render={() => <Ring text="Let's start by breathing..." circle="yellowCircle" toQuestion="breathe-ring"/>}
+            render={() => <Ring text="Let's start by breathing..." circle="yellowCircle" redirectTo="/mind-question" />}
           />
           <Route
             path="/mind-question"
@@ -49,9 +49,9 @@ class App extends Component {
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" toQuestion="fire-ring"/>}
+            render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" redirectTo="/" words={['fail', 'no time', 'grow up', 'not done']}/>}
           />
-          <Route
+          {/* <Route
             path="/feel-question"
             render={() => <Question question="How would you like to feel?" linkTo="/feel-cloud"/>}
           />
@@ -66,7 +66,7 @@ class App extends Component {
           <Route
             path="/growth-cloud"
             render={() => <Cloud question="" linkTo=""/>}
-          />
+          /> */}
         </Router>
       </div>
     );
