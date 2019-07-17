@@ -42,6 +42,6 @@ class Ring extends Component {
 
 Ring.defaultProps = {
     words: []
-  };
+};
 
 export default Ring;
