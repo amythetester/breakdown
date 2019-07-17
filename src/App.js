@@ -5,6 +5,7 @@ import Ring from './components/ring.js'
 import Welcome from './components/welcome.js'
 import Question from './components/question.js'
 import Cloud from './components/cloud.js'
+import Finish from './components/finish.js'
 
 class App extends Component {
   constructor(props) {
@@ -56,7 +57,11 @@ class App extends Component {
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" redirectTo="/" words={this.state.removedWords}/>}
+            render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" redirectTo="/finish" words={this.state.removedWords}/>}
+          />
+          <Route
+            path="/finish"
+            render={() => <Finish redirectTo="/"/>}
           />
         </Router>
       </div>
