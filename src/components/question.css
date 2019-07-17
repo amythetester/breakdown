@@ -16,7 +16,8 @@
   align-items: center;
   flex-direction: column;
   border-radius: 0.25rem;
-  padding: 5em;
+  padding: 3em;
+  font-size: 2em;
 }
 
 textarea {
@@ -34,7 +35,7 @@ textarea {
 }
 
 .space {
-  padding-bottom: 3em;
+  padding-bottom: 1em;
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -48,7 +49,7 @@ textarea {
   to {color: white;}
   }
   
-  @-webkit-keyframes questionFadeIn {
-    from {color:black;}
-    to {color: white;}
-  }
+@-webkit-keyframes questionFadeIn {
+  from {color:black;}
+  to {color: white;}
+}
