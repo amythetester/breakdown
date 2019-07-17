@@ -9,20 +9,26 @@ class Cloud extends Component {
         super(props);
 
         this.state = {
-            
+            removedWords: []
         };
     };
+
+    removeWord = (word) => {
+        const words = this.state.removedWords;
+        words.push(word);
+        this.setState({removedWords: words})
+    }
 
     renderWords = () => {
         const words = Object.keys(this.props.wordCloud);
         return words.map(function(word) {
-            return (<div>{word}</div>)
+            return (<div onClick={() => this.removeWord(word)}>{word}</div>)
         });
     }
 
     render() {
         return (
-            <div>
+            <div className="center">
                 <h1 className="question">
                     {this.props.question}
                 </h1>

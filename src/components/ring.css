@@ -61,10 +61,12 @@
 }
 
 /* breathing circle */
-.yellowCircle{
+#yellowCircle{
     display:flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 3rem;
     border-radius:50%;
     width:500px;
     height:500px;
@@ -111,17 +113,19 @@
 }
 
 /* breathe out circle */
-.fireCircle{
+#fireCircle{
     display:flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 3rem;
     border-radius:50%;
     width:500px;
     height:500px;
     opacity:0;
     /* rate of inflation/deflation */
-    animation:9s firePulseIn 10s ease-in-out 10 alternate;
-    -webkit-animation:9s firePulseIn 10s ease-in-out 10 alternate	
+    animation:4.5s firePulseIn 10s ease-in-out 20 alternate;
+    -webkit-animation:4.5s firePulseIn 10s ease-in-out 20 alternate	
 }
 
 @keyframes firePulseIn{
@@ -130,23 +134,14 @@
         -webkit-transform:scale(0.1,0.1);
         border:25px solid white;
     }
-    25% {
-        opacity:1;
-        border:25px solid orange;
-    }
     50% {
-        opacity:0.5;
-        -webkit-transform:scale(1,1);
-        border:25px solid red;
-    }
-    75% {
         opacity:1;
         border:25px solid orange;
     }
     100% {
-        opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        border:25px solid white;
+        opacity:1;
+        -webkit-transform:scale(1,1);
+        border:25px solid orangered;
     }
 }
 
@@ -156,22 +151,50 @@
         -webkit-transform:scale(0.1,0.1);
         border:25px solid white;
     }
-    25% {
-        opacity:1;
-        border:25px solid orange;
-    }
     50% {
-        opacity:0.5;
-        -webkit-transform:scale(1,1);
-        border:25px solid red;
-    }
-    75% {
         opacity:1;
         border:25px solid orange;
     }
     100% {
-        opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        border:25px solid white;
+        opacity:1;
+        -webkit-transform:scale(1,1);
+        border:25px solid orangered;
     }
+}
+
+/* fade words in ring inspired by https://www.competa.com/blog/changing-words-with-css-animation/ */
+.animated-words {
+    display: inline-block;
+}
+
+.animated-words span {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    color: black;
+    -webkit-animation: animateWord 9s linear 14.5s;
+    animation: animateWord 9s linear 14.5s;
+}
+
+.animated-words span:nth-child(2) { 
+    -webkit-animation-delay: 23s;  
+    animation-delay: 23s; 
+}
+.animated-words span:nth-child(3) { 
+    -webkit-animation-delay: 32s; 
+    animation-delay: 32s; 
+}
+.animated-words span:nth-child(4) { 
+    -webkit-animation-delay: 41s; 
+    animation-delay: 41s; 
+}
+
+@keyframes animateWord {
+    0% { color: white; opacity: 1; }
+    100% { color: black; opacity: 0; }
+}
+
+@-webkit-keyframes animateWord {
+    0% { color: white; opacity: 1; }
+    100% { color: black; opacity: 0; }
 }

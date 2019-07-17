@@ -7,27 +7,24 @@ class Ring extends Component {
         super(props);
 
         this.state = {
-            toQuestion: this.props.toQuestion
+            redirect: false
         };
     };
 
     componentDidMount(){
-        if (this.state.toQuestion === "breathe-ring") {
-            setTimeout(() => this.setState(() => ({toQuestion: "mind"})), 100000)
-        }
+        setTimeout(() => this.setState(() => ({redirect: true})), 100000)
+    }
 
-        if (this.state.toQuestion === "fire-ring") {
-            setTimeout(() => this.setState(() => ({toQuestion: "feel"})), 100000)
-        }
+    rotateWords = () => {
+        const words = this.props.words;
+        return words.map(function(word){
+            return(<span>{word}</span>)
+        });
     }
     
     render() {
-        if (this.state.toQuestion === "mind") {
-            return <Redirect to='/mind-question' />
-        }
-
-        if (this.state.toQuestion === "feel") {
-            return <Redirect to='/feel-question' />
+        if (this.state.redirect === true) {
+            return <Redirect to={this.props.redirectTo} />
         }
 
         return (
@@ -36,11 +33,15 @@ class Ring extends Component {
                     {this.props.text}
                 </h1>
                 <section className="pulsatingCircle">              
-                    <span className={this.props.circle}></span>                 
+                    <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
                 </section>
             </section>
         );
     }
 };
+
+Ring.defaultProps = {
+    words: []
+  };
 
 export default Ring;
