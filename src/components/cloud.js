@@ -9,19 +9,33 @@ class Cloud extends Component {
         super(props);
 
         this.state = {
+            remainingWords: [],
             removedWords: [],
             redirect: false
         };
     };
 
+    componentDidMount() {
+        const words = Object.keys(this.props.wordCloud);
+        this.setState({ remainingWords: words})
+    }
+
     removeWord = (word) => {
-        const words = this.state.removedWords;
-        words.push(word);
-        this.setState({removedWords: words})
+        const hiddenWords = this.state.removedWords;
+        hiddenWords.push(word);
+
+        const displayWords = this.state.remainingWords;
+        const indexOfWord = displayWords.indexOf(word);
+        displayWords.splice(indexOfWord, 1);
+
+        this.setState({
+            removedWords: hiddenWords,
+            remainingWords: displayWords
+        });
     }
 
     renderWords = () => {
-        const words = Object.keys(this.props.wordCloud);
+        const words = this.state.remainingWords;
         return words.map((word) => {
             return (<div onClick={() => this.removeWord(word)}>{word}</div>)
         });
