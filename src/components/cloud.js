@@ -22,7 +22,7 @@ class Cloud extends Component {
     renderWords = () => {
         const words = Object.keys(this.props.wordCloud);
         return words.map(function(word) {
-            return (<div onClick={this.removeWord(word)}>{word}</div>)
+            return (<div onClick={() => this.removeWord(word)}>{word}</div>)
         });
     }
 

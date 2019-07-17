@@ -8,7 +8,7 @@ class Ring extends Component {
 
         this.state = {
             toQuestion: this.props.toQuestion,
-            pulseWords: ['fail', 'no time']
+            pulseWords: ['fail', 'no time', 'grow up', 'not done']
         };
     };
 
@@ -23,7 +23,10 @@ class Ring extends Component {
     }
 
     rotateWords = () => {
-
+        const words = this.state.pulseWords;
+        return words.map(function(word){
+            return(<span>{word}</span>)
+        });
     }
     
     render() {
@@ -41,7 +44,7 @@ class Ring extends Component {
                     {this.props.text}
                 </h1>
                 <section className="pulsatingCircle">              
-                    <span className={this.props.circle}>Word</span>               
+                    <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
                 </section>
             </section>
         );
