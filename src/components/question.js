@@ -5,12 +5,17 @@ import { Redirect } from "react-router-dom";
 class Question extends Component {
     constructor(props) {
         super(props);
+        this.textInput = null;
 
         this.state = {
             answer: "",
             redirect: false,
         };
     };
+
+    // componentDidMount(){
+    //     this.textInput.answer.focus(); 
+    // }
 
     frequency = () => {
         const finalFrequency = {};
@@ -59,7 +64,7 @@ class Question extends Component {
                 </h1>
                 <form id="input" onSubmit={event => this.handleSubmit(event)}>
                     <div>
-                        <textarea type="text" name="answer" rows="15" cols="100" onChange={this.onChangeHandler} />
+                        <textarea type="text" name="answer" autofocus="true" rows="7" cols="50" onChange={this.onChangeHandler} />
                     </div>
                     <div className="space"></div>
                     <div>
