@@ -1,6 +1,6 @@
 import './cloud.css';
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import TagCloud from 'react-tag-cloud';
 import randomColor from 'randomcolor';
 
@@ -9,7 +9,8 @@ class Cloud extends Component {
         super(props);
 
         this.state = {
-            removedWords: []
+            removedWords: [],
+            redirect: false
         };
     };
 
@@ -26,8 +27,19 @@ class Cloud extends Component {
         });
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.removeWordCallback({
+            words: this.state.removedWords
+        });
+        this.setState({ 
+            redirect: true 
+        });
+    }
+
     render() {
-        return (
+        if (this.state.redirect) return <Redirect to={this.props.redirectTo} />;
+        else return (
             <div className="center">
                 <h1 className="question">
                     {this.props.question}
@@ -40,7 +52,6 @@ class Cloud extends Component {
                         fontSize: 30,
                         color: () => randomColor({
                             luminosity: 'bright',
-                            hue: 'blue',
                         }),
                         padding: 5,
                         }}>
@@ -48,9 +59,9 @@ class Cloud extends Component {
                     </TagCloud>
                     </div>
                 </section>
-                <section>
-                    <Link to={this.props.linkTo}><button type="submit" className="btn btn-lg" id="continue">Continue</button></Link>
-                </section>
+                <form onSubmit={event => this.handleSubmit(event)} className="button">
+                    <button type="submit" className="btn btn-lg" id="continue">Continue</button>
+                </form>
             </div>
         );
     }

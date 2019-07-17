@@ -10,11 +10,10 @@
 	justify-content: center;
     align-items: center; 
     position: absolute;
-	bottom: 0;
+	bottom: 20%;
 	right: 0;
-    top: 0;  
-	left: 0;
-	padding: 150px 0;  
+    top: 20%;  
+	left: 0; 
 }
 
 .app-inner {
@@ -29,6 +28,10 @@
 
 .tag-cloud {
     flex: 1;
+}
+
+.button {
+    margin-top: 35rem;
 }
 
 .tag-cloud > div {

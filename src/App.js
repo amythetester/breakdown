@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       initialInput: "",
       initialLetterFrequency: {},
+      removedWords: [],
     };
   }
 
@@ -20,6 +21,12 @@ class App extends Component {
     this.setState({
       initialInput: answer,
       initialLetterFrequency: frequency
+    });
+  }
+
+  removedWordsFromWordCloud = ({words}) => {
+    this.setState({
+      removedWords: words,
     });
   }
 
@@ -45,11 +52,11 @@ class App extends Component {
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Are there any words you wish to remove?" linkTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency}/>}
+            render={() => <Cloud question="Are there any words you wish to remove?" redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" redirectTo="/" words={['fail', 'no time', 'grow up', 'not done']}/>}
+            render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" redirectTo="/" words={this.state.removedWords}/>}
           />
         </Router>
       </div>
