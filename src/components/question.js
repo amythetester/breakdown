@@ -13,13 +13,9 @@ class Question extends Component {
         };
     };
 
-    // componentDidMount(){
-    //     this.textInput.answer.focus(); 
-    // }
-
     frequency = () => {
         const finalFrequency = {};
-        const strAnswer = this.state.answer;
+        const strAnswer = this.state.answer.toLowerCase();
         const arrAnswer = strAnswer.split(' ');
         console.log(arrAnswer);
         arrAnswer.forEach(function(word) {
