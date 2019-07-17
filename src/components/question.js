@@ -13,14 +13,11 @@ class Question extends Component {
         };
     };
 
-    // componentDidMount(){
-    //     this.textInput.answer.focus(); 
-    // }
-
     frequency = () => {
         const finalFrequency = {};
-        const strAnswer = this.state.answer;
-        const arrAnswer = strAnswer.split(' ');
+        const strAnswer = this.state.answer.toLowerCase();
+        const cleanAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!]/gi, ' ');
+        const arrAnswer = cleanAnswer.split(' ');
         console.log(arrAnswer);
         arrAnswer.forEach(function(word) {
             if (finalFrequency[word] == null) {
