@@ -1,4 +1,13 @@
-.font-color {
-    color: #128396;
+.home {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    margin: 3em;
+    padding-right: 5em;
+    padding-left: 5em;
 }
 
+p {
+    font-size: 1.5rem;
+}

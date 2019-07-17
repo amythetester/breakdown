@@ -1,16 +1,16 @@
-import './question.css'
+import './welcome.css'
 import React from 'react';
 import { Link } from "react-router-dom";
 
 function Welcome() {
     return (
       <div>
-        <section className="col-xs-1 text-center">
+        <section className="home">
             <h1>Welcome to Breakdown</h1>
-            <p>Click begin to start reducing stress.</p>
+            <h3>Click begin to start reducing stress.</h3>
             <Link to="/breathe-ring"><button className="btn btn-info" type="submit" id="start-button">Begin</button></Link>
         </section>
-        <section className="col-xs-1 text-center">
+        <section className="home">
           <h2>About Breakdown</h2>
           <p>
             Breakdown is an app focused on settling your physical being before diving into your mental state of being. 
@@ -18,7 +18,7 @@ function Welcome() {
             pieces and helps you visualize a better tomorrow.
           </p>
         </section>
-        <section className="col-xs-1 text-center">
+        <section className="home">
           <h2>How does it work?</h2>
           <p>
             Modern living has caused undo stress in folks lives. We don't breathe as deeply. We don't stop to settle ourselves. 
