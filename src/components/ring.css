@@ -198,3 +198,58 @@
     0% { color: white; opacity: 1; }
     100% { color: black; opacity: 0; }
 }
+
+/* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
+.bar {
+    animation: 100s showBar 10s ease;
+    background: #2a2d2d;
+    max-width: 33%;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 2rem;
+    opacity: 0;
+
+    span {
+        display: block;
+    }
+}
+
+@keyframes showBar {
+	0% {
+        opacity: 0;
+	}
+    2% {
+        opacity:1;
+    }
+	100% {
+        opacity:1;
+    }
+}
+
+.progress {
+  animation: 100s loader 10s ease forwards;
+  background: black;
+  color: darkgrey;
+  padding: 5px;
+  width: 0;
+}
+
+#progress-bar {
+    background-color: darkgrey;
+}
+
+@keyframes loader {
+	0% {
+        opacity: 0;
+		width: 0;
+	}
+    5% {
+        opacity:1;
+    }
+	100% {
+		width: 100%;
+	}
+
+}
+
