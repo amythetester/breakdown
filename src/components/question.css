@@ -30,6 +30,10 @@ textarea {
   color: white;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 #continue {
   background-color: lightgoldenrodyellow;
 }
