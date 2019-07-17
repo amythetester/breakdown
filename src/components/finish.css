@@ -1,0 +1,23 @@
+.finish {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 21em;
+    background-color: black;
+    color: white;
+}
+
+.finish > h1, .finish > h3, .finish > p {
+    padding-top: 3em;
+}
+
+p {
+    padding-bottom:2em;
+}
+
+button {
+    background-color: black;
+}
