@@ -51,22 +51,6 @@ class App extends Component {
             path="/breathe-out-ring"
             render={() => <Ring text="Time to breathe those words out..." circle="fireCircle" redirectTo="/" words={['fail', 'no time', 'grow up', 'not done']}/>}
           />
-          {/* <Route
-            path="/feel-question"
-            render={() => <Question question="How would you like to feel?" linkTo="/feel-cloud"/>}
-          />
-          <Route
-            path="/feel-cloud"
-            render={() => <Cloud question="" linkTo="/growth-question"/>}
-          />
-          <Route
-            path="/growth-question"
-            render={() => <Question question="What would you like to see change in the future?" linkTo="/growth-cloud"/>}
-          />
-          <Route
-            path="/growth-cloud"
-            render={() => <Cloud question="" linkTo=""/>}
-          /> */}
         </Router>
       </div>
     );
