@@ -5,19 +5,26 @@
     justify-content: center;
     padding-left: 5em;
     padding-right: 5em;
-    padding-bottom: 21em;
+
     background-color: black;
     color: white;
 }
 
-.finish > h1, .finish > h3, .finish > p {
+.fade-out {
+    animation: 10s fadeFinish ease;
+}
+
+@keyframes fadeFinish {
+    from {background:black; opacity: 0;}
+    to {opacity: 1;}
+}
+
+.finish > h1, .finish > h2, .finish > p {
     padding-top: 3em;
 }
 
 p {
+    animation-delay:10s ;
     padding-bottom:2em;
 }
 
-button {
-    background-color: black;
-}
