@@ -18,7 +18,7 @@ function Welcome() {
             pieces and helps you visualize a better tomorrow.
           </p>
         </section>
-        <section className="home">
+        <section className="home last-item">
           <h2>How does it work?</h2>
           <p>
             Modern living has caused undo stress in folks lives. We don't breathe as deeply. We don't stop to settle ourselves. 

@@ -12,6 +12,10 @@
     padding-left: 5em;
 }
 
+.last-item {
+    padding-bottom: 7em;
+}
+
 p {
     font-size: 1.5rem;
 }

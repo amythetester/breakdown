@@ -23,15 +23,15 @@
 }
 
 .finish > h2 {
-    animation: 16s fadeFinish ease;
+    animation: 14s fadeFinish ease;
 }
 
 .finish > h3 {
-    animation: 20s fadeFinish ease;
+    animation: 17s fadeFinish ease;
 }
 
 .finish > p, .fade-button {
-    animation: 22s fadeFinish ease;
+    animation: 20s fadeFinish ease;
 }
 
 
