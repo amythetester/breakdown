@@ -1,11 +1,19 @@
+.white {
+    background-color: white;
+}
+
 .home {
     display: flex;
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    margin: 3em;
+    padding-top: 3em;
     padding-right: 5em;
     padding-left: 5em;
+}
+
+.last-item {
+    padding-bottom: 7em;
 }
 
 p {

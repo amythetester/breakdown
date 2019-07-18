@@ -65,7 +65,8 @@ class Cloud extends Component {
                         style={{
                         fontSize: 30,
                         color: () => randomColor({
-                            luminosity: 'light',
+                            hue: 'blue',
+                            // luminosity: 'light',
                         }),
                         padding: 5,
                         }}>
@@ -74,7 +75,7 @@ class Cloud extends Component {
                     </div>
                 </section>
                 <form onSubmit={event => this.handleSubmit(event)} className="button">
-                    <button type="submit" className="btn btn-lg" id="continue">Continue</button>
+                    <button type="submit" className="btn btn-lg" id="continue-to-ring">Continue</button>
                 </form>
             </div>
         );

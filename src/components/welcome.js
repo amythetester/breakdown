@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Welcome() {
     return (
-      <div>
+      <div className="white">
         <section className="home">
             <h1>Welcome to Breakdown</h1>
             <h3>Click begin to start reducing stress.</h3>
@@ -18,7 +18,7 @@ function Welcome() {
             pieces and helps you visualize a better tomorrow.
           </p>
         </section>
-        <section className="home">
+        <section className="home last-item">
           <h2>How does it work?</h2>
           <p>
             Modern living has caused undo stress in folks lives. We don't breathe as deeply. We don't stop to settle ourselves. 
