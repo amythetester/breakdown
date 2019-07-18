@@ -41,3 +41,9 @@
 	transition: 1.4s;
 }
 
+#continue-to-ring {
+    background-color: #2a2d2d;
+    border-color: grey;
+    color: white;
+}
+
