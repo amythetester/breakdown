@@ -57,7 +57,7 @@ class App extends Component {
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to breathe those words out...same as last time, inhale as the ring expands" circle="fireCircle" redirectTo="/finish" words={this.state.removedWords}/>}
+            render={() => <Ring text="Time to breathe those words out...out as the ring contracts" circle="fireCircle" redirectTo="/finish" words={this.state.removedWords}/>}
           />
           <Route
             path="/finish"
