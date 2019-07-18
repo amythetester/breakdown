@@ -13,10 +13,23 @@ class Question extends Component {
         };
     };
 
+    // Borrowed from here https://stackoverflow.com/questions/49655135/javascript-regex-remove-multiple-words-from-string
+    removeWords = function(text) {
+        const wordArray = [
+          "a", "an", "and", "at", "be", "from", "in", "is", "it", 
+          "of", "on", "or", "so", "that", "the", "this", "to", 
+        ];
+
+        const expStr = wordArray.join("|");
+	    return text.replace(new RegExp('\\b(' + expStr + ')\\b', 'gi'), ' ')
+                    .replace(/\s{2,}/g, ' ');
+    }
+
     frequency = () => {
         const finalFrequency = {};
         const strAnswer = this.state.answer.toLowerCase();
-        const cleanAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!]/gi, ' ');
+        const noCharAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!]/gi, ' ');
+        const cleanAnswer = this.removeWords(noCharAnswer);
         const arrAnswer = cleanAnswer.split(' ');
         console.log(arrAnswer);
         arrAnswer.forEach(function(word) {
