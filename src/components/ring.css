@@ -176,17 +176,25 @@
     animation: animateWord 9s linear 14.5s;
 }
 
+.animated-words span:nth-child(1) { 
+    -webkit-animation-delay: 23.5s;  
+    animation-delay: 23.5s; 
+}
 .animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 23s;  
-    animation-delay: 23s; 
+    -webkit-animation-delay: 41.5s;  
+    animation-delay: 41.5s; 
 }
 .animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 32s; 
-    animation-delay: 32s; 
+    -webkit-animation-delay: 59.5s; 
+    animation-delay: 59.5s; 
 }
 .animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 41s; 
-    animation-delay: 41s; 
+    -webkit-animation-delay: 77.5s; 
+    animation-delay: 77.5s; 
+}
+.animated-words span:nth-child(5) { 
+    -webkit-animation-delay: 95.5s; 
+    animation-delay: 95.5s; 
 }
 
 @keyframes animateWord {
