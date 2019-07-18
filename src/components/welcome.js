@@ -21,7 +21,7 @@ function Welcome() {
         <section className="home last-item">
           <h2>How does it work?</h2>
           <p>
-            Modern living has caused undo stress in folks lives. We don't breathe as deeply. We don't stop to settle ourselves. 
+            Modern living has caused undue stress in folks lives. We don't breathe as deeply. We don't stop to settle ourselves. 
             Breakdown starts the user off with a guided breathing exercise to calm your body and walks through a thought journey
             to help reduce stress. Press Begin to start.
           </p>
