@@ -35,6 +35,12 @@
     bottom: 10%;
 }
 
+@media screen and (min-width: 1300px) {
+    .button {
+      padding-top: 30em;
+    }
+  }
+
 .tag-cloud > div {
 	transition: 1.4s;
 }
