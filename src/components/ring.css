@@ -137,8 +137,8 @@
     height:500px;
     opacity:0;
     /* rate of inflation/deflation */
-    animation:4.5s firePulseIn 10s ease-in-out 20 alternate;
-    -webkit-animation:4.5s firePulseIn 10s ease-in-out 20 alternate	
+    animation:4.5s firePulseIn 10s ease-in-out 22 alternate;
+    -webkit-animation:4.5s firePulseIn 10s ease-in-out 22 alternate	
 }
 
 @keyframes firePulseIn{
@@ -190,24 +190,24 @@
 }
 
 .animated-words span:nth-child(1) { 
-    -webkit-animation-delay: 23.5s;  
-    animation-delay: 23.5s; 
+    -webkit-animation-delay: 23s;  
+    animation-delay: 23s; 
 }
 .animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 41.5s;  
-    animation-delay: 41.5s; 
+    -webkit-animation-delay: 41s;  
+    animation-delay: 41s; 
 }
 .animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 59.5s; 
-    animation-delay: 59.5s; 
+    -webkit-animation-delay: 59s; 
+    animation-delay: 59s; 
 }
 .animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 77.5s; 
-    animation-delay: 77.5s; 
+    -webkit-animation-delay: 77s; 
+    animation-delay: 77s; 
 }
 .animated-words span:nth-child(5) { 
-    -webkit-animation-delay: 95.5s; 
-    animation-delay: 95.5s; 
+    -webkit-animation-delay: 95s; 
+    animation-delay: 95s; 
 }
 
 @keyframes animateWord {
@@ -222,7 +222,7 @@
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 .bar {
-    animation: 100s showBar 10s ease;
+    /* animation: 100s showBar 10s ease; */
     background: #2a2d2d;
     max-width: 33%;
     border-radius: 0.25rem;

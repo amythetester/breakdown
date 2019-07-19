@@ -11,8 +11,27 @@ class Ring extends Component {
         };
     };
 
+    getRingDuration = () => {
+        const wordArr = this.props.words;
+        const arrLength = wordArr.length;
+        let ringDuration = 100000;
+
+        const animationDelay = 10;
+        const additionBreath = 9;
+        const breathDuration = 18;
+        if (arrLength > 0){
+            ringDuration = (animationDelay + additionBreath + (arrLength * breathDuration)) * 1000;
+        }
+        return ringDuration;
+    }
+
+    getProgressDuration = () => {
+        const progressDuration = (this.getRingDuration() / 1000);
+        return progressDuration;
+    }
+
     componentDidMount(){
-        setTimeout(() => this.setState(() => ({redirect: true})), 100000)
+        setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration())
     }
 
     rotateWords = () => {
@@ -37,7 +56,7 @@ class Ring extends Component {
                 <section className="pulsatingCircle">              
                     <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
                 </section>
-                <section className="bar">
+                <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> {/*style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}*/}
                     <span id="progress-bar" className="progress"></span>
                 </section>
             </section>
