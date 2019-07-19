@@ -16,7 +16,7 @@ class Ring extends Component {
         const arrLength = wordArr.length;
         let ringDuration = 100000;
 
-        const animationDelay = 0;
+        const animationDelay = 10;
         const additionBreath = 9;
         const breathDuration = 18;
         if (arrLength > 0){
@@ -26,8 +26,7 @@ class Ring extends Component {
     }
 
     getProgressDuration = () => {
-        const animationDelay = 0;
-        const progressDuration = (this.getRingDuration() / 1000) - animationDelay;
+        const progressDuration = (this.getRingDuration() / 1000);
         return progressDuration;
     }
 
