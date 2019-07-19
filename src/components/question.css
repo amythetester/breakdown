@@ -1,9 +1,4 @@
-#background {
-  background-color: black;
-}
-
 .question {
-  background:black;
   color: white;
   display: flex;
   justify-content: center;
@@ -11,7 +6,6 @@
 }
 
 #input {
-  background:black;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -43,17 +37,19 @@ textarea:focus {
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-.questionFadein {
-  -webkit-animation: questionFadeIn 10s ease 1 alternate; 
-  animation: questionFadeIn 10s ease 1 alternate;
+
+.questionFadeIn {
+  -webkit-animation: questionFadeIn 8s ease 1 alternate; 
+  animation: questionFadeIn 8s ease 1 alternate;
 }
 
-@keyframes questionFadeIn{
-  from {color:black;}
-  to {color: white;}
-  }
-  
-@-webkit-keyframes questionFadeIn {
-  from {color:black;}
-  to {color: white;}
+@keyframes questionFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
+
+@-webkit-keyframes questionFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+

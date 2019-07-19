@@ -45,3 +45,18 @@
     color: white;
 }
 
+.cloudFadeIn {
+    -webkit-animation: cloudFadeIn 6s ease 1 alternate; 
+    animation: cloudFadeIn 6s ease 1 alternate;
+  }
+  
+  @keyframes cloudFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @-webkit-keyframes cloudFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+

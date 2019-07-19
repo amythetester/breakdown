@@ -16,8 +16,8 @@ class Question extends Component {
     // Borrowed from here https://stackoverflow.com/questions/49655135/javascript-regex-remove-multiple-words-from-string
     removeWords = function(text) {
         const wordArray = [
-          "a", "an", "and", "at", "be", "from", "in", "is", "it", 
-          "of", "on", "or", "so", "that", "the", "this", "to", 
+          "a", "am", "an", "and", "at", "be", "by", "but", "for", "from", "in", "is", "it", 
+          "no", "of", "on", "or", "so", "that", "the", "this", "to", 
         ];
 
         const expStr = wordArray.join("|");
@@ -68,7 +68,7 @@ class Question extends Component {
     render() {
         if (this.state.redirect) return <Redirect to={this.props.linkTo} />;
         else return (
-            <section id="background" className="questionFadeIn">
+            <section className="questionFadeIn">
                 <h1 className="question">
                     {this.props.question}
                 </h1>
