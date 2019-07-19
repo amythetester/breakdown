@@ -21,13 +21,6 @@ class Ring extends Component {
             return(<span>{word}</span>)
         });
     }
-
-    // topText = () => {
-    //     const sentences = this.props.text;
-    //     return sentences.map(function(sentence){
-    //         return(<span>{sentence}</span>)
-    //     });
-    // }
     
     render() {
         if (this.state.redirect === true) {
