@@ -10,10 +10,10 @@
 	justify-content: center;
     align-items: center; 
     position: absolute;
-	bottom: 20%;
-	right: 0;
-    top: 30%;  
-    left: 0; 
+	bottom: 30%;
+	right: 15%;
+    top: 25%;  
+    left: 15%; 
 }
 
 .app-inner {
@@ -30,8 +30,9 @@
 }
 
 .button {
-    padding-top: 35rem;  
-    padding-bottom: 2.8rem;  
+    padding-top: 28rem;  
+    top: 80%;
+    bottom: 10%;
 }
 
 .tag-cloud > div {
