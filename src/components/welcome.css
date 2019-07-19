@@ -12,10 +12,16 @@
     padding-left: 5em;
 }
 
+#begin-button {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 200px;
+}
+
 .last-item {
     padding-bottom: 7em;
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
