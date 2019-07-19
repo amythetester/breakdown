@@ -28,7 +28,7 @@ class Question extends Component {
     frequency = () => {
         const finalFrequency = {};
         const strAnswer = this.state.answer.toLowerCase();
-        const noCharAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!]/gi, ' ');
+        const noCharAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!\r\n]/gi, ' ');
         const cleanAnswer = this.removeWords(noCharAnswer);
         const arrAnswer = cleanAnswer.split(' ');
         console.log(arrAnswer);
