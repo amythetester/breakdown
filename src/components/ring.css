@@ -252,7 +252,7 @@
 }
 
 .progress {
-  animation: 100s loader 10s ease forwards;
+  /* animation: 100s loader 10s ease forwards; */
   background: black;
   color: darkgrey;
   padding: 5px;
