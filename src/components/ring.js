@@ -56,7 +56,7 @@ class Ring extends Component {
                 <section className="pulsatingCircle">              
                     <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
                 </section>
-                <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> {/*style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}*/}
+                <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
                     <span id="progress-bar" className="progress"></span>
                 </section>
             </section>
