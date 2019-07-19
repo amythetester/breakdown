@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Welcome() {
     return (
       <div className="white">
-        <section className="home">
+        <section className="home hero">
             <h1>Welcome to Breakdown</h1>
             <h3>Click begin to start reducing stress.</h3>
             <Link to="/breathe-ring"><button className="btn btn-info" type="submit" id="begin-button">Begin</button></Link>

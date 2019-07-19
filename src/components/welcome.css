@@ -13,6 +13,12 @@
     padding-bottom: 1.5em;
 }
 
+.hero {
+    background-color: lightgrey;
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+
 #begin-button {
     padding: 0.5rem;
     font-size: 1.5rem;
