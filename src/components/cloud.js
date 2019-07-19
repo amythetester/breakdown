@@ -55,7 +55,7 @@ class Cloud extends Component {
         if (this.state.redirect) return <Redirect to={this.props.redirectTo} />;
         if (this.state.removedWords.length > 4) return <Redirect to={this.props.redirectTo} />;
         else return (
-            <div className="center">
+            <div className="center cloudFadeIn">
                 <h1 className="question">
                     {this.props.question}
                 </h1>
