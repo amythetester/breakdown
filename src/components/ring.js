@@ -17,7 +17,7 @@ class Ring extends Component {
         let ringDuration = 100000;
 
         const animationDelay = 10;
-        const additionBreath = 9;
+        const additionBreath = 10;
         const breathDuration = 18;
         if (arrLength > 0){
             ringDuration = (animationDelay + additionBreath + (arrLength * breathDuration)) * 1000;
