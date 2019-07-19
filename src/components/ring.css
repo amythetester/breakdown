@@ -6,17 +6,30 @@
     flex-wrap: wrap;
 }
 
-.text {
-    color: black;
-    opacity: 0;
+.textFadingEffect {
+    display: inline-block;
     display: flex;
     justify-content: center;
-    margin: 0, 0, 300px, 0;
 }
 
-.textFadingEffect {
-    -webkit-animation: textFadeIn 10s ease 6s 1 alternate; 
-    animation: textFadeIn 10s ease 6s 1 alternate;
+.textFadingEffect span {
+    color: black;
+    margin: 0, 0, 300px, 0;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    color: black;
+    -webkit-animation: textFadeIn 8s ease 6s 1 alternate; 
+    animation: textFadeIn 8s ease 6s 1 alternate;
+}
+
+.textFadingEffect span:nth-child(2) { 
+    -webkit-animation-delay: 13s;  
+    animation-delay: 13s; 
+}
+.textFadingEffect span:nth-child(3) { 
+    -webkit-animation-delay: 19s; 
+    animation-delay: 19s; 
 }
 
 @keyframes textFadeIn {

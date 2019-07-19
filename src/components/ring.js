@@ -21,6 +21,13 @@ class Ring extends Component {
             return(<span>{word}</span>)
         });
     }
+
+    // topText = () => {
+    //     const sentences = this.props.text;
+    //     return sentences.map(function(sentence){
+    //         return(<span>{sentence}</span>)
+    //     });
+    // }
     
     render() {
         if (this.state.redirect === true) {
@@ -29,8 +36,10 @@ class Ring extends Component {
 
         return (
             <section className="fadingEffect center">
-                <h1 className="text textFadingEffect">
-                    {this.props.text}
+                <h1 className="textFadingEffect">
+                    <span>{this.props.text}</span>
+                    <span>Exhale as the ring contracts.</span>
+                    <span>Inhale as the ring expands.</span>
                 </h1>
                 <section className="pulsatingCircle">              
                     <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
