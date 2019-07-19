@@ -26,7 +26,8 @@ class Ring extends Component {
     }
 
     getProgressDuration = () => {
-        const progressDuration = (this.getRingDuration() / 1000);
+        const animationDelay = 10;
+        const progressDuration = (this.getRingDuration() / 1000) - animationDelay;
         return progressDuration;
     }
 
@@ -57,7 +58,7 @@ class Ring extends Component {
                     <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
                 </section>
                 <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
-                    <span id="progress-bar" className="progress"></span>
+                    <span id="progress-bar" className="progress" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>
                 </section>
             </section>
         );
