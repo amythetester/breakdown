@@ -22,6 +22,15 @@ textarea {
   border-top-width: 2px;
   border-color: lightgoldenrodyellow;
   color: white;
+  width: 25em;
+  height: 10em;
+}
+
+@media screen and (max-width: 500px) {
+  textarea {
+    width: 9em;
+    height: 5em;
+  }
 }
 
 textarea:focus {
