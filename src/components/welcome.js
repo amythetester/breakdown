@@ -26,7 +26,7 @@ function Welcome() {
             to help reduce stress. Press Begin to start.
           </p>
         </section>
-        <section className="home last-item">
+        <section className="home">
           <h3>What about my data?</h3>
           <p>
             We understand that data is personal and so are your thoughts and feelings. As a result, any input you provide Breakdown is not 
