@@ -7,6 +7,7 @@ import Question from './components/question.js'
 import Cloud from './components/cloud.js'
 import Finish from './components/finish.js'
 
+// adding a comment
 class App extends Component {
   constructor(props) {
     super(props);
