@@ -39,8 +39,8 @@ textarea:focus {
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
 
 .questionFadeIn {
-  -webkit-animation: questionFadeIn 10s ease 1 alternate; 
-  animation: questionFadeIn 10s ease 1 alternate;
+  -webkit-animation: questionFadeIn 8s ease 1 alternate; 
+  animation: questionFadeIn 8s ease 1 alternate;
 }
 
 @keyframes questionFadeIn {
