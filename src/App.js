@@ -45,7 +45,7 @@ class App extends Component {
           />
           <Route
             path="/breathe-ring"
-            render={() => <Ring text="Let's start by breathing...in as the ring expands" circle="yellowCircle" redirectTo="/mind-question" />}
+            render={() => <Ring text="Let's start by breathing..." circle="yellowCircle" redirectTo="/mind-question" />}
           />
           <Route
             path="/mind-question"
@@ -53,11 +53,11 @@ class App extends Component {
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Click up to 5 words that are causing you stress or anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
+            render={() => <Cloud question="Select up to 5 words that are causing you stress/anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to breathe those words out...out as the ring contracts" circle="fireCircle" redirectTo="/finish" words={this.state.removedWords}/>}
+            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/finish" words={this.state.removedWords}/>}
           />
           <Route
             path="/finish"
