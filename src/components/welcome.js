@@ -18,12 +18,19 @@ function Welcome() {
             pieces and helps you visualize a better tomorrow.
           </p>
         </section>
-        <section className="home last-item">
+        <section className="home">
           <h3>How does it work?</h3>
           <p>
-            Modern living has caused undue stress in folks lives. We don't breathe as deeply. We don't stop to settle ourselves. 
+            Modern living has caused undue stress in folks' lives. We don't breathe as deeply. We don't stop to settle ourselves. 
             Breakdown starts the user off with a guided breathing exercise to calm your body and walks through a thought journey
             to help reduce stress. Press Begin to start.
+          </p>
+        </section>
+        <section className="home last-item">
+          <h3>What about my data?</h3>
+          <p>
+            We understand that data is personal and so are your thoughts and feelings. As a result, any input you provide Breakdown is not 
+            stored in a database. Addionally this information will not be used for study or sold for any purpose.
           </p>
         </section>
       </div>
