@@ -53,7 +53,7 @@ class App extends Component {
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Click up to 5 words that are causing you stress or anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
+            render={() => <Cloud question="Select up to 5 words that are causing you stress/anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
           />
           <Route
             path="/breathe-out-ring"
