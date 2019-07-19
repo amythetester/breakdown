@@ -11,8 +11,22 @@ class Ring extends Component {
         };
     };
 
+    setRingDuration = () => {
+        const wordArr = this.props.words;
+        const arrLength = wordArr.length;
+        let ringDuration = 100000;
+
+        const animationDelay = 10;
+        const additionBreath = 9;
+        const breathDuration = 18;
+        if (arrLength > 0){
+            ringDuration = (animationDelay + additionBreath + (arrLength * breathDuration)) * 1000;
+        }
+        return ringDuration;
+    }
+
     componentDidMount(){
-        setTimeout(() => this.setState(() => ({redirect: true})), 100000)
+        setTimeout(() => this.setState(() => ({redirect: true})), this.setRingDuration())
     }
 
     rotateWords = () => {
