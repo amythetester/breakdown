@@ -68,7 +68,7 @@ class Question extends Component {
     render() {
         if (this.state.redirect) return <Redirect to={this.props.linkTo} />;
         else return (
-            <section id="background" className="questionFadeIn">
+            <section className="questionFadeIn">
                 <h1 className="question">
                     {this.props.question}
                 </h1>
