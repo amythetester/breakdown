@@ -225,7 +225,6 @@
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 .bar {
-    /* animation: 100s showBar 10s ease; */
     background: #2a2d2d;
     max-width: 33%;
     border-radius: 0.25rem;
@@ -252,7 +251,6 @@
 }
 
 .progress {
-  /* animation: 100s loader 10s ease forwards; */
   background: black;
   color: darkgrey;
   padding: 5px;
