@@ -1,0 +1,27 @@
+.action {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5em;
+    padding-right: 5em;
+    background-color: black;
+    color: white;
+}  
+
+@keyframes fadeAction {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.action > h1, .action > h2 {
+    padding-top: 3em;
+}
+
+.action > h1 {
+    animation: 10s fadeFinish ease;
+}
+
+.action > h2 {
+    animation: 14s fadeFinish ease;
+}

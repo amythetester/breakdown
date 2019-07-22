@@ -6,8 +6,8 @@ import Welcome from './components/welcome.js'
 import Question from './components/question.js'
 import Cloud from './components/cloud.js'
 import Finish from './components/finish.js'
+import Action from './components/action.js'
 
-// again
 class App extends Component {
   constructor(props) {
     super(props);
@@ -58,7 +58,11 @@ class App extends Component {
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/finish" words={this.state.removedWords}/>}
+            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/next-step" words={this.state.removedWords}/>}
+          />
+          <Route
+            path="/next-step"
+            render={() => <Action redirectTo="/finish"/>}
           />
           <Route
             path="/finish"
