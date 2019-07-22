@@ -1,3 +1,19 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+}
+
 .white {
     background-color: white;
 }
@@ -6,7 +22,6 @@
     display: flex;
     flex-direction:column;
     align-items: center;
-    justify-content: center;
     padding-top: 1.5em;
     padding-right: 5em;
     padding-left: 5em;
@@ -15,8 +30,14 @@
 
 .hero {
     background-color: lightgrey;
-    padding-bottom: 5em;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
     padding-top: 5em;
+    padding-right: 5em;
+    padding-left: 5em;
+    padding-bottom: 5em;
 }
 
 #begin-button {
