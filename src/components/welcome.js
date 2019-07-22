@@ -14,24 +14,23 @@ function Welcome() {
           <section className="home">
             <h3>About Breakdown</h3>
             <p>
-              Breakdown is an app focused on settling your physical being before diving into your mental state of being. 
-              Using breathing exercises and thoughtful questions, Breakdown helps you break your stress down into manageable 
-              pieces and helps you visualize a better tomorrow.
+              Modern living has caused undue stress in folks' lives. We don't breathe as deeply. We don't stop to take stock of 
+              our emotional state. Breakdown is an app focused on settling your body and mind. Using breathing exercises and thoughtful 
+              prompts, Breakdown helps you break your stress down into manageable pieces and helps you visualize a better tomorrow.
             </p>
           </section>
           <section className="home">
-            <h3>How does it work?</h3>
+            <h3>My location...why?</h3>
             <p>
-              Modern living has caused undue stress in folks' lives. We don't breathe as deeply. We don't stop to settle ourselves. 
-              Breakdown starts the user off with a guided breathing exercise to calm your body and walks through a thought journey
-              to help reduce stress. Press Begin to start.
+              Breakdown strives to provide an intelligent action item at the end of each session. Your location greatly improves 
+              our ability to make reasonable recommendations.
             </p>
           </section>
           <section className="home">
             <h3>What about my data?</h3>
             <p>
-              We understand that data is personal and so are your thoughts and feelings. As a result, any input you provide Breakdown is not 
-              stored in a database. Addionally this information will not be used for study or sold for any purpose.
+              We understand that data is personal and so are your thoughts and feelings. Any information provided to Breakdown will 
+              not be used for study or sold for any purpose.
             </p>
           </section>
         </section>
