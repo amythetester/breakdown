@@ -19,6 +19,18 @@ class App extends Component {
     };
   }
 
+  success = (pos) => {
+    alert(`latitude: ${pos.coords.latitude}
+    \n longitude: ${pos.coords.longitude}
+    \n accuracy: ${pos.coords.accuracy}`);
+  }
+  
+  getGeolocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.success);
+    }
+  }
+
   initialWordCloud = ({answer, frequency}) => {
     this.setState({
       initialInput: answer,
@@ -35,6 +47,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        {this.getGeolocation()}
         <Router>
           {console.log("I'm a console log")}
           <Route
