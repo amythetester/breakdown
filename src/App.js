@@ -25,15 +25,21 @@ class App extends Component {
   componentDidMount() {
     console.log('component did mount');
     this.getGeolocation();
-    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&acc=${pos.coords.accuracy}`
   }
 
-  success = (pos) => {
-    alert(`latitude: ${pos.coords.latitude}
-    \n longitude: ${pos.coords.longitude}
-    \n accuracy: ${pos.coords.accuracy}`);
+  getGeolocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.success);
+    }else {
+      console.log('this did not work');
+    }
+    console.log('getGeolocation ran');
+  }
 
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`
+  success = (position) => {
+    const current = position.coords;
+    //const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
     console.log(url);
     axios.get(url)
       .then((response) => {
@@ -44,15 +50,6 @@ class App extends Component {
         // handle error
         console.log(error);
       })
-  }
-
-  getGeolocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.success);
-    } else {
-      console.log('this did not work');
-    }
-    console.log('getGeolocation ran');
   }
 
   initialWordCloud = ({answer, frequency}) => {
