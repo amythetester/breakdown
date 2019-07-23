@@ -16,7 +16,7 @@ class Action extends Component {
         return (
             <div className="action">
                 <h1>What's next?</h1>
-                <h2>Time to go for a quick walk.</h2> 
+                <h2>{this.props.action}</h2> 
                 <Link to="/finish"><button className="btn btn-info fade-button" type="submit">Continue</button></Link>
             </div>
         );
