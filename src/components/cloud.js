@@ -84,16 +84,22 @@ class Cloud extends Component {
             focused: this.state.focusWords,
             remaining: this.state.remainingWords,
         });
-        console.log(this.state.remaininigWords);
+        console.log(this.state.remainingWords);
         this.setState({ 
             redirect: true 
         });
     }
 
+    renderCloud = () => {
+        const remaining = this.state.remainingWords < 1 && this.props.wordCloud < 1;
+        const removed = this.state.removedWords.length > 4;
+        return (remaining || removed)
+    }
+
     render() {
-        if (this.state.redirect) return <Redirect to={this.props.redirectTo} />;
-        if (this.state.removedWords.length > 4) return <Redirect to={this.props.redirectTo} />;
-        else return (
+        if (this.state.redirect || this.renderCloud()) {
+            return <Redirect to={this.props.redirectTo} />;
+        }else {return (
             <div className="center cloudFadeIn">
                 <h1 className="question">
                     {this.props.question}
@@ -119,7 +125,7 @@ class Cloud extends Component {
                 </form>
             </div>
         );
-    }
+    }}
 };
 
 export default Cloud;
