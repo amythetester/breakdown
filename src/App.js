@@ -16,13 +16,22 @@ class App extends Component {
       initialInput: "",
       initialLetterFrequency: {},
       removedWords: [],
+      latitude: null,
+      longitude: null,
+      accuracy: null,
     };
   }
 
+  componentDidMount() {
+    this.getGeolocation();
+  }
+
   success = (pos) => {
-    alert(`latitude: ${pos.coords.latitude}
-    \n longitude: ${pos.coords.longitude}
-    \n accuracy: ${pos.coords.accuracy}`);
+    this.setState({
+      latitude: pos.coords.latitude,
+      longitude: pos.coords.longitude,
+      accuracy: pos.coords.accuracy
+    });
   }
   
   getGeolocation = () => {
@@ -47,7 +56,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.getGeolocation()}
         <Router>
           {console.log("I'm a console log")}
           <Route
