@@ -49,8 +49,10 @@ class App extends Component {
   getGeolocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.success);
+    } else {
+      console.log('this did not work');
     }
-    console.log('getGeolocation ran')
+    console.log('getGeolocation ran');
   }
 
   initialWordCloud = ({answer, frequency}) => {
