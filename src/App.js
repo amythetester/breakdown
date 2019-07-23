@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Ring from './components/ring.js'
-import Welcome from './components/welcome.js'
-import Question from './components/question.js'
-import Cloud from './components/cloud.js'
-import Finish from './components/finish.js'
-import Action from './components/action.js'
+import axios from 'axios';
+
+import Welcome from './components/welcome.js';
+import Ring from './components/ring.js';
+import Question from './components/question.js';
+import Cloud from './components/cloud.js';
+import Action from './components/action.js';
+import Finish from './components/finish.js';
 
 class App extends Component {
   constructor(props) {
@@ -19,26 +21,43 @@ class App extends Component {
       latitude: null,
       longitude: null,
       accuracy: null,
+      action: "",
     };
   }
 
   componentDidMount() {
-    this.getGeolocation();
+    // console.log(pos);
+    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&acc=${pos.coords.accuracy}`
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`
+    console.log(url);
+    axios.get(url)
+      .then((response) => {
+        // this.setState({action: response.action});
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
   }
 
-  success = (pos) => {
-    this.setState({
-      latitude: pos.coords.latitude,
-      longitude: pos.coords.longitude,
-      accuracy: pos.coords.accuracy
-    });
-  }
-  
-  getGeolocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.success);
-    }
-  }
+  // success = (pos) => {
+  //   alert(`latitude: ${pos.coords.latitude}
+  //   \n longitude: ${pos.coords.longitude}
+  //   \n accuracy: ${pos.coords.accuracy}`);
+  // }
+
+  // getGeolocation = () => {
+  //   const options = {
+  //     enableHighAccuracy: true,
+  //     timeout: 5000,
+  //     maximumAge: 0
+  //   };
+
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(this.success, null, options);
+  //   }
+  // }
 
   initialWordCloud = ({answer, frequency}) => {
     this.setState({
@@ -56,6 +75,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        {/*this.getGeolocation()*/}
         <Router>
           {console.log("I'm a console log")}
           <Route
