@@ -61,10 +61,20 @@ class App extends Component {
     });
   }
 
-  removedWordsFromWordCloud = ({words}) => {
+  removedWordsFromWordCloud = ({removed, remaining}) => {
+    console.log(removed);
+    console.log(remaining);
     this.setState({
-      removedWords: words,
+      removedWords: removed,
+      remainingWords: remaining,
     });
+    console.log(this.state.remainingWords);
+  }
+
+  focusWordsFromWordCloud = ({focused}) => {
+    this.setState({
+      focusWords: focused,
+    })
   }
 
   render() {
@@ -88,7 +98,7 @@ class App extends Component {
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Select up to 5 words that are causing you stress/anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
+            render={() => <Cloud question="Select up to 5 words that are causing you stress/anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} wordCallback={this.removedWordsFromWordCloud} render='renderReleaseWords'/>}
           />
           <Route
             path="/breathe-out-ring"
@@ -96,19 +106,19 @@ class App extends Component {
           />
           <Route
             path="/focus-cloud"
-            render={() => <Cloud question="Select up to 5 words that you want to re-enforce." redirectTo="/breathe-in-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
+            render={() => <Cloud question="Select up to 5 words that you want to re-enforce." redirectTo="/breathe-in-ring" wordCloud={this.state.remainingWords} wordCallback={this.focusWordsFromWordCloud} render='renderFocusWords'/>}
           />
           <Route
             path="/breathe-in-ring"
-            render={() => <Ring text="Time to focus on those words by breathing them in..." circle="calmCircle" redirectTo="/next-step" words={this.state.focusWords}/>}
+            render={() => <Ring text="Time to focus on those words by breathing them in..." circle="calmCircle" redirectTo="/finish" words={this.state.focusWords}/>}
           />
           <Route
             path="/next-step"
-            render={() => <Action redirectTo="/finish" action={this.state.action}/>}
+            render={() => <Action redirectTo="/" action={this.state.action}/>}
           />
           <Route
             path="/finish"
-            render={() => <Finish redirectTo="/"/>}
+            render={() => <Finish redirectTo="/next-step"/>}
           />
         </Router>
       </div>

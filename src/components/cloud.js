@@ -11,13 +11,19 @@ class Cloud extends Component {
         this.state = {
             remainingWords: [],
             removedWords: [],
+            focusWords: [],
             redirect: false
         };
     };
 
     componentDidMount() {
-        const words = Object.keys(this.props.wordCloud);
-        this.setState({ remainingWords: words})
+        if (this.props.redirectTo === "/breathe-out-ring") {
+            const words = Object.keys(this.props.wordCloud);
+            this.setState({ remainingWords: words})
+        }else {
+            const words = this.props.wordCloud;
+            this.setState({ remainingWords: words})
+        } 
     }
 
     removeWord = (word) => {
@@ -34,18 +40,51 @@ class Cloud extends Component {
         });
     }
 
-    renderWords = () => {
+    focusWord = (word) => {
+        const hiddenWords = this.state.focusWords;
+        hiddenWords.push(word);
+
+        const displayWords = this.state.remainingWords;
+        const indexOfWord = displayWords.indexOf(word);
+        displayWords.splice(indexOfWord, 1);
+
+        this.setState({
+            focusWords: hiddenWords,
+            remainingWords: displayWords
+        });
+    }
+
+    renderReleaseWords = () => {
         const words = this.state.remainingWords;
         return words.map((word) => {
             return (<div onClick={() => this.removeWord(word)}>{word}</div>)
         });
     }
 
+    renderFocusWords = () => {
+        const words = this.state.remainingWords;
+        return words.map((word) => {
+            return (<div onClick={() => this.focusWord(word)}>{word}</div>)
+        });
+    }
+
+    renderWords = () => {
+        if (this.props.render === 'renderReleaseWords') {
+            return this.renderReleaseWords();
+        } else {
+            return this.renderFocusWords();
+        }
+    }   
+
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.removeWordCallback({
-            words: this.state.removedWords
+        console.log(this.state.remainingWords);
+        this.props.wordCallback({
+            removed: this.state.removedWords,
+            focused: this.state.focusWords,
+            remaining: this.state.remainingWords,
         });
+        console.log(this.state.remaininigWords);
         this.setState({ 
             redirect: true 
         });
