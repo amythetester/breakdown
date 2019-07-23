@@ -18,6 +18,8 @@ class App extends Component {
       initialInput: "",
       initialLetterFrequency: {},
       removedWords: [],
+      remainingWords: [],
+      focusWords:[],
       action: "",
     };
   }
@@ -90,7 +92,15 @@ class App extends Component {
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/next-step" words={this.state.removedWords}/>}
+            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/focus-cloud" words={this.state.removedWords}/>}
+          />
+          <Route
+            path="/focus-cloud"
+            render={() => <Cloud question="Select up to 5 words that you want to re-enforce." redirectTo="/breathe-in-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
+          />
+          <Route
+            path="/breathe-in-ring"
+            render={() => <Ring text="Time to focus on those words by breathing them in..." circle="calmCircle" redirectTo="/next-step" words={this.state.focusWords}/>}
           />
           <Route
             path="/next-step"
