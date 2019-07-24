@@ -30,8 +30,15 @@ class App extends Component {
   }
 
   getGeolocation = () => {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.success);
+      console.log(this.success);
+      navigator.geolocation.getCurrentPosition(this.success, this.error, options);
     }else {
       console.log('this did not work');
     }
@@ -39,9 +46,10 @@ class App extends Component {
   }
 
   success = (position) => {
+    console.log('success is trying to run')
     const current = position.coords;
-    //const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
+    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
     console.log(url);
     axios.get(url)
       .then((response) => {
@@ -52,6 +60,11 @@ class App extends Component {
         // handle error
         console.log(error);
       })
+  }
+
+  error = (geoError) => {
+    console.log('geolocation not working');
+    console.log(geoError);
   }
 
   initialWordCloud = ({answer, frequency}) => {
