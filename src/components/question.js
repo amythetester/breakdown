@@ -29,10 +29,10 @@ class Question extends Component {
         const finalFrequency = {};
         const strAnswer = this.state.answer.toLowerCase();
         const noCharAnswer = strAnswer.replace(/[|&;$%@"<>()+,.!\r\n]/gi, ' ');
-        const noSpaceAnswer = noCharAnswer.replace(/''/gi, );
-        const cleanAnswer = this.removeWords(noSpaceAnswer);
+        const cleanAnswer = this.removeWords(noCharAnswer);
         const arrAnswer = cleanAnswer.split(' ');
         arrAnswer.forEach(function(word) {
+            if (!word) return;
             if (finalFrequency[word] == null) {
                 finalFrequency[word] = 1;
             } else {

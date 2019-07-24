@@ -68,10 +68,10 @@ class App extends Component {
       removedWords: removed,
       remainingWords: remaining,
     });
-    console.log(this.state.remainingWords);
   }
 
   focusWordsFromWordCloud = ({focused}) => {
+    console.log(focused);
     this.setState({
       focusWords: focused,
     })
@@ -98,7 +98,16 @@ class App extends Component {
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Select up to 5 words that are causing you stress/anxiety." redirectTo="/breathe-out-ring"  fallbackRedirectTo="/finish" wordCloud={this.state.initialLetterFrequency} wordCallback={this.removedWordsFromWordCloud} render='renderReleaseWords'/>}
+            render={() =>
+              <Cloud
+                question="Select up to 5 words that are causing you stress/anxiety."
+                redirectTo="/breathe-out-ring"
+                fallbackRedirectTo="/finish"
+                wordCloud={this.state.initialLetterFrequency}
+                wordCallback={this.removedWordsFromWordCloud}
+                render='renderReleaseWords'
+              />
+            }
           />
           <Route
             path="/breathe-out-ring"
@@ -106,7 +115,16 @@ class App extends Component {
           />
           <Route
             path="/focus-cloud"
-            render={() => <Cloud question="Select up to 5 words that you want to re-enforce." redirectTo="/breathe-in-ring" fallbackRedirectTo="/finish" wordCloud={this.state.remainingWords} wordCallback={this.focusWordsFromWordCloud} render='renderFocusWords'/>}
+            render={() =>
+              <Cloud
+                question="Select up to 5 words that you want to reinforce."
+                redirectTo="/breathe-in-ring"
+                fallbackRedirectTo="/finish"
+                wordCloud={this.state.remainingWords}
+                wordCallback={this.focusWordsFromWordCloud}
+                render='renderFocusWords'
+              />
+            }
           />
           <Route
             path="/breathe-in-ring"

@@ -18,25 +18,11 @@ class Cloud extends Component {
         };
     };
 
-    // componentDidMount() {
-    //     if (this.props.redirectTo === "/breathe-out-ring") {
-    //         const words = Object.keys(this.props.wordCloud);
-    //         this.setState({  
-    //             remainingWords: words
-    //         })
-    //     }else {
-    //         const words = this.props.wordCloud;
-    //         this.setState({ 
-    //             remainingWords: words
-    //         })
-    //     } 
-    // }
-
     removeWord = (word) => {
-        const hiddenWords = this.state.removedWords;
+        const hiddenWords = this.state.removedWords.slice();
         hiddenWords.push(word);
 
-        const displayWords = this.state.remainingWords;
+        const displayWords = this.state.remainingWords.slice();
         const indexOfWord = displayWords.indexOf(word);
         displayWords.splice(indexOfWord, 1);
 
@@ -47,10 +33,10 @@ class Cloud extends Component {
     }
 
     focusWord = (word) => {
-        const hiddenWords = this.state.focusWords;
+        const hiddenWords = this.state.focusWords.slice();
         hiddenWords.push(word);
 
-        const displayWords = this.state.remainingWords;
+        const displayWords = this.state.remainingWords.slice();
         const indexOfWord = displayWords.indexOf(word);
         displayWords.splice(indexOfWord, 1);
 
@@ -84,13 +70,13 @@ class Cloud extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.remainingWords);
+        // console.log(this.state.remainingWords);
         this.props.wordCallback({
             removed: this.state.removedWords,
             focused: this.state.focusWords,
             remaining: this.state.remainingWords,
         });
-        console.log(this.state.remainingWords);
+        // console.log(this.state.remainingWords);
         this.setState({ 
             redirect: true 
         });
@@ -100,21 +86,18 @@ class Cloud extends Component {
         const hasWordsRemaining = this.state.remainingWords.length < 1;
         const hasHitMaxRemoved = this.state.removedWords.length > 4;
         
-        if (hasWordsRemaining === true){
-            return true;
-        }else if (hasHitMaxRemoved === true){
-            return true;
-        }else {
-            return false;
-        }
+        return (hasWordsRemaining || hasHitMaxRemoved);
     }
 
     render() {
-        // console.log(Object.keys(this.props.wordCloud).length);
-        // console.log(Object.keys(this.props.wordCloud));
         if (Object.keys(this.props.wordCloud).length < 1) {
             return <Redirect to={this.props.fallbackRedirectTo} />;
         }else if (this.state.redirect || this.redirectCloud()) {
+            this.props.wordCallback({
+                removed: this.state.removedWords,
+                focused: this.state.focusWords,
+                remaining: this.state.remainingWords,
+            });
             return <Redirect to={this.props.redirectTo} />;
         }else return (
             <div className="center cloudFadeIn">
