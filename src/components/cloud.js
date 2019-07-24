@@ -83,8 +83,9 @@ class Cloud extends Component {
     redirectCloud = () => {
         const hasWordsRemaining = this.state.remainingWords.length < 1;
         const hasHitMaxRemoved = this.state.removedWords.length > 4;
+        const hasHitMaxFocusClicked = this.state.focusWords.length > 4;
         
-        return (hasWordsRemaining || hasHitMaxRemoved);
+        return (hasWordsRemaining || hasHitMaxRemoved || hasHitMaxFocusClicked);
     }
 
     render() {
