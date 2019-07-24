@@ -129,6 +129,7 @@ class App extends Component {
                 circle="fireCircle"
                 redirectTo="/focus-cloud"
                 words={this.state.removedWords}
+                animateWords="fire-animated-words"
               />
             }
           />
@@ -153,6 +154,7 @@ class App extends Component {
                 circle="calmCircle"
                 redirectTo="/finish"
                 words={this.state.focusWords}
+                animateWords="calm-animated-words"
               />
             }
           />
