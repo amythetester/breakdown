@@ -45,8 +45,8 @@ class App extends Component {
 
   success = (position) => {
     const current = position.coords;
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
-    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
+    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=2000`;
     axios.get(url)
       .then((response) => {
         console.log(response);
@@ -59,7 +59,7 @@ class App extends Component {
   error = (geoError) => {
     console.log(geoError);
     
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
     axios.get(url)
       .then((response) => {
         console.log(response);
