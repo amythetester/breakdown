@@ -37,34 +37,36 @@ class App extends Component {
     };
 
     if (navigator.geolocation) {
-      console.log(this.success);
       navigator.geolocation.getCurrentPosition(this.success, this.error, options);
     }else {
-      console.log('this did not work');
+      console.log('geoLocation did not work');
     }
-    console.log('getGeolocation ran');
   }
 
   success = (position) => {
-    console.log('success is trying to run')
     const current = position.coords;
     const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
     // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
-    console.log(url);
     axios.get(url)
       .then((response) => {
-        // this.setState({action: response.action});
         console.log(response);
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       })
   }
 
   error = (geoError) => {
-    console.log('geolocation not working');
     console.log(geoError);
+    
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather`;
+    axios.get(url)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 
   initialWordCloud = ({answer, frequency}) => {
