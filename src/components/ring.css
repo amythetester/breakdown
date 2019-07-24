@@ -370,3 +370,10 @@
 
 }
 
+.skip {
+    color: darkgrey;
+}
+
+.skip:hover {
+    color: #2a2d2d;
+}
