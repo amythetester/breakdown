@@ -55,7 +55,7 @@ class Ring extends Component {
                     <span>Inhale as the ring expands.</span>
                 </h1>
                 <section className="pulsatingCircle">              
-                    <span id={this.props.circle} className="animated-words">{this.rotateWords()}</span>               
+                    <span id={this.props.circle} className={this.props.animateWords}>{this.rotateWords()}</span>               
                 </section>
                 <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
                     <span id="progress-bar" className="progress" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>

@@ -70,13 +70,11 @@ class Cloud extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(this.state.remainingWords);
         this.props.wordCallback({
             removed: this.state.removedWords,
             focused: this.state.focusWords,
             remaining: this.state.remainingWords,
         });
-        // console.log(this.state.remainingWords);
         this.setState({ 
             redirect: true 
         });
@@ -85,8 +83,9 @@ class Cloud extends Component {
     redirectCloud = () => {
         const hasWordsRemaining = this.state.remainingWords.length < 1;
         const hasHitMaxRemoved = this.state.removedWords.length > 4;
+        const hasHitMaxFocusClicked = this.state.focusWords.length > 4;
         
-        return (hasWordsRemaining || hasHitMaxRemoved);
+        return (hasWordsRemaining || hasHitMaxRemoved || hasHitMaxFocusClicked);
     }
 
     render() {

@@ -229,46 +229,91 @@
 }
 
 /* fade words in ring inspired by https://www.competa.com/blog/changing-words-with-css-animation/ */
-.animated-words {
+.fire-animated-words {
     display: inline-block;
 }
 
-.animated-words span {
+.fire-animated-words span {
     position: absolute;
     overflow: hidden;
     opacity: 0;
     color: black;
-    -webkit-animation: animateWord 9s linear 14.5s;
-    animation: animateWord 9s linear 14.5s;
+    -webkit-animation: animateFireWord 9s linear 14.5s;
+    animation: animateFireWord 9s linear 14.5s;
 }
 
-.animated-words span:nth-child(1) { 
-    -webkit-animation-delay: 23s;  
-    animation-delay: 23s; 
+.fire-animated-words span:nth-child(1) { 
+    -webkit-animation-delay: 23.5s;  
+    animation-delay: 23.5s; 
 }
-.animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 41s;  
-    animation-delay: 41s; 
+.fire-animated-words span:nth-child(2) { 
+    -webkit-animation-delay: 41.5s;  
+    animation-delay: 41.5s; 
 }
-.animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 59s; 
-    animation-delay: 59s; 
+.fire-animated-words span:nth-child(3) { 
+    -webkit-animation-delay: 59.5s; 
+    animation-delay: 59.5s; 
 }
-.animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 77s; 
-    animation-delay: 77s; 
+.fire-animated-words span:nth-child(4) { 
+    -webkit-animation-delay: 77.5s; 
+    animation-delay: 77.5s; 
 }
-.animated-words span:nth-child(5) { 
-    -webkit-animation-delay: 95s; 
-    animation-delay: 95s; 
+.fire-animated-words span:nth-child(5) { 
+    -webkit-animation-delay: 95.5s; 
+    animation-delay: 95.5s; 
 }
 
-@keyframes animateWord {
+@keyframes animateFireWord {
     0% { color: white; opacity: 1; }
     100% { color: black; opacity: 0; }
 }
 
-@-webkit-keyframes animateWord {
+@-webkit-keyframes animateFireWord {
+    0% { color: white; opacity: 1; }
+    100% { color: black; opacity: 0; }
+}
+
+/* calm animated words */
+.calm-animated-words {
+    display: inline-block;
+}
+
+.calm-animated-words span {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    color: black;
+    -webkit-animation: animateCalmWord 9s linear 10s;
+    animation: animateCalmWord 9s linear 10s;
+}
+
+.calm-animated-words span:nth-child(1) { 
+    -webkit-animation-delay: 19s;  
+    animation-delay: 19s; 
+}
+.calm-animated-words span:nth-child(2) { 
+    -webkit-animation-delay: 37s;  
+    animation-delay: 37s; 
+}
+.calm-animated-words span:nth-child(3) { 
+    -webkit-animation-delay: 55s; 
+    animation-delay: 55s; 
+}
+.calm-animated-words span:nth-child(4) { 
+    -webkit-animation-delay: 73s; 
+    animation-delay: 73s; 
+}
+.calm-animated-words span:nth-child(5) { 
+    -webkit-animation-delay: 91s; 
+    animation-delay: 91s; 
+}
+
+@keyframes animateCalmWord {
+    0% { color: white; opacity: 1; }
+    100% { color: black; opacity: 0; }
+}
+
+@-webkit-keyframes animateCalmWord {
     0% { color: white; opacity: 1; }
     100% { color: black; opacity: 0; }
 }
