@@ -1,6 +1,6 @@
 import './ring.css';
 import React, {Component} from  'react';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class Ring extends Component {
     constructor(props) {
@@ -59,6 +59,9 @@ class Ring extends Component {
                 </section>
                 <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
                     <span id="progress-bar" className="progress" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>
+                </section>
+                <section>
+                    <Link to={this.props.redirectTo} className="skip">Skip</Link>
                 </section>
             </section>
         );
