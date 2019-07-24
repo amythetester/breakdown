@@ -8,23 +8,29 @@ class Cloud extends Component {
     constructor(props) {
         super(props);
 
+        const words = Array.isArray(props.wordCloud) ? props.wordCloud : Object.keys(props.wordCloud);
+
         this.state = {
-            remainingWords: [],
+            remainingWords: words,
             removedWords: [],
             focusWords: [],
             redirect: false
         };
     };
 
-    componentDidMount() {
-        if (this.props.redirectTo === "/breathe-out-ring") {
-            const words = Object.keys(this.props.wordCloud);
-            this.setState({ remainingWords: words})
-        }else {
-            const words = this.props.wordCloud;
-            this.setState({ remainingWords: words})
-        } 
-    }
+    // componentDidMount() {
+    //     if (this.props.redirectTo === "/breathe-out-ring") {
+    //         const words = Object.keys(this.props.wordCloud);
+    //         this.setState({  
+    //             remainingWords: words
+    //         })
+    //     }else {
+    //         const words = this.props.wordCloud;
+    //         this.setState({ 
+    //             remainingWords: words
+    //         })
+    //     } 
+    // }
 
     removeWord = (word) => {
         const hiddenWords = this.state.removedWords;
@@ -90,16 +96,27 @@ class Cloud extends Component {
         });
     }
 
-    renderCloud = () => {
-        const remaining = this.state.remainingWords < 1 && this.props.wordCloud < 1;
-        const removed = this.state.removedWords.length > 4;
-        return (remaining || removed)
+    redirectCloud = () => {
+        const hasWordsRemaining = this.state.remainingWords.length < 1;
+        const hasHitMaxRemoved = this.state.removedWords.length > 4;
+        
+        if (hasWordsRemaining === true){
+            return true;
+        }else if (hasHitMaxRemoved === true){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     render() {
-        if (this.state.redirect || this.renderCloud()) {
+        // console.log(Object.keys(this.props.wordCloud).length);
+        // console.log(Object.keys(this.props.wordCloud));
+        if (Object.keys(this.props.wordCloud).length < 1) {
+            return <Redirect to={this.props.fallbackRedirectTo} />;
+        }else if (this.state.redirect || this.redirectCloud()) {
             return <Redirect to={this.props.redirectTo} />;
-        }else {return (
+        }else return (
             <div className="center cloudFadeIn">
                 <h1 className="question">
                     {this.props.question}
@@ -125,7 +142,7 @@ class Cloud extends Component {
                 </form>
             </div>
         );
-    }}
+    }
 };
 
 export default Cloud;
