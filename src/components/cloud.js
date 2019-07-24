@@ -8,23 +8,21 @@ class Cloud extends Component {
     constructor(props) {
         super(props);
 
+        const words = Array.isArray(props.wordCloud) ? props.wordCloud : Object.keys(props.wordCloud);
+
         this.state = {
-            remainingWords: [],
+            remainingWords: words,
             removedWords: [],
+            focusWords: [],
             redirect: false
         };
     };
 
-    componentDidMount() {
-        const words = Object.keys(this.props.wordCloud);
-        this.setState({ remainingWords: words})
-    }
-
     removeWord = (word) => {
-        const hiddenWords = this.state.removedWords;
+        const hiddenWords = this.state.removedWords.slice();
         hiddenWords.push(word);
 
-        const displayWords = this.state.remainingWords;
+        const displayWords = this.state.remainingWords.slice();
         const indexOfWord = displayWords.indexOf(word);
         displayWords.splice(indexOfWord, 1);
 
@@ -34,27 +32,74 @@ class Cloud extends Component {
         });
     }
 
-    renderWords = () => {
+    focusWord = (word) => {
+        const hiddenWords = this.state.focusWords.slice();
+        hiddenWords.push(word);
+
+        const displayWords = this.state.remainingWords.slice();
+        const indexOfWord = displayWords.indexOf(word);
+        displayWords.splice(indexOfWord, 1);
+
+        this.setState({
+            focusWords: hiddenWords,
+            remainingWords: displayWords
+        });
+    }
+
+    renderReleaseWords = () => {
         const words = this.state.remainingWords;
         return words.map((word) => {
             return (<div onClick={() => this.removeWord(word)}>{word}</div>)
         });
     }
 
+    renderFocusWords = () => {
+        const words = this.state.remainingWords;
+        return words.map((word) => {
+            return (<div onClick={() => this.focusWord(word)}>{word}</div>)
+        });
+    }
+
+    renderWords = () => {
+        if (this.props.render === 'renderReleaseWords') {
+            return this.renderReleaseWords();
+        } else {
+            return this.renderFocusWords();
+        }
+    }   
+
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.removeWordCallback({
-            words: this.state.removedWords
+        // console.log(this.state.remainingWords);
+        this.props.wordCallback({
+            removed: this.state.removedWords,
+            focused: this.state.focusWords,
+            remaining: this.state.remainingWords,
         });
+        // console.log(this.state.remainingWords);
         this.setState({ 
             redirect: true 
         });
     }
 
+    redirectCloud = () => {
+        const hasWordsRemaining = this.state.remainingWords.length < 1;
+        const hasHitMaxRemoved = this.state.removedWords.length > 4;
+        
+        return (hasWordsRemaining || hasHitMaxRemoved);
+    }
+
     render() {
-        if (this.state.redirect) return <Redirect to={this.props.redirectTo} />;
-        if (this.state.removedWords.length > 4) return <Redirect to={this.props.redirectTo} />;
-        else return (
+        if (Object.keys(this.props.wordCloud).length < 1) {
+            return <Redirect to={this.props.fallbackRedirectTo} />;
+        }else if (this.state.redirect || this.redirectCloud()) {
+            this.props.wordCallback({
+                removed: this.state.removedWords,
+                focused: this.state.focusWords,
+                remaining: this.state.remainingWords,
+            });
+            return <Redirect to={this.props.redirectTo} />;
+        }else return (
             <div className="center cloudFadeIn">
                 <h1 className="question">
                     {this.props.question}

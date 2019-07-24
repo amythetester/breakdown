@@ -18,6 +18,8 @@ class App extends Component {
       initialInput: "",
       initialLetterFrequency: {},
       removedWords: [],
+      remainingWords: [],
+      focusWords:[],
       action: "",
     };
   }
@@ -25,15 +27,21 @@ class App extends Component {
   componentDidMount() {
     console.log('component did mount');
     this.getGeolocation();
-    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&acc=${pos.coords.accuracy}`
   }
 
-  success = (pos) => {
-    alert(`latitude: ${pos.coords.latitude}
-    \n longitude: ${pos.coords.longitude}
-    \n accuracy: ${pos.coords.accuracy}`);
+  getGeolocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.success);
+    }else {
+      console.log('this did not work');
+    }
+    console.log('getGeolocation ran');
+  }
 
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`
+  success = (position) => {
+    const current = position.coords;
+    //const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
     console.log(url);
     axios.get(url)
       .then((response) => {
@@ -46,15 +54,6 @@ class App extends Component {
       })
   }
 
-  getGeolocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.success);
-    } else {
-      console.log('this did not work');
-    }
-    console.log('getGeolocation ran');
-  }
-
   initialWordCloud = ({answer, frequency}) => {
     this.setState({
       initialInput: answer,
@@ -62,10 +61,20 @@ class App extends Component {
     });
   }
 
-  removedWordsFromWordCloud = ({words}) => {
+  removedWordsFromWordCloud = ({removed, remaining}) => {
+    console.log(removed);
+    console.log(remaining);
     this.setState({
-      removedWords: words,
+      removedWords: removed,
+      remainingWords: remaining,
     });
+  }
+
+  focusWordsFromWordCloud = ({focused}) => {
+    console.log(focused);
+    this.setState({
+      focusWords: focused,
+    })
   }
 
   render() {
@@ -85,23 +94,49 @@ class App extends Component {
           />
           <Route
             path="/mind-question"
-            render={() => <Question question="List some things that are on your mind." linkTo="/mind-cloud" wordCloudCallback={this.initialWordCloud}/>}
+            render={() => <Question question="List some things that are on your mind." redirectTo="/mind-cloud" wordCloudCallback={this.initialWordCloud}/>}
           />
           <Route
             path="/mind-cloud"
-            render={() => <Cloud question="Select up to 5 words that are causing you stress/anxiety." redirectTo="/breathe-out-ring" wordCloud={this.state.initialLetterFrequency} removeWordCallback={this.removedWordsFromWordCloud}/>}
+            render={() =>
+              <Cloud
+                question="Select up to 5 words that are causing you stress/anxiety."
+                redirectTo="/breathe-out-ring"
+                fallbackRedirectTo="/finish"
+                wordCloud={this.state.initialLetterFrequency}
+                wordCallback={this.removedWordsFromWordCloud}
+                render='renderReleaseWords'
+              />
+            }
           />
           <Route
             path="/breathe-out-ring"
-            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/next-step" words={this.state.removedWords}/>}
+            render={() => <Ring text="Time to release those words by breathing them out..." circle="fireCircle" redirectTo="/focus-cloud" words={this.state.removedWords}/>}
+          />
+          <Route
+            path="/focus-cloud"
+            render={() =>
+              <Cloud
+                question="Select up to 5 words that you want to reinforce."
+                redirectTo="/breathe-in-ring"
+                fallbackRedirectTo="/finish"
+                wordCloud={this.state.remainingWords}
+                wordCallback={this.focusWordsFromWordCloud}
+                render='renderFocusWords'
+              />
+            }
+          />
+          <Route
+            path="/breathe-in-ring"
+            render={() => <Ring text="Time to focus on those words by breathing them in..." circle="calmCircle" redirectTo="/finish" words={this.state.focusWords}/>}
           />
           <Route
             path="/next-step"
-            render={() => <Action redirectTo="/finish" action={this.state.action}/>}
+            render={() => <Action redirectTo="/" action={this.state.action}/>}
           />
           <Route
             path="/finish"
-            render={() => <Finish redirectTo="/"/>}
+            render={() => <Finish redirectTo="/next-step"/>}
           />
         </Router>
       </div>

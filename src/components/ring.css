@@ -178,6 +178,56 @@
     }
 }
 
+/* breath-in-circle */
+#calmCircle{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    border-radius:50%;
+    width:500px;
+    height:500px;
+    opacity:0;
+    /* rate of inflation/deflation */
+    animation:4.5s calmPulseIn 10s ease-in-out 22 alternate;
+    -webkit-animation:4.5s calmPulseIn 10s ease-in-out 22 alternate	
+}
+
+@keyframes calmPulseIn{
+    0% {
+        opacity:0.5;
+        -webkit-transform:scale(0.1,0.1);
+        border:25px solid white;
+    }
+    50% {
+        opacity:1;
+        border:25px solid lightgreen;
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:scale(1,1);
+        border:25px solid lightblue;
+    }
+}
+
+@-webkit-keyframes calmPulseIn{
+    0% {
+        opacity:0.5;
+        -webkit-transform:scale(0.1,0.1);
+        border:25px solid white;
+    }
+    50% {
+        opacity:1;
+        border:25px solid lightgreen;
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:scale(1,1);
+        border:25px solid lightblue;
+    }
+}
+
 /* fade words in ring inspired by https://www.competa.com/blog/changing-words-with-css-animation/ */
 .animated-words {
     display: inline-block;
