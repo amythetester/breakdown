@@ -288,24 +288,24 @@
 }
 
 .calm-animated-words span:nth-child(1) { 
-    -webkit-animation-delay: 20s;  
-    animation-delay: 20s; 
+    -webkit-animation-delay: 18.5s;  
+    animation-delay: 18.5s; 
 }
 .calm-animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 38s;  
-    animation-delay: 38s; 
+    -webkit-animation-delay: 36.5s;  
+    animation-delay: 36.5s; 
 }
 .calm-animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 56s; 
-    animation-delay: 56s; 
+    -webkit-animation-delay: 54.5s; 
+    animation-delay: 54.5s; 
 }
 .calm-animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 73s; 
-    animation-delay: 73s; 
+    -webkit-animation-delay: 72.5s; 
+    animation-delay: 72.5s; 
 }
 .calm-animated-words span:nth-child(5) { 
-    -webkit-animation-delay: 92s; 
-    animation-delay: 92s; 
+    -webkit-animation-delay: 90.5s; 
+    animation-delay: 90.5s; 
 }
 
 @keyframes animateCalmWord {
