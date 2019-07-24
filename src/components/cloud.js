@@ -70,13 +70,11 @@ class Cloud extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(this.state.remainingWords);
         this.props.wordCallback({
             removed: this.state.removedWords,
             focused: this.state.focusWords,
             remaining: this.state.remainingWords,
         });
-        // console.log(this.state.remainingWords);
         this.setState({ 
             redirect: true 
         });
