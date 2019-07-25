@@ -18,8 +18,6 @@ class App extends Component {
     const removedWords = JSON.parse(localStorage.getItem('removedWords'));
     const remainingWords = JSON.parse(localStorage.getItem('remainingWords'));
     const focusWords = JSON.parse(localStorage.getItem('focusWords'));
-    
-    console.log("intial frequency", Object.entries(initialLetterFrequency));
 
     this.state = {
       initialInput: "",
@@ -127,7 +125,7 @@ class App extends Component {
             path="/mind-question"
             render={() =>
               <Question
-                question="List some things that are on your mind."
+                question="List what's on your mind, positive or negative. Both are encouraged."
                 redirectTo="/mind-cloud"
                 wordCloudCallback={this.initialWordCloud}
               />
