@@ -18,6 +18,16 @@ class Cloud extends Component {
         };
     };
 
+    componentDidMount(){
+        this.enterFullScreen();
+    }
+
+    enterFullScreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        }
+    }
+
     removeWord = (word) => {
         const hiddenWords = this.state.removedWords.slice();
         hiddenWords.push(word);

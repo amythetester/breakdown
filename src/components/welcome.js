@@ -3,18 +3,20 @@ import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
 class Welcome extends Component{
-  constructor(props) {
-    super(props);
+  
+  componentDidMount(){
+    this.exitFullScreen();
+  }
 
-    this.state = {
-      
-    };
+  exitFullScreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
   }
 
   handleClick = () => {
     localStorage.clear();
   }
-
 
   render() {
     return (

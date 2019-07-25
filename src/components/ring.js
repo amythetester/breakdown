@@ -11,6 +11,18 @@ class Ring extends Component {
         };
     };
 
+    componentDidMount(){
+        setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration());
+
+        this.enterFullScreen();
+    }
+
+    enterFullScreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        }
+    }
+
     getRingDuration = () => {
         const wordArr = this.props.words;
         const arrLength = wordArr.length;
@@ -31,19 +43,11 @@ class Ring extends Component {
         return progressDuration;
     }
 
-    componentDidMount(){
-        setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration())
-    }
-
     rotateWords = () => {
         const words = this.props.words;
         return words.map(function(word){
             return(<span>{word}</span>)
         });
-    }
-
-    enterFullScreen = () => {
-        return document.documentElement.requestFullscreen();
     }
     
     render() {
