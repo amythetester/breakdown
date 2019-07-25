@@ -18,7 +18,7 @@ class Question extends Component {
     }
 
     enterFullScreen = () => {
-        if (!document.fullscreenElement) {
+        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
             document.documentElement.requestFullscreen();
         }
     }

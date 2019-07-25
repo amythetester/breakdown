@@ -9,7 +9,7 @@ class Welcome extends Component{
   }
 
   exitFullScreen = () => {
-    if (document.fullscreenElement) {
+    if (document.fullscreenElement && document.documentElement.requestFullscreen) {
       document.exitFullscreen();
     }
   }
