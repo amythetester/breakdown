@@ -90,14 +90,14 @@ class Cloud extends Component {
 
     render() {
         if (Object.keys(this.props.wordCloud).length < 1) {
-            return <Redirect to={this.props.fallbackRedirectTo} />;
+            return <Redirect push to={this.props.fallbackRedirectTo} />;
         }else if (this.state.redirect || this.redirectCloud()) {
             this.props.wordCallback({
                 removed: this.state.removedWords,
                 focused: this.state.focusWords,
                 remaining: this.state.remainingWords,
             });
-            return <Redirect to={this.props.redirectTo} />;
+            return <Redirect push to={this.props.redirectTo} />;
         }else return (
             <div className="center cloudFadeIn">
                 <h1 className="question">

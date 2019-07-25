@@ -44,7 +44,7 @@ class Ring extends Component {
     
     render() {
         if (this.state.redirect === true) {
-            return <Redirect to={this.props.redirectTo} />
+            return <Redirect push to={this.props.redirectTo} />
         }
 
         return (
