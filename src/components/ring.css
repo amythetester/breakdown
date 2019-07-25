@@ -219,8 +219,8 @@
     overflow: hidden;
     opacity: 0;
     color: black;
-    -webkit-animation: animateFireWord 9s linear 14.5s;
-    animation: animateFireWord 9s linear 14.5s;
+    -webkit-animation: animateWord 9s linear 14.5s;
+    animation: animateWord 9s linear 14.5s;
 }
 
 .fire-animated-words span:nth-child(1) { 
@@ -244,16 +244,6 @@
     animation-delay: 95.5s; 
 }
 
-@keyframes animateFireWord {
-    0% { color: white; opacity: 1; }
-    100% { color: black; opacity: 0; }
-}
-
-@-webkit-keyframes animateFireWord {
-    0% { color: white; opacity: 1; }
-    100% { color: black; opacity: 0; }
-}
-
 /* calm animated words */
 .calm-animated-words {
     display: inline-block;
@@ -264,8 +254,8 @@
     overflow: hidden;
     opacity: 0;
     color: black;
-    -webkit-animation: animateCalmWord 14s linear 10s;
-    animation: animateCalmWord 15s linear 10s;
+    -webkit-animation: animateWord 14s linear 10s;
+    animation: animateWord 15s linear 10s;
 }
 
 .calm-animated-words span:nth-child(1) { 
@@ -289,12 +279,12 @@
     animation-delay: 91s; 
 }
 
-@keyframes animateCalmWord {
+@keyframes animateWord {
     0% { color: white; opacity: 1; }
     100% { color: black; opacity: 0; }
 }
 
-@-webkit-keyframes animateCalmWord {
+@-webkit-keyframes animateWord {
     0% { color: white; opacity: 1; }
     100% { color: black; opacity: 0;}
 }
