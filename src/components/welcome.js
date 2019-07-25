@@ -1,8 +1,28 @@
 import './welcome.css'
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
-function Welcome() {
+class Welcome extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      initialInput: "",
+      initialLetterFrequency: {},
+      removedWords: [],
+      remainingWords: [],
+      focusWords:[],
+      action: "",
+    };
+  }
+
+componentDidMount(){
+  localStorage.clear();
+  console.log(localStorage);
+}
+
+
+render() {
     return (
       <div className="white">
         <section className="hero">
@@ -37,5 +57,6 @@ function Welcome() {
       </div>
     );
   }
+}
 
 export default Welcome;
