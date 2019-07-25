@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('component did mount');
     this.getGeolocation();
   }
 
@@ -69,6 +68,8 @@ class App extends Component {
   }
 
   initialWordCloud = ({answer, frequency}) => {
+    localStorage.setItem('initialLetterFrequency', frequency);
+
     this.setState({
       initialInput: answer,
       initialLetterFrequency: frequency
@@ -76,8 +77,9 @@ class App extends Component {
   }
 
   removedWordsFromWordCloud = ({removed, remaining}) => {
-    console.log(removed);
-    console.log(remaining);
+    localStorage.setItem('removedWords', removed);
+    localStorage.setItem('remainingWords', remaining);
+
     this.setState({
       removedWords: removed,
       remainingWords: remaining,
@@ -85,7 +87,8 @@ class App extends Component {
   }
 
   focusWordsFromWordCloud = ({focused}) => {
-    console.log(focused);
+    localStorage.setItem('focusWords', focused);
+    
     this.setState({
       focusWords: focused,
     })

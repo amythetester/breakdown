@@ -7,28 +7,22 @@ class Welcome extends Component{
     super(props);
 
     this.state = {
-      initialInput: "",
-      initialLetterFrequency: {},
-      removedWords: [],
-      remainingWords: [],
-      focusWords:[],
-      action: "",
+      
     };
   }
 
-componentDidMount(){
-  localStorage.clear();
-  console.log(localStorage);
-}
+  handleClick = () => {
+    localStorage.clear();
+  }
 
 
-render() {
+  render() {
     return (
       <div className="white">
         <section className="hero">
             <h1>Welcome to Breakdown</h1>
             <h3>Click begin to start reducing stress.</h3>
-            <Link to="/breathe-ring"><button className="btn btn-info" type="submit" id="begin-button">Begin</button></Link>
+            <Link to="/breathe-ring"><button className="btn btn-info" onClick={this.handleClick} type="submit" id="begin-button">Begin</button></Link>
         </section>
         <section className="wrapper">
           <section className="home">

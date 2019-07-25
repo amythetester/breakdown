@@ -13,11 +13,6 @@ class Question extends Component {
         };
     };
 
-    componentDidUpdate(){
-        localStorage.setItem('initialFrequency', this.state.answer);
-        console.log(localStorage);
-    }
-
     // Borrowed from here https://stackoverflow.com/questions/49655135/javascript-regex-remove-multiple-words-from-string
     removeWords = function(text) {
         const wordArray = [
