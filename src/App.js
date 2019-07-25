@@ -127,7 +127,7 @@ class App extends Component {
             path="/mind-question"
             render={() =>
               <Question
-                question="List some things that are on your mind."
+                question="List what's on your mind, positive or negative; both are encouraged."
                 redirectTo="/mind-cloud"
                 wordCloudCallback={this.initialWordCloud}
               />
