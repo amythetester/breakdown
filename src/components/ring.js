@@ -51,9 +51,9 @@ class Ring extends Component {
             return <Redirect push to={this.props.redirectTo} />
         }
 
+
         return (
             <section className="fadingEffect center">
-                {this.enterFullScreen}
                 <h1 className="textFadingEffect">
                     <span>{this.props.text}</span>
                     <span>Exhale as the ring contracts.</span>

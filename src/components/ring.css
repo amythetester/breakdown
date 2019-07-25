@@ -89,27 +89,7 @@
     opacity:0;
     border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
-    -webkit-animation:9s pulseIn 10s ease-in-out 10 alternate;
     animation:9s pulseIn 10s ease-in-out 10 alternate;
-}
-
-@-webkit-keyframes pulseIn{
-    0%{
-        opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        transform:scale(0.1,0.1);
-        
-    }
-    50%{
-        opacity:1;
-        -webkit-transform:scale(1,1);
-        transform:scale(1,1);
-    }
-    100%{
-        opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        transform:scale(0.1,0.1);
-    }
 }
 
 @keyframes pulseIn{
@@ -138,42 +118,25 @@
     width:500px;
     height:500px;
     opacity:0;
+    border:25px solid white;
     /* rate of inflation/deflation */
     animation:4.5s firePulseIn 10s ease-in-out 22 alternate;
-    -webkit-animation:4.5s firePulseIn 10s ease-in-out 22 alternate	
 }
 
 @keyframes firePulseIn{
     0% {
         opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        border:25px solid white;
+        transform:scale(0.1,0.1);
+        border-color: white;
     }
     50% {
         opacity:1;
-        border:25px solid orange;
+        border-color: orange;
     }
     100% {
         opacity:1;
-        -webkit-transform:scale(1,1);
-        border:25px solid orangered;
-    }
-}
-
-@-webkit-keyframes firePulseIn{
-    0% {
-        opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        border:25px solid white;
-    }
-    50% {
-        opacity:1;
-        border:25px solid orange;
-    }
-    100% {
-        opacity:1;
-        -webkit-transform:scale(1,1);
-        border:25px solid orangered;
+        transform:scale(1,1);
+        border-color: orangered;
     }
 }
 
@@ -188,42 +151,24 @@
     width:500px;
     height:500px;
     opacity:0;
+    border:25px solid white;
     /* rate of inflation/deflation */
     animation:4.5s calmPulseIn 10s ease-in-out 22 alternate;
-    -webkit-animation:4.5s calmPulseIn 10s ease-in-out 22 alternate	
 }
 
 @keyframes calmPulseIn{
     0% {
         opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        border:25px solid white;
+        transform:scale(0.1,0.1);
+        border-color:white;
     }
     50% {
         opacity:1;
-        border:25px solid lightgreen;
     }
     100% {
         opacity:1;
-        -webkit-transform:scale(1,1);
-        border:25px solid lightblue;
-    }
-}
-
-@-webkit-keyframes calmPulseIn{
-    0% {
-        opacity:0.5;
-        -webkit-transform:scale(0.1,0.1);
-        border:25px solid white;
-    }
-    50% {
-        opacity:1;
-        border:25px solid lightgreen;
-    }
-    100% {
-        opacity:1;
-        -webkit-transform:scale(1,1);
-        border:25px solid lightblue;
+        transform:scale(1,1);
+        border-color: lightgreen;
     }
 }
 
