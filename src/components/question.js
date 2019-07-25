@@ -82,7 +82,7 @@ class Question extends Component {
                 </h1>
                 <form id="input" onSubmit={event => this.handleSubmit(event)}>
                     <div>
-                        <textarea type="text" name="answer" autoFocus={true} onChange={this.onChangeHandler} />
+                        <textarea type="text" name="answer" maxlength="400" minlength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
                     </div>
                     <div className="space"></div>
                     <div>
