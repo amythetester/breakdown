@@ -11,6 +11,18 @@ class Ring extends Component {
         };
     };
 
+    componentDidMount(){
+        setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration());
+
+        this.enterFullScreen();
+    }
+
+    enterFullScreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        }
+    }
+
     getRingDuration = () => {
         const wordArr = this.props.words;
         const arrLength = wordArr.length;
@@ -31,10 +43,6 @@ class Ring extends Component {
         return progressDuration;
     }
 
-    componentDidMount(){
-        setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration())
-    }
-
     rotateWords = () => {
         const words = this.props.words;
         return words.map(function(word){
@@ -46,6 +54,7 @@ class Ring extends Component {
         if (this.state.redirect === true) {
             return <Redirect push to={this.props.redirectTo} />
         }
+
 
         return (
             <section className="fadingEffect center">
