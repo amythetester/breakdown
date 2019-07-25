@@ -1,14 +1,28 @@
 import './welcome.css'
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
-function Welcome() {
+class Welcome extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      
+    };
+  }
+
+  handleClick = () => {
+    localStorage.clear();
+  }
+
+
+  render() {
     return (
       <div className="white">
         <section className="hero">
             <h1>Welcome to Breakdown</h1>
             <h3>Click begin to start reducing stress.</h3>
-            <Link to="/breathe-ring"><button className="btn btn-info" type="submit" id="begin-button">Begin</button></Link>
+            <Link to="/breathe-ring"><button className="btn btn-info" onClick={this.handleClick} type="submit" id="begin-button">Begin</button></Link>
         </section>
         <section className="wrapper">
           <section className="home">
@@ -37,5 +51,6 @@ function Welcome() {
       </div>
     );
   }
+}
 
 export default Welcome;

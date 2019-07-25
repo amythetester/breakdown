@@ -14,24 +14,31 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    const initialLetterFrequency = JSON.parse(localStorage.getItem('initialLetterFrequency'));
+    const removedWords = JSON.parse(localStorage.getItem('removedWords'));
+    const remainingWords = JSON.parse(localStorage.getItem('remainingWords'));
+    const focusWords = JSON.parse(localStorage.getItem('focusWords'));
+    
+    console.log("intial frequency", Object.entries(initialLetterFrequency));
+
     this.state = {
       initialInput: "",
-      initialLetterFrequency: {},
-      removedWords: [],
-      remainingWords: [],
-      focusWords:[],
-      action: "",
+      initialLetterFrequency: initialLetterFrequency || {},
+      removedWords: removedWords || [],
+      remainingWords: remainingWords || [],
+      focusWords: focusWords || [],
+      actions: [],
     };
   }
 
   componentDidMount() {
-    console.log('component did mount');
     this.getGeolocation();
+    console.log('app component mounted');
   }
 
   getGeolocation = () => {
     const options = {
-      enableHighAccuracy: false,
+      enableHighAccuracy: true,
       timeout: 120000,
       maximumAge: 0
     };
@@ -45,8 +52,7 @@ class App extends Component {
 
   success = (position) => {
     const current = position.coords;
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
-    // const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${position.accuracy}`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=${current.latitude}&lon=${current.longitude}&acc=${current.accuracy}`;
     axios.get(url)
       .then((response) => {
         console.log(response);
@@ -59,7 +65,7 @@ class App extends Component {
   error = (geoError) => {
     console.log(geoError);
     
-    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather`;
+    const url = `https://fkr0cyut0i.execute-api.us-west-2.amazonaws.com/prod/get-weather?lat=72&lon=128&acc=2000`;
     axios.get(url)
       .then((response) => {
         console.log(response);
@@ -70,6 +76,8 @@ class App extends Component {
   }
 
   initialWordCloud = ({answer, frequency}) => {
+    localStorage.setItem('initialLetterFrequency', JSON.stringify(frequency));
+
     this.setState({
       initialInput: answer,
       initialLetterFrequency: frequency
@@ -77,8 +85,9 @@ class App extends Component {
   }
 
   removedWordsFromWordCloud = ({removed, remaining}) => {
-    console.log(removed);
-    console.log(remaining);
+    localStorage.setItem('removedWords', JSON.stringify(removed));
+    localStorage.setItem('remainingWords', JSON.stringify(remaining));
+
     this.setState({
       removedWords: removed,
       remainingWords: remaining,
@@ -86,7 +95,8 @@ class App extends Component {
   }
 
   focusWordsFromWordCloud = ({focused}) => {
-    console.log(focused);
+    localStorage.setItem('focusWords', JSON.stringify(focused));
+    
     this.setState({
       focusWords: focused,
     })

@@ -47,7 +47,7 @@ class Question extends Component {
         field[event.target.name] = event.target.value;
     
         this.setState(field);
-      }
+    }
     
     handleSubmit = (event) => {
         event.preventDefault();
