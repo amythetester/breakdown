@@ -120,7 +120,7 @@
     opacity:0;
     border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
-    animation:4.5s firePulseIn 10s ease-in-out 22 alternate;
+    animation:18s firePulseIn 10s ease-in-out 22 alternate;
 }
 
 @keyframes firePulseIn{
@@ -129,14 +129,32 @@
         transform:scale(0.1,0.1);
         border-color: lightgoldenrodyellow;
     }
+    25% {
+        opacity:1;
+        transform:scale(1,1);
+    }
     50% {
+        opacity:0.5;
+        transform:scale(0.1,0.1);
+        border-color: lightgoldenrodyellow;
+    }
+    62.5% {
+        opacity:1;
+        border-color: orange;
+    }
+    75% {
+        opacity:1;
+        transform:scale(1,1);
+        border-color: orangered;
+    }
+    87.5% {
         opacity:1;
         border-color: orange;
     }
     100% {
-        opacity:1;
-        transform:scale(1,1);
-        border-color: orangered;
+        opacity:0.5;
+        transform:scale(0.1,0.1);
+        border-color: lightgoldenrodyellow;
     }
 }
 
