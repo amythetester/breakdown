@@ -14,18 +14,26 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    const initialLetterFrequency = JSON.parse(localStorage.getItem('initialLetterFrequency'));
+    const removedWords = JSON.parse(localStorage.getItem('removedWords'));
+    const remainingWords = JSON.parse(localStorage.getItem('remainingWords'));
+    const focusWords = JSON.parse(localStorage.getItem('focusWords'));
+    
+    console.log("intial frequency", Object.entries(initialLetterFrequency));
+
     this.state = {
       initialInput: "",
-      initialLetterFrequency: {},
-      removedWords: [],
-      remainingWords: [],
-      focusWords:[],
-      action: "",
+      initialLetterFrequency: initialLetterFrequency || {},
+      removedWords: removedWords || [],
+      remainingWords: remainingWords || [],
+      focusWords: focusWords || [],
+      actions: [],
     };
   }
 
   componentDidMount() {
     this.getGeolocation();
+    console.log('app component mounted');
   }
 
   getGeolocation = () => {
@@ -68,7 +76,7 @@ class App extends Component {
   }
 
   initialWordCloud = ({answer, frequency}) => {
-    localStorage.setItem('initialLetterFrequency', frequency);
+    localStorage.setItem('initialLetterFrequency', JSON.stringify(frequency));
 
     this.setState({
       initialInput: answer,
@@ -77,8 +85,8 @@ class App extends Component {
   }
 
   removedWordsFromWordCloud = ({removed, remaining}) => {
-    localStorage.setItem('removedWords', removed);
-    localStorage.setItem('remainingWords', remaining);
+    localStorage.setItem('removedWords', JSON.stringify(removed));
+    localStorage.setItem('remainingWords', JSON.stringify(remaining));
 
     this.setState({
       removedWords: removed,
@@ -87,7 +95,7 @@ class App extends Component {
   }
 
   focusWordsFromWordCloud = ({focused}) => {
-    localStorage.setItem('focusWords', focused);
+    localStorage.setItem('focusWords', JSON.stringify(focused));
     
     this.setState({
       focusWords: focused,
