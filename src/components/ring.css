@@ -118,7 +118,7 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid white;
+    border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
     animation:4.5s firePulseIn 10s ease-in-out 22 alternate;
 }
@@ -127,7 +127,7 @@
     0% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: white;
+        border-color: lightgoldenrodyellow;
     }
     50% {
         opacity:1;
@@ -151,7 +151,7 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid white;
+    border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
     animation:4.5s calmPulseIn 10s ease-in-out 22 alternate;
 }
@@ -160,7 +160,7 @@
     0% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color:white;
+        border-color:lightgoldenrodyellow;
     }
     50% {
         opacity:1;
