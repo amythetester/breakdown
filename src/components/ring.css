@@ -227,8 +227,8 @@
     overflow: hidden;
     opacity: 0;
     color: black;
-    -webkit-animation: animateCalmWord 9s linear 10s;
-    animation: animateCalmWord 9s linear 10s;
+    -webkit-animation: animateCalmWord 14s linear 10s;
+    animation: animateCalmWord 15s linear 10s;
 }
 
 .calm-animated-words span:nth-child(1) { 
@@ -254,12 +254,12 @@
 
 @keyframes animateCalmWord {
     0% { color: white; opacity: 1; }
-    100% { color: black; opacity: 0; }
+    100% { color: black; opacity: 0.5; }
 }
 
 @-webkit-keyframes animateCalmWord {
     0% { color: white; opacity: 1; }
-    100% { color: black; opacity: 0; }
+    100% { color: black; opacity: 0.5;}
 }
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
