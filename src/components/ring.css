@@ -120,7 +120,7 @@
     opacity:0;
     border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
-    animation:18s firePulseIn 10s ease-in-out 22 alternate;
+    animation:18s firePulseIn 10s ease-in-out 7 normal;
 }
 
 @keyframes firePulseIn{
@@ -171,22 +171,41 @@
     opacity:0;
     border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
-    animation:4.5s calmPulseIn 10s ease-in-out 22 alternate;
+    animation:18s calmPulseIn 10s ease-in-out 7 normal;
 }
 
 @keyframes calmPulseIn{
     0% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color:lightgoldenrodyellow;
+        border-color: lightgoldenrodyellow;
     }
-    50% {
-        opacity:1;
-    }
-    100% {
+    25% {
         opacity:1;
         transform:scale(1,1);
+    }
+    50% {
+        opacity:0.5;
+        transform:scale(0.1,0.1);
+        border-color: lightgoldenrodyellow;
+    }
+    62.5% {
+        opacity:1;
         border-color: lightgreen;
+    }
+    75% {
+        opacity:1;
+        transform:scale(1,1);
+        border-color: lightseagreen;
+    }
+    87.5% {
+        opacity:1;
+        border-color: lightgreen;
+    }
+    100% {
+        opacity:0.5;
+        transform:scale(0.1,0.1);
+        border-color: lightgoldenrodyellow;
     }
 }
 
