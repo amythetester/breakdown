@@ -87,44 +87,43 @@
     width:500px;
     height:500px;
     opacity:0;
+    border:25px solid lightgoldenrodyellow;
     /* rate of inflation/deflation */
+    -webkit-animation:9s pulseIn 10s ease-in-out 10 alternate;
     animation:9s pulseIn 10s ease-in-out 10 alternate;
-    -webkit-animation:9s pulseIn 10s ease-in-out 10 alternate	
-}
-
-@keyframes pulseIn{
-    0%{
-        opacity:0.5;
-        transform:scale(0.1,0.1);
-        border:25px solid lightgoldenrodyellow;
-    }
-    50%{
-        opacity:1;
-        transform:scale(1,1);
-        border:25px solid lightgoldenrodyellow;
-    }
-    100%{
-        opacity:0.5;
-        transform:scale(0.1,0.1);
-        border:25px solid lightgoldenrodyellow;
-    }
 }
 
 @-webkit-keyframes pulseIn{
     0%{
         opacity:0.5;
         -webkit-transform:scale(0.1,0.1);
-        border:25px solid lightgoldenrodyellow;
+        transform:scale(0.1,0.1);
+        
     }
     50%{
         opacity:1;
         -webkit-transform:scale(1,1);
-        border:25px solid lightgoldenrodyellow;
+        transform:scale(1,1);
     }
     100%{
         opacity:0.5;
         -webkit-transform:scale(0.1,0.1);
-        border:25px solid lightgoldenrodyellow;
+        transform:scale(0.1,0.1);
+    }
+}
+
+@keyframes pulseIn{
+    0%{
+        opacity:0.5;
+        transform:scale(0.1,0.1);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1,1);
+    }
+    100%{
+        opacity:0.5;
+        transform:scale(0.1,0.1);
     }
 }
 

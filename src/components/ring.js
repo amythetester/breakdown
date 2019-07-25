@@ -41,6 +41,10 @@ class Ring extends Component {
             return(<span>{word}</span>)
         });
     }
+
+    enterFullScreen = () => {
+        return document.documentElement.requestFullscreen();
+    }
     
     render() {
         if (this.state.redirect === true) {
@@ -49,6 +53,7 @@ class Ring extends Component {
 
         return (
             <section className="fadingEffect center">
+                {this.enterFullScreen}
                 <h1 className="textFadingEffect">
                     <span>{this.props.text}</span>
                     <span>Exhale as the ring contracts.</span>
