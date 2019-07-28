@@ -20,7 +20,7 @@ class InAppNav extends Component {
         return( <nav>
             {/* {window.history.length > 1 ? <Link to={() => window.history.back()}>Back</Link> : <Link to="/">Home</Link>}
             <Link to={() => window.location.reload()}>Refresh</Link> */}
-            {document.fullscreenElement ? <Link to={() => window.location.reload()} onClick={this.exitFullScreen}>Exit Fullscreen</Link> : <Link to={() => window.location.reload()} onClick={this.enterFullScreen}>Fullscreen</Link>}
+            {document.fullscreenElement ? <Link to={() => window.location.reload()} className="full-screen" onClick={this.exitFullScreen}>Exit Fullscreen</Link> : <Link to={() => window.location.reload()} className="full-screen" onClick={this.enterFullScreen}>Fullscreen</Link>}
         </nav>);
     }
 }

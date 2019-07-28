@@ -1,10 +1,32 @@
+#breath {
+    display: grid;
+    grid-template-columns: 5% 10% auto 10% 5%;
+    grid-template-rows: 5% 10% auto 10% 5%;
+    /* grid-template-areas: 
+    ". . . . inappnav"
+    ". . instruction . ."
+    ". . ring . ."
+    ". . bar . ."
+    ". . skip . ."; */
+}
+
+#inappnav{
+  /* grid-area: inappnav; */
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
 .textFadingEffect {
-    display: inline-block;
+    grid-area: instruction;
+    /* display: inline-block;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .textFadingEffect span {
+    grid-area: instruction;
     color:  #253b56;
     margin: 0, 0, 300px, 0;
     left: 0;
@@ -46,10 +68,10 @@
     background: #253b56;
     -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
     animation: whiteFadeIn 8s ease 1 alternate;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     flex-wrap: wrap;
 }
 
@@ -70,11 +92,11 @@
     /* background:black;
     -webkit-animation: blackFadeIn 8s ease 1 alternate; 
     animation: blackFadeIn 8s ease 1 alternate; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 }
 
 /* @keyframes blackFadeIn {
@@ -90,10 +112,11 @@
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
 .pulsatingCircle{
-    display:flex;
+    grid-area: ring;
+    /* display:flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: auto; */
 }
 
 /* breathing circle */
@@ -108,7 +131,6 @@
     height:500px;
     opacity:0;
     border:25px solid lightgoldenrodyellow;
-    /* rate of inflation/deflation */
     animation:9s pulseIn 10s ease-in-out 10 alternate;
 }
 
@@ -139,7 +161,6 @@
     height:500px;
     opacity:0;
     border:25px solid lightgoldenrodyellow;
-    /* rate of inflation/deflation */
     animation:18s firePulseIn 10s ease-in-out 7 normal;
 }
 
@@ -190,7 +211,6 @@
     height:500px;
     opacity:0;
     border:25px solid lightgoldenrodyellow;
-    /* rate of inflation/deflation */
     animation:18s calmPulseIn 10s ease-in-out 7 normal;
 }
 
@@ -311,6 +331,7 @@
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 .bar {
+    grid-area: bar;
     background: #2a2d2d;
     max-width: 33%;
     border-radius: 0.25rem;
@@ -337,6 +358,7 @@
 }
 
 .progress {
+  grid-area: bar;
   background: black;
   color: darkgrey;
   padding: 5px;
@@ -362,6 +384,7 @@
 }
 
 .skip {
+    grid-area: skip;
     color: darkgrey;
 }
 
