@@ -136,7 +136,7 @@ class App extends Component {
             path="/mind-cloud"
             render={() =>
               <Cloud
-                question="Select up to 5 words that are causing you stress/anxiety."
+                question="Select up to 5 words that are causing you stress."
                 redirectTo="/breathe-out-ring"
                 fallbackRedirectTo="/finish"
                 wordCloud={this.state.initialLetterFrequency}

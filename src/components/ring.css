@@ -5,7 +5,7 @@
 }
 
 .textFadingEffect span {
-    color: black;
+    color:  #253b56;
     margin: 0, 0, 300px, 0;
     left: 0;
     text-align: center;
@@ -13,7 +13,6 @@
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    color: black;
     -webkit-animation: textFadeIn 8s ease 6s 1 alternate; 
     animation: textFadeIn 8s ease 6s 1 alternate;
 }
@@ -28,15 +27,15 @@
 }
 
 @keyframes textFadeIn {
-    0% {color:black; opacity:1;}
+    0% {color: #253b56; opacity:1;}
     50% {color: white; opacity:1;}
-    100% {color:black; opacity:0;}
+    100% {color: #253b56; opacity:0;}
 }
 
 @-webkit-keyframes textFadeIn {
-    0% {color:black; opacity:1;}
+    0% {color: #253b56; opacity:1;}
     50% {color: white; opacity:1;}
-    100% {color:black; opacity:0;}
+    100% {color: #253b56; opacity:0;}
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -44,7 +43,7 @@
     position:absolute;
     top:0; bottom:0; right:0;
     width:100%;
-    background:black;
+    background: #253b56;
     -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
     animation: whiteFadeIn 8s ease 1 alternate;
     display: flex;
@@ -56,12 +55,12 @@
 
 @keyframes whiteFadeIn{
     from {background:white;}
-    to {background: black;}
+    to {background:  #253b56;}
 }
   
 @-webkit-keyframes whiteFadeIn {
     from {background: white;}
-    to {background: black;}
+    to {background:  #253b56;}
 }
 
 .blackFadingEffect {
