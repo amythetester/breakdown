@@ -1,11 +1,3 @@
-.center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 .textFadingEffect {
     display: inline-block;
     display: flex;
@@ -48,24 +40,53 @@
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-.fadingEffect {
+.whiteFadingEffect {
     position:absolute;
     top:0; bottom:0; right:0;
     width:100%;
     background:black;
-    -webkit-animation: fadeIn 8s ease 1 alternate; 
-    animation: fadeIn 8s ease 1 alternate;
+    -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
+    animation: whiteFadeIn 8s ease 1 alternate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-@keyframes fadeIn{
+@keyframes whiteFadeIn{
     from {background:white;}
     to {background: black;}
 }
   
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes whiteFadeIn {
     from {background: white;}
     to {background: black;}
 }
+
+.blackFadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    /* background:black;
+    -webkit-animation: blackFadeIn 8s ease 1 alternate; 
+    animation: blackFadeIn 8s ease 1 alternate; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* @keyframes blackFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
+@-webkit-keyframes blackFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+} */
 
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */

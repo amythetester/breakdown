@@ -16,14 +16,14 @@ class Ring extends Component {
     componentDidMount(){
         setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration());
 
-        this.enterFullScreen();
+        // this.enterFullScreen();
     }
 
-    enterFullScreen = () => {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
-    }
+    // enterFullScreen = () => {
+    //     if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+    //         document.documentElement.requestFullscreen();
+    //     }
+    // }
 
     getRingDuration = () => {
         const wordArr = this.props.words;
@@ -59,7 +59,8 @@ class Ring extends Component {
 
 
         return (
-            <section className="fadingEffect center">
+            <section className={this.props.fade}>
+                <InAppNav />
                 <h1 className="textFadingEffect">
                     <span>{this.props.text}</span>
                     <span>Exhale as the ring contracts.</span>

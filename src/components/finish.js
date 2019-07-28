@@ -2,22 +2,25 @@ import './finish.css';
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
+import InAppNav from './inappnav.js';
+
 
 class Finish extends Component {
 
-    componentDidMount(){
-        this.enterFullScreen();
-    }
+    // componentDidMount(){
+    //     this.enterFullScreen();
+    // }
 
-    enterFullScreen = () => {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
-    }
+    // enterFullScreen = () => {
+    //     if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+    //         document.documentElement.requestFullscreen();
+    //     }
+    // }
 
     render(){
         return (
             <div className="finish">
+                <InAppNav />
                 <h1>Congrats, you made it!</h1>
                 <h2>Sometimes life gets overwhelming, but you can do this! You always could.</h2> 
                 <h3>Feel free to come back anytime that doesn't feel like the case.</h3>

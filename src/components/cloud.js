@@ -4,6 +4,8 @@ import { Redirect } from "react-router-dom";
 import TagCloud from 'react-tag-cloud';
 import randomColor from 'randomcolor';
 
+import InAppNav from './inappnav.js';
+
 class Cloud extends Component {
     constructor(props) {
         super(props);
@@ -18,15 +20,15 @@ class Cloud extends Component {
         };
     };
 
-    componentDidMount(){
-        this.enterFullScreen();
-    }
+    // componentDidMount(){
+    //     this.enterFullScreen();
+    // }
 
-    enterFullScreen = () => {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
-    }
+    // enterFullScreen = () => {
+    //     if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+    //         document.documentElement.requestFullscreen();
+    //     }
+    // }
 
     removeWord = (word) => {
         const hiddenWords = this.state.removedWords.slice();
@@ -110,6 +112,7 @@ class Cloud extends Component {
             return <Redirect push to={this.props.redirectTo} />;
         }else return (
             <div className="center cloudFadeIn">
+                <InAppNav />
                 <h1 className="question">
                     {this.props.question}
                 </h1>

@@ -2,6 +2,8 @@ import './question.css';
 import React, {Component} from 'react';
 import { Redirect } from "react-router-dom";
 
+import InAppNav from './inappnav.js';
+
 class Question extends Component {
     constructor(props) {
         super(props);
@@ -13,15 +15,15 @@ class Question extends Component {
         };
     };
 
-    componentDidMount(){
-        this.enterFullScreen();
-    }
+    // componentDidMount(){
+    //     this.enterFullScreen();
+    // }
 
-    enterFullScreen = () => {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
-    }
+    // enterFullScreen = () => {
+    //     if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+    //         document.documentElement.requestFullscreen();
+    //     }
+    // }
 
     // Borrowed from here https://stackoverflow.com/questions/49655135/javascript-regex-remove-multiple-words-from-string
     removeWords = function(text) {
@@ -77,6 +79,7 @@ class Question extends Component {
         if (this.state.redirect) return <Redirect push to={this.props.redirectTo} />;
         else return (
             <section className="questionFadeIn">
+                <InAppNav />
                 <h1 className="question">
                     {this.props.question}
                 </h1>
