@@ -1,32 +1,22 @@
-#breath {
+#breathe {
     display: grid;
-    grid-template-columns: 5% 10% auto 10% 5%;
-    grid-template-rows: 5% 10% auto 10% 5%;
-    /* grid-template-areas: 
-    ". . . . inappnav"
-    ". . instruction . ."
-    ". . ring . ."
-    ". . bar . ."
-    ". . skip . ."; */
+    grid-template-columns: 1fr 50% 1fr ;
+    grid-template-rows: 1fr 50% 1fr ;
+    padding: 20px;
 }
 
-#inappnav{
-  /* grid-area: inappnav; */
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 2;
+#nav{
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
 }
 
 .textFadingEffect {
-    grid-area: instruction;
-    /* display: inline-block;
-    display: flex;
-    justify-content: center; */
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
 }
 
 .textFadingEffect span {
-    grid-area: instruction;
     color:  #253b56;
     margin: 0, 0, 300px, 0;
     left: 0;
@@ -68,10 +58,6 @@
     background: #253b56;
     -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
     animation: whiteFadeIn 8s ease 1 alternate;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     flex-wrap: wrap;
 }
 
@@ -111,12 +97,12 @@
 
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
-.pulsatingCircle{
-    grid-area: ring;
-    /* display:flex;
+#pulsatingCircle{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display:flex;
     justify-content: center;
     align-items: center;
-    margin: auto; */
 }
 
 /* breathing circle */
@@ -330,8 +316,16 @@
 }
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
-.bar {
-    grid-area: bar;
+#barSkip {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#bar {
     background: #2a2d2d;
     max-width: 33%;
     border-radius: 0.25rem;
@@ -341,7 +335,7 @@
     opacity: 0;  
 }
 
-.bar > span {
+#bar > span {
     display: block;
 }
 
@@ -357,16 +351,10 @@
     }
 }
 
-.progress {
-  grid-area: bar;
-  background: black;
-  color: darkgrey;
-  padding: 5px;
-  width: 0;
-}
-
 #progress-bar {
-    background-color: darkgrey;
+  background-color: darkgrey;
+  padding: 10px;
+  width: 0;
 }
 
 @keyframes loader {
@@ -384,8 +372,9 @@
 }
 
 .skip {
-    grid-area: skip;
     color: darkgrey;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
 }
 
 .skip:hover {

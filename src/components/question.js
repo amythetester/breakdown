@@ -15,16 +15,6 @@ class Question extends Component {
         };
     };
 
-    // componentDidMount(){
-    //     this.enterFullScreen();
-    // }
-
-    // enterFullScreen = () => {
-    //     if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-    //         document.documentElement.requestFullscreen();
-    //     }
-    // }
-
     // Borrowed from here https://stackoverflow.com/questions/49655135/javascript-regex-remove-multiple-words-from-string
     removeWords = function(text) {
         const wordArray = [
