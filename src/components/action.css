@@ -1,12 +1,33 @@
-.action {
+.actions {
+    display: grid;
+    grid-template-rows: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    padding: 20px;
+}
+
+#action1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+}
+
+#action2 {
+    grid-row: 3 / 4;
+    grid-column: 3 / 6;
+}
+
+#action3 {
+    grid-row: 5 / 6;
+    grid-column: 1 / 4;
+}
+
+/* .action {
     display: flex;
     flex-direction:column;
-    align-items: center;
+
     justify-content: center;
     padding-left: 5em;
     padding-right: 5em;
-    background-color: black;
-    color: white;
+    color: black;
 }  
 
 @keyframes fadeAction {
@@ -19,9 +40,14 @@
 }
 
 .action > h1 {
-    animation: 10s fadeFinish ease;
+    animation: 10s fadeAction ease;
 }
 
 .action > h2 {
-    animation: 14s fadeFinish ease;
+    animation: 14s fadeAction ease;
+} */
+
+#home {
+    display: flex;
+    justify-content: center;
 }

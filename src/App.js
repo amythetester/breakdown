@@ -185,20 +185,26 @@ class App extends Component {
             }
           />
           <Route
-            path="/next-step"
-            render={() =>
-              <Action
-                redirectTo="/"
-                action={this.state.action}
-              />
-            }
-          />
-          <Route
             path="/finish"
             render={() =>
               <Finish
                 redirectTo="/next-step"
               />
+            }
+          />
+          <Route
+            path="/next-step"
+            render={() =>
+              <div>
+                <nav className="nav navbar navbar-dark bg-dark">
+                  <Link to="/" className="navbar-brand">Breakdown</Link>
+                  <Link to="/breathe-ring"><button className="btn btn-dark nav-item nav-link" type="submit">Begin</button></Link>
+                </nav>
+                <Action
+                  redirectTo="/"
+                  action={this.state.action}
+                />
+              </div>
             }
           />
         </Router>
