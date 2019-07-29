@@ -108,7 +108,7 @@ class App extends Component {
             exact path="/"
             render={() => <div><nav className="nav navbar navbar-dark bg-dark">
             <Link to="/" className="navbar-brand">Breakdown</Link>
-            <Link to="/breathe-ring"><button className="btn btn-dark nav-item nav-link" type="submit">Start a New Session</button></Link>
+            <Link to="/breathe-ring"><button className="btn btn-info nav-item nav-link" type="submit">Start a New Session</button></Link>
           </nav> <Welcome /></div>}
           />
           <Route
@@ -198,7 +198,7 @@ class App extends Component {
               <div>
                 <nav className="nav navbar navbar-dark bg-dark">
                   <Link to="/" className="navbar-brand">Breakdown</Link>
-                  <Link to="/breathe-ring"><button className="btn btn-dark nav-item nav-link" type="submit">Start a New Session</button></Link>
+                  <Link to="/breathe-ring"><button className="btn btn-info nav-item nav-link" type="submit">Start a New Session</button></Link>
                 </nav>
                 <Action
                   redirectTo="/"

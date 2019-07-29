@@ -26,7 +26,7 @@ class Action extends Component {
         return (
             <div className="white">
                 <section className="banner">
-                    <div className="transparent">
+                    <div className="transparentAction">
                         <h1>What's Next?</h1>
                         <p>Consider taking one of the following actions.</p>
                     </div>
