@@ -2,6 +2,8 @@ import './ring.css';
 import React, {Component} from  'react';
 import { Redirect, Link } from "react-router-dom";
 
+import InAppNav from './inappnav.js';
+
 class Ring extends Component {
     constructor(props) {
         super(props);
@@ -13,14 +15,6 @@ class Ring extends Component {
 
     componentDidMount(){
         setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration());
-
-        this.enterFullScreen();
-    }
-
-    enterFullScreen = () => {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
     }
 
     getRingDuration = () => {
@@ -57,21 +51,24 @@ class Ring extends Component {
 
 
         return (
-            <section className="fadingEffect center">
-                <h1 className="textFadingEffect">
+            <section id="breathe" className={this.props.fade}>
+                <div id="nav">
+                    <InAppNav />
+                </div>
+                <h1 id="instruction" className="textFadingEffect">
                     <span>{this.props.text}</span>
                     <span>Exhale as the ring contracts.</span>
                     <span>Inhale as the ring expands.</span>
                 </h1>
-                <section className="pulsatingCircle">              
+                <section id="pulsatingCircle">              
                     <span id={this.props.circle} className={this.props.animateWords}>{this.rotateWords()}</span>               
                 </section>
-                <section className="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
-                    <span id="progress-bar" className="progress" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>
-                </section>
-                <section>
+                <div id="barSkip">
+                    <section id="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
+                        <span id="progress-bar" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>
+                    </section> 
                     <Link to={this.props.redirectTo} className="skip">Skip</Link>
-                </section>
+                </div>
             </section>
         );
     }

@@ -118,6 +118,7 @@ class App extends Component {
                 text="Let's start by breathing..."
                 circle="yellowCircle"
                 redirectTo="/mind-question"
+                fade="whiteFadingEffect"
               />
             }
           />
@@ -135,7 +136,7 @@ class App extends Component {
             path="/mind-cloud"
             render={() =>
               <Cloud
-                question="Select up to 5 words that are causing you stress/anxiety."
+                question="Select up to 5 words that are causing you stress."
                 redirectTo="/breathe-out-ring"
                 fallbackRedirectTo="/finish"
                 wordCloud={this.state.initialLetterFrequency}
@@ -153,6 +154,7 @@ class App extends Component {
                 redirectTo="/focus-cloud"
                 words={this.state.removedWords}
                 animateWords="fire-animated-words"
+                fade="blackFadingEffect"
               />
             }
           />
@@ -178,6 +180,7 @@ class App extends Component {
                 redirectTo="/finish"
                 words={this.state.focusWords}
                 animateWords="calm-animated-words"
+                fade="blackFadingEffect"
               />
             }
           />

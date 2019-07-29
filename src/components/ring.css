@@ -1,27 +1,33 @@
-.center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+#breathe {
+    display: grid;
+    grid-template-columns: 1fr 70% 1fr ;
+    grid-template-rows: 1fr 20px 70%  20px 1fr;
+    padding: 20px;
 }
 
-.textFadingEffect {
-    display: inline-block;
+#nav{
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+}
+
+#instruction {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     display: flex;
     justify-content: center;
 }
 
 .textFadingEffect span {
-    color: black;
-    margin: 0, 0, 300px, 0;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    color:  #253b56;
     left: 0;
-    text-align: center;
-    width: 100%;
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    color: black;
     -webkit-animation: textFadeIn 8s ease 6s 1 alternate; 
     animation: textFadeIn 8s ease 6s 1 alternate;
 }
@@ -36,44 +42,50 @@
 }
 
 @keyframes textFadeIn {
-    0% {color:black; opacity:1;}
+    0% {color: #253b56; opacity:1;}
     50% {color: white; opacity:1;}
-    100% {color:black; opacity:0;}
+    100% {color: #253b56; opacity:0;}
 }
 
-@-webkit-keyframes textFadeIn {
-    0% {color:black; opacity:1;}
+/* @-webkit-keyframes textFadeIn {
+    0% {color: #253b56; opacity:1;}
     50% {color: white; opacity:1;}
-    100% {color:black; opacity:0;}
-}
+    100% {color: #253b56; opacity:0;}
+} */
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-.fadingEffect {
+.whiteFadingEffect {
     position:absolute;
     top:0; bottom:0; right:0;
     width:100%;
-    background:black;
-    -webkit-animation: fadeIn 8s ease 1 alternate; 
-    animation: fadeIn 8s ease 1 alternate;
+    background: #253b56;
+    -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
+    animation: whiteFadeIn 8s ease 1 alternate;
+    flex-wrap: wrap;
 }
 
-@keyframes fadeIn{
+@keyframes whiteFadeIn{
     from {background:white;}
-    to {background: black;}
+    to {background:  #253b56;}
 }
-  
-@-webkit-keyframes fadeIn {
-    from {background: white;}
-    to {background: black;}
+
+
+.blackFadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+
 }
+
 
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
-.pulsatingCircle{
+#pulsatingCircle{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
 /* breathing circle */
@@ -88,7 +100,6 @@
     height:500px;
     opacity:0;
     border:25px solid lightgoldenrodyellow;
-    /* rate of inflation/deflation */
     animation:9s pulseIn 10s ease-in-out 10 alternate;
 }
 
@@ -107,6 +118,14 @@
     }
 }
 
+@media screen and (max-width: 750px) {
+  #yellowCircle {
+    width:200px;
+    height:200px;
+    border-width: 10px;
+  }
+}
+
 /* breathe out circle */
 #fireCircle{
     display:flex;
@@ -119,7 +138,6 @@
     height:500px;
     opacity:0;
     border:25px solid lightgoldenrodyellow;
-    /* rate of inflation/deflation */
     animation:18s firePulseIn 10s ease-in-out 7 normal;
 }
 
@@ -170,7 +188,6 @@
     height:500px;
     opacity:0;
     border:25px solid lightgoldenrodyellow;
-    /* rate of inflation/deflation */
     animation:18s calmPulseIn 10s ease-in-out 7 normal;
 }
 
@@ -290,7 +307,16 @@
 }
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
-.bar {
+#barSkip {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#bar {
     background: #2a2d2d;
     max-width: 33%;
     border-radius: 0.25rem;
@@ -300,7 +326,7 @@
     opacity: 0;  
 }
 
-.bar > span {
+#bar > span {
     display: block;
 }
 
@@ -316,15 +342,10 @@
     }
 }
 
-.progress {
-  background: black;
-  color: darkgrey;
-  padding: 5px;
-  width: 0;
-}
-
 #progress-bar {
-    background-color: darkgrey;
+  background-color: darkgrey;
+  padding: 10px;
+  width: 0;
 }
 
 @keyframes loader {
@@ -343,6 +364,8 @@
 
 .skip {
     color: darkgrey;
+    /* grid-column: 2 / 3;
+    grid-row: 5 / 6; */
 }
 
 .skip:hover {

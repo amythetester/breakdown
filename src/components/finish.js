@@ -2,18 +2,7 @@ import './finish.css';
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
-
 class Finish extends Component {
-
-    componentDidMount(){
-        this.enterFullScreen();
-    }
-
-    enterFullScreen = () => {
-        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
-    }
 
     render(){
         return (
