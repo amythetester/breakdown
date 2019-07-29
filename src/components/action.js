@@ -32,23 +32,17 @@ class Action extends Component {
                     </div>
                 </section>
                 <section className="actions">
-                    <section id="action1">
+                    <section className="action">
                         <h3>Have 5 minutes?</h3>
-                        <p>
-                            {this.props.actions[0]}
-                        </p>
+                        <p>{this.props.actions[0]}</p>
                     </section>
-                    <section id="action2">
+                    <section className="action">
                         <h3>Have 10 minutes?</h3>
-                        <p>
-                            {this.props.actions[1]}
-                        </p>
+                        <p>{this.props.actions[1]}</p>
                     </section>
-                    <section id="action3">
+                    <section className="action">
                         <h3>Have more time?</h3>
-                        <p>
-                            {this.props.actions[2]}
-                        </p>
+                        <p>{this.props.actions[2]}</p>
                     </section>
                 </section>
                 <div id="home">
