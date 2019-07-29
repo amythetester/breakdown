@@ -20,34 +20,31 @@
     grid-column: 1 / 4;
 }
 
-/* .action {
-    display: flex;
-    flex-direction:column;
-
-    justify-content: center;
-    padding-left: 5em;
-    padding-right: 5em;
-    color: black;
-}  
-
-@keyframes fadeAction {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-.action > h1, .action > h2 {
-    padding-top: 3em;
-}
-
-.action > h1 {
-    animation: 10s fadeAction ease;
-}
-
-.action > h2 {
-    animation: 14s fadeAction ease;
-} */
-
 #home {
     display: flex;
     justify-content: center;
+}
+
+.banner {
+    background-color: #f2ba49;
+    background-image: url('https://images.pexels.com/photos/1287142/pexels-photo-1287142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-position: top right;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding-top: 5em;
+    padding-right: 5em;
+    padding-left: 5em;
+    padding-bottom: 5em;
+}
+
+.transparent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background:rgba(255,255,255,0.4);
+  border-radius: 0.25rem;
 }

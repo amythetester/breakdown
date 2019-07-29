@@ -25,9 +25,11 @@ class Action extends Component {
     render() {
         return (
             <div className="white">
-                <section className="hero">
-                    <h1>What's Next?</h1>
-                    <p>Consider taking one of the following actions.</p>
+                <section className="banner">
+                    <div className="transparent">
+                        <h1>What's Next?</h1>
+                        <p>Consider taking one of the following actions.</p>
+                    </div>
                 </section>
                 <section className="actions">
                     <section id="action1">
