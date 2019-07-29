@@ -68,8 +68,10 @@ class Question extends Component {
     render() {
         if (this.state.redirect) return <Redirect push to={this.props.redirectTo} />;
         else return (
-            <section className="questionFadeIn">
-                <InAppNav />
+            <section id="mind-question" className="questionFadeIn">
+                <div id="nav">
+                    <InAppNav />
+                </div>
                 <h1 className="question">
                     {this.props.question}
                 </h1>
@@ -77,11 +79,9 @@ class Question extends Component {
                     <div>
                         <textarea type="text" name="answer" maxlength="400" minlength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
                     </div>
-                    <div className="space"></div>
                     <div>
                        <button type="submit" className="btn btn-lg" id="continue">Continue</button>
                     </div>
-                    <div className="space"></div>
                 </form>
             </section>
         );

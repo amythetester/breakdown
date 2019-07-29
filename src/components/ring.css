@@ -1,7 +1,7 @@
 #breathe {
     display: grid;
-    grid-template-columns: 1fr 50% 1fr ;
-    grid-template-rows: 1fr 50% 1fr ;
+    grid-template-columns: 1fr 70% 1fr ;
+    grid-template-rows: 1fr 70% 1fr ;
     padding: 20px;
 }
 
