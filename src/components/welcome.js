@@ -2,6 +2,9 @@ import './welcome.css'
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
+import Nav from './nav.js';
+import Footer from './footer.js';
+
 class Welcome extends Component{
   
   componentDidMount(){
@@ -21,6 +24,7 @@ class Welcome extends Component{
   render() {
     return (
       <div className="white">
+        <Nav />
         <section className="hero">
           <div className="transparentWelcome">
             <h1>Welcome to Breakdown</h1>
@@ -52,6 +56,7 @@ class Welcome extends Component{
             </p>
           </section>
         </section>
+        <Footer />
       </div>
     );
   }
