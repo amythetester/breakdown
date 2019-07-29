@@ -11,17 +11,24 @@
   display: flex;
 }
 
+#instruction {
+    display: flex;
+    justify-content: center;
+}
+
 .textFadingEffect {
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
 .textFadingEffect span {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     color:  #253b56;
     margin: 0, 0, 300px, 0;
     left: 0;
     text-align: center;
-    width: 100%;
+    /* width: 100%; */
     position: absolute;
     overflow: hidden;
     opacity: 0;
