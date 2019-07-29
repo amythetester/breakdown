@@ -1,7 +1,7 @@
 #breathe {
     display: grid;
     grid-template-columns: 1fr 70% 1fr ;
-    grid-template-rows: 1fr 70% 1fr ;
+    grid-template-rows: 1fr 20px 70%  20px 1fr;
     padding: 20px;
 }
 
@@ -12,23 +12,19 @@
 }
 
 #instruction {
-    display: flex;
-    justify-content: center;
-}
-
-.textFadingEffect {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
 }
 
 .textFadingEffect span {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
     color:  #253b56;
-    margin: 0, 0, 300px, 0;
     left: 0;
-    text-align: center;
-    /* width: 100%; */
     position: absolute;
     overflow: hidden;
     opacity: 0;
@@ -51,11 +47,11 @@
     100% {color: #253b56; opacity:0;}
 }
 
-@-webkit-keyframes textFadeIn {
+/* @-webkit-keyframes textFadeIn {
     0% {color: #253b56; opacity:1;}
     50% {color: white; opacity:1;}
     100% {color: #253b56; opacity:0;}
-}
+} */
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
 .whiteFadingEffect {
@@ -72,41 +68,21 @@
     from {background:white;}
     to {background:  #253b56;}
 }
-  
-@-webkit-keyframes whiteFadeIn {
-    from {background: white;}
-    to {background:  #253b56;}
-}
+
 
 .blackFadingEffect {
     position:absolute;
     top:0; bottom:0; right:0;
     width:100%;
-    /* background:black;
-    -webkit-animation: blackFadeIn 8s ease 1 alternate; 
-    animation: blackFadeIn 8s ease 1 alternate; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; */
+
 }
 
-/* @keyframes blackFadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-  
-@-webkit-keyframes blackFadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-} */
 
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
 #pulsatingCircle{
     grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -140,6 +116,14 @@
         opacity:0.5;
         transform:scale(0.1,0.1);
     }
+}
+
+@media screen and (max-width: 750px) {
+  #yellowCircle {
+    width:200px;
+    height:200px;
+    border-width: 10px;
+  }
 }
 
 /* breathe out circle */
@@ -325,7 +309,7 @@
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 #barSkip {
     grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    grid-row: 5 / 6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,8 +364,8 @@
 
 .skip {
     color: darkgrey;
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    /* grid-column: 2 / 3;
+    grid-row: 5 / 6; */
 }
 
 .skip:hover {

@@ -2,9 +2,6 @@ import './finish.css';
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
-import InAppNav from './inappnav.js';
-
-
 class Finish extends Component {
 
     render(){

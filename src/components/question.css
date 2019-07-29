@@ -1,7 +1,7 @@
 #mind-question {
   display: grid;
   grid-template-columns: 1fr 70% 1fr;
-  grid-template-rows: 1fr 20px 70%  20px 1fr;
+  grid-template-rows: ;
   padding: 20px;
 }
 
