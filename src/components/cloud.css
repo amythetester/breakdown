@@ -39,12 +39,6 @@
 	flex-direction: column;
 	justify-content: center;
   align-items: center; 
-  /* height: 400%; */
-  /* position: absolute;
-	bottom: 30%;
-	right: 15%;
-   
-  left: 15%;  */
 }
 
 .app-inner {
@@ -67,7 +61,6 @@
     grid-row: 5 / 6;
     display: flex;
     justify-content: center;
-    /* padding-top: 75%; */
 }
 
 .tag-cloud > div {
