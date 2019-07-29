@@ -1,22 +1,55 @@
 /* inspired by https://stackblitz.com/edit/react-tag-cloud?file=App.js */
 .center {
-    display:flex;
-    flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 70% 1fr;
+  grid-template-rows: 1fr 20px minmax(200px, 400px)  20px 60px 1fr;
+  padding: 20px;
+}
+
+.cloudFadeIn {
+    -webkit-animation: cloudFadeIn 6s ease 1 alternate; 
+    animation: cloudFadeIn 6s ease 1 alternate;
+}
+  
+@keyframes cloudFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-webkit-keyframes cloudFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#nav {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+}
+
+.question {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 .app-outer {
-    display: flex;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  display: flex;
 	flex-direction: column;
 	justify-content: center;
-    align-items: center; 
-    position: absolute;
+  align-items: center; 
+  /* height: 400%; */
+  /* position: absolute;
 	bottom: 30%;
 	right: 15%;
-    top: 25%;  
-    left: 15%; 
+   
+  left: 15%;  */
 }
 
 .app-inner {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -30,16 +63,12 @@
 }
 
 .button {
-    padding-top: 32em;  
-    top: 80%;
-    bottom: 10%;
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    display: flex;
+    justify-content: center;
+    /* padding-top: 75%; */
 }
-
-@media screen and (min-width: 1500px) {
-    .button {
-      padding-top: 40em;
-    }
-  }
 
 .tag-cloud > div {
 	transition: 1.4s;
@@ -50,19 +79,3 @@
     border-color: grey;
     color: white;
 }
-
-.cloudFadeIn {
-    -webkit-animation: cloudFadeIn 6s ease 1 alternate; 
-    animation: cloudFadeIn 6s ease 1 alternate;
-  }
-  
-  @keyframes cloudFadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  @-webkit-keyframes cloudFadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-

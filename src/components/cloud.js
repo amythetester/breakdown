@@ -20,16 +20,6 @@ class Cloud extends Component {
         };
     };
 
-    // componentDidMount(){
-    //     this.enterFullScreen();
-    // }
-
-    // enterFullScreen = () => {
-    //     if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
-    //         document.documentElement.requestFullscreen();
-    //     }
-    // }
-
     removeWord = (word) => {
         const hiddenWords = this.state.removedWords.slice();
         hiddenWords.push(word);
@@ -112,7 +102,9 @@ class Cloud extends Component {
             return <Redirect push to={this.props.redirectTo} />;
         }else return (
             <div className="center cloudFadeIn">
-                <InAppNav />
+                <div id="nav">
+                    <InAppNav />
+                </div>
                 <h1 className="question">
                     {this.props.question}
                 </h1>
