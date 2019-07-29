@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from 'axios';
 
 import Welcome from './components/welcome.js';
@@ -106,10 +106,7 @@ class App extends Component {
         <Router>
           <Route
             exact path="/"
-            render={() => <div><nav className="nav navbar navbar-dark bg-dark">
-            <Link to="/" className="navbar-brand">Breakdown</Link>
-            <Link to="/breathe-ring"><button className="btn btn-info nav-item nav-link" type="submit">Start a New Session</button></Link>
-          </nav> <Welcome /></div>}
+            render={() => <Welcome />}
           />
           <Route
             path="/breathe-ring"
@@ -195,16 +192,10 @@ class App extends Component {
           <Route
             path="/next-step"
             render={() =>
-              <div>
-                <nav className="nav navbar navbar-dark bg-dark">
-                  <Link to="/" className="navbar-brand">Breakdown</Link>
-                  <Link to="/breathe-ring"><button className="btn btn-info nav-item nav-link" type="submit">Start a New Session</button></Link>
-                </nav>
-                <Action
-                  redirectTo="/"
-                  action={this.state.action}
-                />
-              </div>
+              <Action
+                redirectTo="/"
+                action={this.state.action}
+              />
             }
           />
         </Router>

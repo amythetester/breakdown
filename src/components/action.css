@@ -44,12 +44,13 @@
     padding-top: 4rem;
     padding-right: 4rem;
     padding-left: 4rem;
+    padding-bottom: 4rem;
 }
 
 #home {
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
+    background-color: lightgrey;
 }
 

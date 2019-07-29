@@ -1,6 +1,9 @@
 import './action.css';
 import React, {Component} from  'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+import Nav from './nav.js';
+import Footer from './footer.js';
 
 class Action extends Component {
     constructor(props) {
@@ -25,6 +28,7 @@ class Action extends Component {
     render() {
         return (
             <div className="white">
+                <Nav />
                 <section className="banner">
                     <div className="transparentAction">
                         <h1>What's Next?</h1>
@@ -45,9 +49,10 @@ class Action extends Component {
                         <p>{this.props.actions[2]}</p>
                     </section>
                 </section>
-                <div id="home">
+                <Footer />
+                {/* <div id="home">
                     <Link to={this.props.redirectTo}><button className="btn btn-info" type="submit" id="begin-button">Back to Home</button></Link>
-                </div>
+                </div> */}
             </div>
         );
     }
