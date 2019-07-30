@@ -6,7 +6,7 @@ class Finish extends Component {
 
     render(){
         return (
-            <section className="finish">
+            <section className="finish finishFadeIn">
                 <div className="transparentFinish">
                     <h1>Congrats, you made it!</h1>
                     <h2>Sometimes life gets overwhelming, but you can do this! You always could.</h2> 
