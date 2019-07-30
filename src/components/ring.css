@@ -65,7 +65,7 @@
 }
 
 @keyframes whiteFadeIn{
-    from {background:white;}
+    from {background:lightgrey;}
     to {background:  #253b56;}
 }
 
@@ -176,6 +176,14 @@
     }
 }
 
+@media screen and (max-width: 750px) {
+  #fireCircle {
+    width:200px;
+    height:200px;
+    border-width: 10px;
+  }
+}
+
 /* breath-in-circle */
 #calmCircle{
     display:flex;
@@ -224,6 +232,14 @@
         transform:scale(0.1,0.1);
         border-color: lightgoldenrodyellow;
     }
+}
+
+@media screen and (max-width: 750px) {
+  #calmCircle {
+    width:200px;
+    height:200px;
+    border-width: 10px;
+  }
 }
 
 /* fade words in ring inspired by https://www.competa.com/blog/changing-words-with-css-animation/ */
