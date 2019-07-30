@@ -2,7 +2,7 @@ import './question.css';
 import React, {Component} from 'react';
 import { Redirect } from "react-router-dom";
 
-import InAppNav from './inappnav.js';
+// import InAppNav from './inappnav.js';
 
 class Question extends Component {
     constructor(props) {

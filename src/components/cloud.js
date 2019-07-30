@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import TagCloud from 'react-tag-cloud';
 import randomColor from 'randomcolor';
 
-import InAppNav from './inappnav.js';
+// import InAppNav from './inappnav.js';
 
 class Cloud extends Component {
     constructor(props) {

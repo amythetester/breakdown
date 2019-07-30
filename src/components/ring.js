@@ -2,7 +2,7 @@ import './ring.css';
 import React, {Component} from  'react';
 import { Redirect, Link } from "react-router-dom";
 
-import InAppNav from './inappnav.js';
+// import InAppNav from './inappnav.js';
 
 class Ring extends Component {
     constructor(props) {
