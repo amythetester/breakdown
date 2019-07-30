@@ -27,19 +27,19 @@
 }
 
 .transparentFinish > h1 {
-    animation: 10s fadeFinish ease;
+    animation: 7s fadeFinish ease;
     margin-bottom: 5rem;
 }
 
 .transparentFinish > h2 {
-    animation: 10s fadeFinish ease;
+    animation: 7s fadeFinish ease;
 }
 
 .transparentFinish > h3 {
-    animation: 13s fadeFinish ease;
+    animation: 10s fadeFinish ease;
     margin-top: 5rem;
 }
 
 .transparentFinish #begin-button {
-    animation: 13s fadeFinish ease;
+    animation: 10s fadeFinish ease;
 }

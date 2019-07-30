@@ -4,6 +4,16 @@
     grid-template-columns: 100%;
     grid-gap: 20px;
     padding: 20px;
+    background-image: url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?w=2000');
+    background-position: bottom, right;
+    height: 100vh;
+    width: 100vw;
+}
+
+@media screen and (min-width: 2000px) {
+  #breathe {
+    background-image: url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?w=6000');
+  }
 }
 
 #inAppNav{
@@ -23,13 +33,13 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    color:  #253b56;
+    color:  white;
     left: 0;
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    -webkit-animation: textFadeIn 8s ease 6s 1 alternate; 
-    animation: textFadeIn 8s ease 6s 1 alternate;
+    -webkit-animation: textFadeIn 7s ease 6s 1 alternate; 
+    animation: textFadeIn 7s ease 6s 1 alternate;
 }
 
 .textFadingEffect span:nth-child(2) { 
@@ -42,9 +52,9 @@
 }
 
 @keyframes textFadeIn {
-    0% {color: #253b56; opacity:1;}
-    50% {color: white; opacity:1;}
-    100% {color: #253b56; opacity:0;}
+    0% {color: #eff5f1; opacity:1;}
+    50% {color: black; opacity:1;}
+    100% {color: #eff5f1; opacity:0;}
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -58,8 +68,8 @@
 }
 
 @keyframes fadeIn{
-    from {background: black;}
-    to {background: #253b56;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
@@ -81,17 +91,16 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid #eacd5d;
+    border:25px solid #e9d466;
     animation:9s pulseIn 10s ease-in-out 5 alternate;
 }
 
 @keyframes pulseIn{
     0%{
-        opacity:0.5;
+        opacity:1;
         transform:scale(0.1,0.1);
     }
     50%{
-        opacity:1;
         transform:scale(1,1);
     }
     100%{
@@ -119,42 +128,37 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid #eacd5d;
+    border:25px solid #e9d466;
     animation:18s firePulseIn 10s ease-in-out 7 normal;
 }
 
 @keyframes firePulseIn{
     0% {
-        opacity:0.5;
+        opacity:1;
         transform:scale(0.1,0.1);
-        border-color: #eacd5d;
+        border-color: #e9d466;
     }
     25% {
-        opacity:1;
         transform:scale(1,1);
     }
     50% {
-        opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: #eacd5d;
+        border-color: #e9d466;
     }
     62.5% {
-        opacity:1;
-        border-color: #e58c4f;
+        border-color: #f2b948;
     }
     75% {
-        opacity:1;
         transform:scale(1,1);
-        border-color: #d57d72;
+        border-color: #e78c50;
     }
     87.5% {
-        opacity:1;
-        border-color: #e58c4f;
+        border-color: #f2b948;
     }
     100% {
-        opacity:0.5;
+        opacity:1;
         transform:scale(0.1,0.1);
-        border-color: #eacd5d;
+        border-color: #e9d466;
     }
 }
 
@@ -177,42 +181,40 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid #eacd5d;
+    border:25px solid #e9d466;
     animation:18s calmPulseIn 10s ease-in-out 7 normal;
 }
 
 @keyframes calmPulseIn{
     0% {
-        opacity:0.5;
+        opacity:1;
         transform:scale(0.1,0.1);
-        border-color: #eacd5d;
+        border-color: #e9d466;
     }
     25% {
-        opacity:1;
         transform:scale(1,1);
     }
     50% {
-        opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: #eacd5d;
+        border-color: #e9d466;
     }
     62.5% {
-        opacity:1;
-        border-color: #4fe2bb;
+        /* border-color: #98c8f9; */
+        border-color: #b395d3;
     }
     75% {
-        opacity:1;
         transform:scale(1,1);
-        border-color: #79dfea;
+        /* border-color: #b395d3; */
+        border-color: #98c8f9;
     }
     87.5% {
-        opacity:1;
-        border-color: #4fe2bb;
+        /* border-color: #98c8f9; */
+         border-color: #b395d3;
     }
     100% {
-        opacity:0.5;
+        opacity:1;
         transform:scale(0.1,0.1);
-        border-color: #eacd5d;
+        border-color: #e9d466;
     }
 }
 
@@ -234,28 +236,28 @@
     overflow: hidden;
     opacity: 0;
     color: black;
-    -webkit-animation: animateWord 9s linear 14.5s;
-    animation: animateWord 9s linear 14.5s;
+    /* -webkit-animation: animateWord 5s linear 14.5s; */
+    animation: animateWord 5s linear 14.5s;
 }
 
 .fire-animated-words span:nth-child(1) { 
-    -webkit-animation-delay: 23.5s;  
+    /* -webkit-animation-delay: 23.5s;   */
     animation-delay: 23.5s; 
 }
 .fire-animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 41.5s;  
+    /* -webkit-animation-delay: 41.5s;   */
     animation-delay: 41.5s; 
 }
 .fire-animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 59.5s; 
+    /* -webkit-animation-delay: 59.5s;  */
     animation-delay: 59.5s; 
 }
 .fire-animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 77.5s; 
+    /* -webkit-animation-delay: 77.5s;  */
     animation-delay: 77.5s; 
 }
 .fire-animated-words span:nth-child(5) { 
-    -webkit-animation-delay: 95.5s; 
+    /* -webkit-animation-delay: 95.5s;  */
     animation-delay: 95.5s; 
 }
 
@@ -269,40 +271,35 @@
     overflow: hidden;
     opacity: 0;
     color: black;
-    -webkit-animation: animateWord 14s linear 10s;
-    animation: animateWord 15s linear 10s;
+    /* -webkit-animation: animateWord 11s linear 10s; */
+    animation: animateWord 11s linear 10s;
 }
 
 .calm-animated-words span:nth-child(1) { 
-    -webkit-animation-delay: 19s;  
+    /* -webkit-animation-delay: 19s;   */
     animation-delay: 19s; 
 }
 .calm-animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 37s;  
+    /* -webkit-animation-delay: 37s;   */
     animation-delay: 37s; 
 }
 .calm-animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 55s; 
+    /* -webkit-animation-delay: 55s;  */
     animation-delay: 55s; 
 }
 .calm-animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 73s; 
+    /* -webkit-animation-delay: 73s;  */
     animation-delay: 73s; 
 }
 .calm-animated-words span:nth-child(5) { 
-    -webkit-animation-delay: 91s; 
+    /* -webkit-animation-delay: 91s;  */
     animation-delay: 91s; 
 }
 
 @keyframes animateWord {
     0% { color: white; opacity: 1; }
-    100% { color: black; opacity: 0; }
+    100% { color: white; opacity: 0; }
 }
-
-/* @-webkit-keyframes animateWord {
-    0% { color: white; opacity: 1; }
-    100% { color: black; opacity: 0;}
-} */
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 #barSkip {
