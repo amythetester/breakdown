@@ -134,7 +134,7 @@ class App extends Component {
               <Cloud
                 question="Select up to 5 words that are causing you stress."
                 redirectTo="/breathe-out-ring"
-                fallbackRedirectTo="/finish"
+                fallbackRedirectTo="/focus-cloud"
                 wordCloud={this.state.initialLetterFrequency}
                 wordCallback={this.removedWordsFromWordCloud}
                 render='renderReleaseWords'
