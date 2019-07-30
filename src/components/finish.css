@@ -4,21 +4,29 @@
     align-items: center;
     justify-content: center;
     background-color: #253b56;
-    /* background-image: url('/images/breakdown-finish2.jpeg'); */
-    background-image: url('/images/breakdown-finish1.jpeg');
-    /* background-image: url('/images/breakdown-finish3.jpeg'); */
+    background-image: url('/images/breakdown-finish.jpeg');
     background-position: right, center;
     color: white;
     height: 100vh;
     width: 100vw;
-}  
+} 
+
+.finishFadeIn {
+    -webkit-animation: finishFadeIn 6s ease 1 alternate; 
+    animation: finishFadeIn 6s ease 1 alternate;
+}
+  
+@keyframes finishFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
 .transparentFinish {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  background:rgba(0,0,0,0.75);
+  background:rgba(0,0,0,0.5);
   border-radius: 0.25rem;
 }
 
