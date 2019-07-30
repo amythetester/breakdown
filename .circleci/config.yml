@@ -6,49 +6,49 @@ orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.3.1
 
-# Orchestrate or schedule a set of jobs, see https://circleci.com/docs/2.0/workflows/
-workflows:
-  # Name the workflow "Welcome"
-  Welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
-# jobs:
-#   build:
-#     working_directory: ~/breakdown
-#     docker:
-#       - image: circleci/python:3.7-stretch-node
-#     steps:
-#       - checkout
-#       - run:
-#           name: Install npm
-#           command: npm ci
-#       - run:
-#           name: Run build
-#           command: npm run build
-#   deploy:
-#     working_directory: /tmp/breakdown
-#     docker:
-#       - image: circleci/python:3.7-stretch-node
-#     steps:
-#       - run:
-#           name: List files
-#           command: ls -al . && ls -al /tmp
-#       - run:
-#           name: Install awscli
-#           command: sudo pip install awscli
-#       - run:
-#           name: Deploy to S3
-#           command: aws s3 cp ./build/ s3://breakdownstress --recursive
-
+# # Orchestrate or schedule a set of jobs, see https://circleci.com/docs/2.0/workflows/
 # workflows:
-#   version: 2
-#   build-deploy:
+#   # Name the workflow "Welcome"
+#   Welcome:
+#     # Run the welcome/run job in its own container
 #     jobs:
-#       - build
-#       - deploy:
-#           requires:
-#             - build
-#           filters:
-#             branches:
-#               only: master
+#       - welcome/run
+jobs:
+  build:
+    working_directory: ~/breakdown
+    docker:
+      - image: circleci/python:3.7-stretch-node
+    steps:
+      - checkout
+      - run:
+          name: Install npm
+          command: npm ci
+      - run:
+          name: Run build
+          command: npm run build
+  # deploy:
+  #   working_directory: /tmp/breakdown
+  #   docker:
+  #     - image: circleci/python:3.7-stretch-node
+  #   steps:
+  #     - run:
+  #         name: List files
+  #         command: ls -al . && ls -al /tmp
+  #     - run:
+  #         name: Install awscli
+  #         command: sudo pip install awscli
+  #     - run:
+  #         name: Deploy to S3
+  #         command: aws s3 cp ./build/ s3://breakdownstress --recursive
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      # - deploy:
+      #     requires:
+      #       - build
+          filters:
+            branches:
+              only: master
