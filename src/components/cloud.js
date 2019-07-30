@@ -105,7 +105,7 @@ class Cloud extends Component {
                 {/* <div id="inAppNav">
                     <InAppNav />
                 </div> */}
-                <h1 className="question">
+                <h1 className="text">
                     {this.props.question}
                 </h1>
                 <section className='app-outer'>
