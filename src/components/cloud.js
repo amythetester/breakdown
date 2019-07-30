@@ -115,7 +115,7 @@ class Cloud extends Component {
                         style={{
                         fontSize: 30,
                         color: () => randomColor({
-                            hue: 'orange',
+                            hue: 'yellow',
                             luminosity: 'light',
                         }),
                         padding: 5,

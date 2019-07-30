@@ -32,11 +32,11 @@
   justify-content: center;
 }
 
-#question {
+.text {
   grid-row: 1 / 2;
   display: flex;
   justify-content: center;
-  color: black;
+  color: white;
 }
 
 .app-outer {
@@ -72,14 +72,9 @@
     grid-row: 3 / 4;
     display: flex;
     justify-content: center;
+    padding-bottom: 2rem;
 }
 
 .tag-cloud > div {
 	transition: 1.4s;
-}
-
-#continue-to-ring {
-    background-color: #2a2d2d;
-    border-color: grey;
-    color: white;
 }
