@@ -1,8 +1,9 @@
 /* inspired by https://stackblitz.com/edit/react-tag-cloud?file=App.js */
 .center {
   display: grid;
-  grid-template-columns: 1fr 70% 1fr;
-  grid-template-rows: 1fr 20px minmax(200px, 400px)  20px 60px 1fr;
+  grid-template-rows: 1fr 70% 1fr;
+  grid-template-columns: 100%;
+  grid-gap: 20px;
   padding: 20px;
 }
 
@@ -21,29 +22,36 @@
   to {opacity: 1;}
 }
 
-#nav {
-  grid-column: 3 / 4;
+#inAppNav {
   grid-row: 1 / 2;
   display: flex;
+  justify-content: center;
 }
 
-/* .question {
-  grid-column: 2 / 3;
+.question {
   grid-row: 1 / 2;
-} */
+  display: flex;
+  justify-content: center;
+  color: white;
+}
 
 .app-outer {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   display: flex;
 	flex-direction: column;
 	justify-content: center;
   align-items: center; 
+  height: 23rem;
+}
+
+@media screen and (max-width: 500px) {
+  .app-outer {
+    height: 15rem;
+  }
 }
 
 .app-inner {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -57,8 +65,7 @@
 }
 
 .button {
-    grid-column: 2 / 3;
-    grid-row: 5 / 6;
+    grid-row: 3 / 4;
     display: flex;
     justify-content: center;
 }

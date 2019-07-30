@@ -52,9 +52,9 @@ class Ring extends Component {
 
         return (
             <section id="breathe" className={this.props.fade}>
-                <div id="inAppNav">
+                {/* <div id="inAppNav">
                     <InAppNav />
-                </div>
+                </div> */}
                 <h1 id="instruction" className="textFadingEffect">
                     <span>{this.props.text}</span>
                     <span>Exhale as the ring contracts.</span>

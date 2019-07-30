@@ -31,12 +31,12 @@
 textarea {
   display: flex;
   background-color:#253b56;
-  border-bottom-width: 4px;
+  /* border-bottom-width: 4px;
   border-right-width: 4px;
   border-left-width: 2px;
   border-top-width: 2px;
-  border-color: lightgoldenrodyellow;
-  /* border: none; */
+  border-color: lightgoldenrodyellow; */
+  border: none;
   color: white;
   width: 25em;
   height: 10em;
@@ -73,15 +73,7 @@ textarea:focus {
   justify-content: center;
 }
 
-#continue {
-  background-color: lightgoldenrodyellow;
-  margin-top: 2em;
-  display: flex;
-  justify-content: center;
-}
-
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-
 .questionFadeIn {
   animation: questionFadeIn 8s ease 1 alternate;
 }

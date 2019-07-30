@@ -102,9 +102,9 @@ class Cloud extends Component {
             return <Redirect push to={this.props.redirectTo} />;
         }else return (
             <div className="center cloudFadeIn">
-                <div id="nav">
+                {/* <div id="inAppNav">
                     <InAppNav />
-                </div>
+                </div> */}
                 <h1 className="question">
                     {this.props.question}
                 </h1>
@@ -115,7 +115,7 @@ class Cloud extends Component {
                         style={{
                         fontSize: 30,
                         color: () => randomColor({
-                            hue: 'blue',
+                            hue: 'orange',
                             luminosity: 'light',
                         }),
                         padding: 5,
@@ -125,7 +125,7 @@ class Cloud extends Component {
                     </div>
                 </section>
                 <form onSubmit={event => this.handleSubmit(event)} className="button">
-                    <button type="submit" className="btn btn-lg" id="continue-to-ring">Continue</button>
+                    <button type="submit" className="btn btn-info fade-button" id="begin-button">Continue</button>
                 </form>
             </div>
         );

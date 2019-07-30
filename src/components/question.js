@@ -80,7 +80,7 @@ class Question extends Component {
                         <textarea type="text" name="answer" maxlength="400" minlength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
                     </div>
                     <div id="submit">
-                       <button type="submit" id="continue" className="btn btn-lg">Continue</button>
+                       <button type="submit" id="begin-button" className="btn btn-info fade-button">Continue</button>
                     </div>
                 </form>
             </section>
