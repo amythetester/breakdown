@@ -1,43 +1,42 @@
 #mind-question {
-  display: grid;
-  grid-template-columns: 1fr 70% 1fr;
-  grid-template-rows: ;
-  padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 70% 1fr;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
+    padding: 20px;
 }
 
-#nav {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
-  display: flex;
-}
-
-.question {
-  color: white;
-  grid-column: 2 / 3;
+/* #inAppNav {
   grid-row: 1 / 2;
   display: flex;
   justify-content: center;
+} */
+
+#question {
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-#input {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+#textbox {
+  grid-row: 2 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border-radius: 0.25rem; */
   font-size: 2em;
 }
 
 textarea {
   display: flex;
   background-color:#253b56;
-  border-bottom-width: 4px;
+  /* border-bottom-width: 4px;
   border-right-width: 4px;
   border-left-width: 2px;
   border-top-width: 2px;
-  border-color: lightgoldenrodyellow;
-  /* border: none; */
+  border-color: lightgoldenrodyellow; */
+  border: none;
   color: white;
   width: 25em;
   height: 10em;
@@ -68,16 +67,13 @@ textarea:focus {
   outline: none;
 }
 
-#continue {
-  background-color: lightgoldenrodyellow;
-  margin-top: 2em;
+#submit {
+  grid-row: 3 / 4;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-
 .questionFadeIn {
   animation: questionFadeIn 8s ease 1 alternate;
 }

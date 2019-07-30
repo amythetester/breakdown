@@ -1,28 +1,28 @@
 #breathe {
     display: grid;
-    grid-template-columns: 1fr 70% 1fr ;
-    grid-template-rows: 1fr 20px 70%  20px 1fr;
+    grid-template-rows: 1fr 70% 1fr;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
     padding: 20px;
 }
 
-#nav{
-  grid-column: 3 / 4;
+#inAppNav{
   grid-row: 1 / 2;
   display: flex;
+  justify-content: center;
 }
 
 #instruction {
-    grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
     justify-content: center;
 }
 
 .textFadingEffect span {
-    grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
     justify-content: center;
+    width: 100%;
     color:  #253b56;
     left: 0;
     position: absolute;
@@ -47,26 +47,19 @@
     100% {color: #253b56; opacity:0;}
 }
 
-/* @-webkit-keyframes textFadeIn {
-    0% {color: #253b56; opacity:1;}
-    50% {color: white; opacity:1;}
-    100% {color: #253b56; opacity:0;}
-} */
-
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
 .whiteFadingEffect {
     position:absolute;
     top:0; bottom:0; right:0;
     width:100%;
-    background: #253b56;
     -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
     animation: whiteFadeIn 8s ease 1 alternate;
     flex-wrap: wrap;
 }
 
 @keyframes whiteFadeIn{
-    from {background:white;}
-    to {background:  #253b56;}
+    from {background: black;}
+    to {background: #253b56;}
 }
 
 
@@ -77,12 +70,9 @@
 
 }
 
-
-
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
 #pulsatingCircle{
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -99,7 +89,7 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid lightgoldenrodyellow;
+    border:25px solid #eacd5d;
     animation:9s pulseIn 10s ease-in-out 10 alternate;
 }
 
@@ -113,7 +103,7 @@
         transform:scale(1,1);
     }
     100%{
-        opacity:0.5;
+        opacity:1;
         transform:scale(0.1,0.1);
     }
 }
@@ -137,7 +127,7 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid lightgoldenrodyellow;
+    border:25px solid #eacd5d;
     animation:18s firePulseIn 10s ease-in-out 7 normal;
 }
 
@@ -145,7 +135,7 @@
     0% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: lightgoldenrodyellow;
+        border-color: #eacd5d;
     }
     25% {
         opacity:1;
@@ -154,26 +144,34 @@
     50% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: lightgoldenrodyellow;
+        border-color: #eacd5d;
     }
     62.5% {
         opacity:1;
-        border-color: orange;
+        border-color: #e58c4f;
     }
     75% {
         opacity:1;
         transform:scale(1,1);
-        border-color: orangered;
+        border-color: #d57d72;
     }
     87.5% {
         opacity:1;
-        border-color: orange;
+        border-color: #e58c4f;
     }
     100% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: lightgoldenrodyellow;
+        border-color: #eacd5d;
     }
+}
+
+@media screen and (max-width: 750px) {
+  #fireCircle {
+    width:200px;
+    height:200px;
+    border-width: 10px;
+  }
 }
 
 /* breath-in-circle */
@@ -187,7 +185,7 @@
     width:500px;
     height:500px;
     opacity:0;
-    border:25px solid lightgoldenrodyellow;
+    border:25px solid #eacd5d;
     animation:18s calmPulseIn 10s ease-in-out 7 normal;
 }
 
@@ -195,7 +193,7 @@
     0% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: lightgoldenrodyellow;
+        border-color: #eacd5d;
     }
     25% {
         opacity:1;
@@ -204,26 +202,34 @@
     50% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: lightgoldenrodyellow;
+        border-color: #eacd5d;
     }
     62.5% {
         opacity:1;
-        border-color: lightgreen;
+        border-color: #4fe2bb;
     }
     75% {
         opacity:1;
         transform:scale(1,1);
-        border-color: lightseagreen;
+        border-color: #79dfea;
     }
     87.5% {
         opacity:1;
-        border-color: lightgreen;
+        border-color: #4fe2bb;
     }
     100% {
         opacity:0.5;
         transform:scale(0.1,0.1);
-        border-color: lightgoldenrodyellow;
+        border-color: #eacd5d;
     }
+}
+
+@media screen and (max-width: 750px) {
+  #calmCircle {
+    width:200px;
+    height:200px;
+    border-width: 10px;
+  }
 }
 
 /* fade words in ring inspired by https://www.competa.com/blog/changing-words-with-css-animation/ */
@@ -308,8 +314,7 @@
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 #barSkip {
-    grid-column: 2 / 3;
-    grid-row: 5 / 6;
+    grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -364,8 +369,6 @@
 
 .skip {
     color: darkgrey;
-    /* grid-column: 2 / 3;
-    grid-row: 5 / 6; */
 }
 
 .skip:hover {

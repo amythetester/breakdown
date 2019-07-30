@@ -29,6 +29,7 @@
 .hero {
     background-color: #f2ba49;
     background-image: url('https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
     background-position: center center;
     display: flex;
     flex-direction:column;

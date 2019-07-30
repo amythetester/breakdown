@@ -69,18 +69,18 @@ class Question extends Component {
         if (this.state.redirect) return <Redirect push to={this.props.redirectTo} />;
         else return (
             <section id="mind-question" className="questionFadeIn">
-                <div id="nav">
+                {/* <div id="inAppNav">
                     <InAppNav />
-                </div>
-                <h1 className="question">
+                </div> */}
+                <h1 id="question">
                     {this.props.question}
                 </h1>
                 <form id="input" onSubmit={event => this.handleSubmit(event)}>
-                    <div>
+                    <div id="textbox">
                         <textarea type="text" name="answer" maxlength="400" minlength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
                     </div>
-                    <div>
-                       <button type="submit" className="btn btn-lg" id="continue">Continue</button>
+                    <div id="submit">
+                       <button type="submit" id="begin-button" className="btn btn-info fade-button">Continue</button>
                     </div>
                 </form>
             </section>
