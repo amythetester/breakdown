@@ -4,7 +4,7 @@
     grid-template-columns: 100%;
     grid-gap: 20px;
     padding: 20px;
-    background-image: url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?w=2000');
+    background-image: url('/images/breakdown-ring.jpeg');
     background-position: bottom, right;
     height: 100vh;
     width: 100vw;
@@ -12,7 +12,7 @@
 
 @media screen and (min-width: 2000px) {
   #breathe {
-    background-image: url('https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?w=6000');
+    background-image: url('/images/breakdown-ring.jpeg');
   }
 }
 

@@ -4,10 +4,10 @@
     align-items: center;
     justify-content: center;
     background-color: #253b56;
-    /* background-image: url('https://images.pexels.com/photos/207135/pexels-photo-207135.jpeg'); */
-    background-image: url('https://images.pexels.com/photos/1927507/pexels-photo-1927507.jpeg?w=2000');
+    /* background-image: url('/images/breakdown-finish2.jpeg'); */
+    background-image: url('/images/breakdown-finish1.jpeg');
+    /* background-image: url('/images/breakdown-finish3.jpeg'); */
     background-position: right, center;
-    /* background-repeat: no-repeat; */
     color: white;
     height: 100vh;
     width: 100vw;
