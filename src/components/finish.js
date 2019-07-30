@@ -6,13 +6,15 @@ class Finish extends Component {
 
     render(){
         return (
-            <div className="finish">
-                <h1>Congrats, you made it!</h1>
-                <h2>Sometimes life gets overwhelming, but you can do this! You always could.</h2> 
-                <h3>Feel free to come back anytime that doesn't feel like the case.</h3>
-                <p>Love, Your Breakdown Team</p>
-                <Link to={this.props.redirectTo}><button className="btn btn-info fade-button" type="submit" id="start-button">Finish</button></Link>
-            </div>
+            <section className="finish">
+                <div className="transparentFinish">
+                    <h1>Congrats, you made it!</h1>
+                    <h2>Sometimes life gets overwhelming, but you can do this! You always could.</h2> 
+                    <h2>Feel free to come back anytime that doesn't feel like the case.</h2>
+                    <h3>Love, Your Breakdown Team</h3>
+                    <Link to={this.props.redirectTo}><button className="btn btn-info fade-button" type="submit" id="begin-button">Finish</button></Link>
+                </div>
+            </section>
         );
     }
 }

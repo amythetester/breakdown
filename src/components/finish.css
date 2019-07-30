@@ -3,35 +3,42 @@
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    padding-left: 5em;
-    padding-right: 5em;
-    background-color:  #253b56;
+    background-color: #253b56;
+    background-image: url('https://images.pexels.com/photos/207135/pexels-photo-207135.jpeg');
+    background-position: center, center;
+    background-repeat: no-repeat;
     color: white;
+    height: 100vh;
+    width: 100vw;
 }  
+
+.transparentFinish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background:rgba(0,0,0,0.5);
+  border-radius: 0.25rem;
+}
 
 @keyframes fadeFinish {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
-.finish > h1, .finish > h2, .finish > p {
-    padding-top: 3em;
-}
-
-.finish > h1 {
+.transparentFinish > h1 {
     animation: 10s fadeFinish ease;
+    margin-bottom: 5rem;
 }
 
-.finish > h2 {
+.transparentFinish > h2 {
     animation: 14s fadeFinish ease;
 }
 
-.finish > h3 {
+.transparentFinish > h3, .transparentFinish > button {
     animation: 17s fadeFinish ease;
+    margin-top: 5rem;
 }
 
-.finish > p, .fade-button {
-    animation: 20s fadeFinish ease;
-}
 
 
