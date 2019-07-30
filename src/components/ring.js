@@ -52,23 +52,25 @@ class Ring extends Component {
 
         return (
             <section id="breathe" className="fadingEffect">
-                {/* <div id="inAppNav">
-                    <InAppNav />
-                </div> */}
-                <h1 id="instruction" className="textFadingEffect">
-                    <span>{this.props.text}</span>
-                    <span>Exhale as the ring contracts.</span>
-                    <span>Inhale as the ring expands.</span>
-                </h1>
-                <section id="pulsatingCircle">              
-                    <span id={this.props.circle} className={this.props.animateWords}>{this.rotateWords()}</span>               
-                </section>
-                <div id="barSkip">
-                    <section id="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
-                        <span id="progress-bar" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>
-                    </section> 
-                    <Link to={this.props.redirectTo} className="skip">Skip</Link>
-                </div>
+                {/* <div className="transparentRing"> */}
+                    {/* <div id="inAppNav">
+                        <InAppNav />
+                    </div> */}
+                    <h1 id="instruction" className="textFadingEffect">
+                        <span>{this.props.text}</span>
+                        <span>Exhale as the ring contracts.</span>
+                        <span>Inhale as the ring expands.</span>
+                    </h1>
+                    <section id="pulsatingCircle">              
+                        <span id={this.props.circle} className={this.props.animateWords}>{this.rotateWords()}</span>               
+                    </section>
+                    <div id="barSkip">
+                        <section id="bar" style={{animation: `${this.getProgressDuration()}s showBar 10s ease`}}> 
+                            <span id="progress-bar" style={{animation: `${this.getProgressDuration()}s loader 10s ease forwards`}}></span>
+                        </section> 
+                        <Link to={this.props.redirectTo} className="skip">Skip</Link>
+                    </div>
+                {/* </div> */}
             </section>
         );
     }

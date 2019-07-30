@@ -4,9 +4,10 @@
     align-items: center;
     justify-content: center;
     background-color: #253b56;
-    background-image: url('https://images.pexels.com/photos/207135/pexels-photo-207135.jpeg');
-    background-position: center, center;
-    background-repeat: no-repeat;
+    /* background-image: url('https://images.pexels.com/photos/207135/pexels-photo-207135.jpeg'); */
+    background-image: url('https://images.pexels.com/photos/1927507/pexels-photo-1927507.jpeg?w=2000');
+    background-position: right, center;
+    /* background-repeat: no-repeat; */
     color: white;
     height: 100vh;
     width: 100vw;
@@ -17,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.75);
   border-radius: 0.25rem;
 }
 

@@ -92,6 +92,8 @@ class Cloud extends Component {
 
     render() {
         if (Object.keys(this.props.wordCloud).length < 1) {
+            return <Redirect push to="/finish" />;
+        }else if (this.state.removedWords.length === 0 && this.state.focusWords.length === 0 && this.state.redirect) {
             return <Redirect push to={this.props.fallbackRedirectTo} />;
         }else if (this.state.redirect || this.redirectCloud()) {
             this.props.wordCallback({

@@ -22,6 +22,15 @@
   justify-content: center;
 }
 
+/* .transparentRing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background:rgba(255,255,255,0.5);
+  border-radius: 0.25rem;
+} */
+
 #instruction {
     grid-row: 1 / 2;
     display: flex;
@@ -38,8 +47,8 @@
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    -webkit-animation: textFadeIn 7s ease 6s 1 alternate; 
-    animation: textFadeIn 7s ease 6s 1 alternate;
+    -webkit-animation: textFadeIn 7s ease 4s 1 alternate; 
+    animation: textFadeIn 7s ease 4s 1 alternate;
 }
 
 .textFadingEffect span:nth-child(2) { 
@@ -182,7 +191,7 @@
     height:500px;
     opacity:0;
     border:25px solid #e9d466;
-    animation:18s calmPulseIn 10s ease-in-out 7 normal;
+    animation: 18s calmPulseIn 10s ease-in-out 7 normal;
 }
 
 @keyframes calmPulseIn{
@@ -200,7 +209,7 @@
     }
     62.5% {
         /* border-color: #98c8f9; */
-        border-color: #b395d3;
+        /* border-color: #b395d3; */
     }
     75% {
         transform:scale(1,1);
@@ -209,7 +218,7 @@
     }
     87.5% {
         /* border-color: #98c8f9; */
-         border-color: #b395d3;
+         /* border-color: #b395d3; */
     }
     100% {
         opacity:1;
@@ -235,8 +244,7 @@
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    color: black;
-    /* -webkit-animation: animateWord 5s linear 14.5s; */
+    color: white;
     animation: animateWord 5s linear 14.5s;
 }
 
@@ -270,7 +278,7 @@
     position: absolute;
     overflow: hidden;
     opacity: 0;
-    color: black;
+    color: white;
     /* -webkit-animation: animateWord 11s linear 10s; */
     animation: animateWord 11s linear 10s;
 }
