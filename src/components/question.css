@@ -1,6 +1,6 @@
 #mind-question {
   display: grid;
-  grid-template-rows: 1fr 70% 1fr;
+  grid-template-rows: 1fr 80%;
   grid-template-columns: 100%;
   grid-gap: 20px;
   padding: 20px;
@@ -72,9 +72,9 @@ textarea:focus {
 }
 
 #submit {
-  grid-row: 3 / 4;
   display: flex;
   justify-content: center;
+  padding-bottom: 1.5rem;
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
