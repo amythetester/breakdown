@@ -27,10 +27,10 @@
   display: flex;
 }
 
-.question {
+/* .question {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-}
+} */
 
 .app-outer {
   grid-column: 2 / 3;

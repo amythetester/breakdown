@@ -58,8 +58,8 @@
 }
 
 @keyframes whiteFadeIn{
-    from {background:#343a40;}
-    to {background:  #253b56;}
+    from {background: black;}
+    to {background: #253b56;}
 }
 
 

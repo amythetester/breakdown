@@ -50,9 +50,6 @@ class Action extends Component {
                     </section>
                 </section>
                 <Footer />
-                {/* <div id="home">
-                    <Link to={this.props.redirectTo}><button className="btn btn-info" type="submit" id="begin-button">Back to Home</button></Link>
-                </div> */}
             </div>
         );
     }
