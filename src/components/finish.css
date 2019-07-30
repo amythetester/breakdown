@@ -32,13 +32,14 @@
 }
 
 .transparentFinish > h2 {
-    animation: 14s fadeFinish ease;
+    animation: 10s fadeFinish ease;
 }
 
-.transparentFinish > h3, .transparentFinish > button {
-    animation: 17s fadeFinish ease;
+.transparentFinish > h3 {
+    animation: 13s fadeFinish ease;
     margin-top: 5rem;
 }
 
-
-
+.transparentFinish #begin-button {
+    animation: 13s fadeFinish ease;
+}
