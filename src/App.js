@@ -115,7 +115,6 @@ class App extends Component {
                 text="Let's start by breathing..."
                 circle="yellowCircle"
                 redirectTo="/mind-question"
-                fade="whiteFadingEffect"
               />
             }
           />
@@ -151,7 +150,6 @@ class App extends Component {
                 redirectTo="/focus-cloud"
                 words={this.state.removedWords}
                 animateWords="fire-animated-words"
-                fade="blackFadingEffect"
               />
             }
           />
@@ -177,7 +175,6 @@ class App extends Component {
                 redirectTo="/finish"
                 words={this.state.focusWords}
                 animateWords="calm-animated-words"
-                fade="blackFadingEffect"
               />
             }
           />

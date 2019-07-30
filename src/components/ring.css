@@ -48,26 +48,18 @@
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
-.whiteFadingEffect {
+.fadingEffect {
     position:absolute;
     top:0; bottom:0; right:0;
     width:100%;
-    -webkit-animation: whiteFadeIn 8s ease 1 alternate; 
-    animation: whiteFadeIn 8s ease 1 alternate;
+    -webkit-animation: fadeIn 8s ease 1 alternate; 
+    animation: fadeIn 8s ease 1 alternate;
     flex-wrap: wrap;
 }
 
-@keyframes whiteFadeIn{
+@keyframes fadeIn{
     from {background: black;}
     to {background: #253b56;}
-}
-
-
-.blackFadingEffect {
-    position:absolute;
-    top:0; bottom:0; right:0;
-    width:100%;
-
 }
 
 /* adapted from http://cssdeck.com/labs/vpfhbyk6 */
@@ -90,7 +82,7 @@
     height:500px;
     opacity:0;
     border:25px solid #eacd5d;
-    animation:9s pulseIn 10s ease-in-out 10 alternate;
+    animation:9s pulseIn 10s ease-in-out 5 alternate;
 }
 
 @keyframes pulseIn{
@@ -307,10 +299,10 @@
     100% { color: black; opacity: 0; }
 }
 
-@-webkit-keyframes animateWord {
+/* @-webkit-keyframes animateWord {
     0% { color: white; opacity: 1; }
     100% { color: black; opacity: 0;}
-}
+} */
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
 #barSkip {

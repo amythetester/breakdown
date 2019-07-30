@@ -20,7 +20,7 @@ class Ring extends Component {
     getRingDuration = () => {
         const wordArr = this.props.words;
         const arrLength = wordArr.length;
-        let ringDuration = 100000;
+        let ringDuration = 55000;
 
         const animationDelay = 10;
         const additionBreath = 9;
@@ -51,7 +51,7 @@ class Ring extends Component {
 
 
         return (
-            <section id="breathe" className={this.props.fade}>
+            <section id="breathe" className="fadingEffect">
                 {/* <div id="inAppNav">
                     <InAppNav />
                 </div> */}
