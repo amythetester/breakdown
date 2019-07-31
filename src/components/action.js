@@ -17,6 +17,8 @@ class Action extends Component {
 
     componentDidMount(){
         this.exitFullScreen();
+
+        window.scrollTo(0, 0);
     }
 
     exitFullScreen = () => {

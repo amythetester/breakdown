@@ -15,6 +15,8 @@ class Ring extends Component {
 
     componentDidMount(){
         setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration());
+
+        window.scrollTo(0, 0);
     }
 
     getRingDuration = () => {
