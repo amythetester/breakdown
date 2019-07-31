@@ -6,14 +6,9 @@
     padding: 20px;
     background-image: url('/images/breakdown-ring.jpeg');
     background-position: bottom, right;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
-}
-
-@media screen and (min-width: 2000px) {
-  #breathe {
-    background-image: url('/images/breakdown-ring.jpeg');
-  }
 }
 
 #inAppNav{
@@ -113,7 +108,7 @@
   #yellowCircle {
     width:200px;
     height:200px;
-    border-width: 15px;
+    border-width: 12px;
   }
 }
 
@@ -160,7 +155,7 @@
   #fireCircle {
     width:200px;
     height:200px;
-    border-width: 15px;
+    border-width: 12px;
   }
 }
 
@@ -207,7 +202,7 @@
   #calmCircle {
     width:200px;
     height:200px;
-    border-width: 15px;
+    border-width: 12px;
   }
 }
 
@@ -281,8 +276,8 @@
 }
 
 @keyframes animateWord {
-    0% { color: white; opacity: 1; }
-    100% { color: white; opacity: 0; }
+    0% { color: black; opacity: 1; }
+    100% { color: black; opacity: 0; }
 }
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */

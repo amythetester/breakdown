@@ -23,7 +23,7 @@ class Cloud extends Component {
     componentDidMount(){
         window.scrollTo(0, 0);
     }
-    
+
     removeWord = (word) => {
         const hiddenWords = this.state.removedWords.slice();
         hiddenWords.push(word);
