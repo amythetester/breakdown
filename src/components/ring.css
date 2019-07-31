@@ -145,14 +145,8 @@
         transform:scale(0.1,0.1);
         border-color: #e9d466;
     }
-    62.5% {
-        border-color: #f2b948;
-    }
     75% {
         transform:scale(1,1);
-        border-color: #e78c50;
-    }
-    87.5% {
         border-color: #f2b948;
     }
     100% {
@@ -198,18 +192,9 @@
         transform:scale(0.1,0.1);
         border-color: #e9d466;
     }
-    62.5% {
-        /* border-color: #98c8f9; */
-        /* border-color: #b395d3; */
-    }
     75% {
         transform:scale(1,1);
-        /* border-color: #b395d3; */
-        border-color: #98c8f9;
-    }
-    87.5% {
-        /* border-color: #98c8f9; */
-         /* border-color: #b395d3; */
+        border-color: #bdd68f;
     }
     100% {
         opacity:1;
