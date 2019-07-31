@@ -11,12 +11,6 @@
   width: 100vw;
 }
 
-/* #inAppNav {
-  grid-row: 1 / 2;
-  display: flex;
-  justify-content: center;
-} */
-
 #question {
   grid-row: 1 / 2;
   display: flex;
@@ -31,7 +25,6 @@
   flex-direction: column;
   align-items: center;
   font-size: 2em;
-  /* padding-left: 20px; */
 }
 
 textarea {
@@ -39,11 +32,9 @@ textarea {
   background-color: #ffe199;
   border-width: 2px;
   border-color: black;
-  /* border: none; */
   color: black;
   width: 25em;
   height: 10em;
-  /* padding-left: 20px; */
 }
 
 @media screen and (max-width: 850px) {
@@ -69,13 +60,12 @@ textarea {
 
 textarea:focus {
   outline: none;
-  /* padding-left: 20px; */
 }
 
-#submit {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1.5rem;
+@media screen and (min-width: 1000px) {
+  #input{
+    padding-top: 5rem;
+  }
 }
 
 /* idea from https://jsfiddle.net/gionaf/SNycF/ */
@@ -86,6 +76,12 @@ textarea:focus {
 @keyframes questionFadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+@media screen and (max-width: 420px) {
+  .inAppNav {
+    display: none;
+  }
 }
 
 
