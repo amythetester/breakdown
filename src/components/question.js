@@ -76,8 +76,8 @@ class Question extends Component {
                 <h1 id="question">
                     {this.props.question}
                 </h1>
-                <form id="input" onSubmit={event => this.handleSubmit(event)}>
-                    <div id="textbox">
+                <form id="textbox" onSubmit={event => this.handleSubmit(event)}>
+                    <div>
                         <textarea type="text" name="answer" maxlength="400" minlength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
                     </div>
                     <div id="submit">
