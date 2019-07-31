@@ -131,7 +131,9 @@ class Cloud extends Component {
                     </div>
                 </section>
                 <form onSubmit={event => this.handleSubmit(event)} className="button">
-                    <button type="submit" className="btn btn-info fade-button" id="begin-button">Continue</button>
+                    <div className="wrap-button">
+                        <button type="submit" className="btn btn-info fade-button" id="begin-button">Continue</button>
+                    </div>
                 </form>
             </div>
         );

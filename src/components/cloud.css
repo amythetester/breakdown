@@ -76,6 +76,11 @@
     padding-bottom: 2rem;
 }
 
+.wrap-button {
+  display: flex;
+  justify-content: center;
+}
+
 .tag-cloud > div {
 	transition: 1.4s;
 }
