@@ -50,13 +50,13 @@ class Ring extends Component {
         if (this.state.redirect === true) {
             return <Redirect push to={this.props.redirectTo} />
         }
-
-
         return (
             <section id="breathe" className="fadingEffect">
-                    {/* <div id="inAppNav">
-                        <InAppNav />
-                    </div> */}
+                    <img class="menu"
+                        src='/images/breakdown-hamburger-menu.png'
+                        alt="menu"
+                        height="50px"
+                    />
                     <h1 id="instruction" className="textFadingEffect">
                         <span>{this.props.text}</span>
                         <span>Exhale as the ring contracts.</span>

@@ -67,6 +67,8 @@
 
 .tag-cloud {
     flex: 1;
+    color: #fdf1b2;
+    filter: drop-shadow(0 0 1rem white);     
 }
 
 .button {
@@ -83,4 +85,9 @@
 
 .tag-cloud > div {
 	transition: 1.4s;
+}
+
+#menu {
+  grid-row: 1 / 2;
+  max-height: 25px;
 }
