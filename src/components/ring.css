@@ -18,6 +18,12 @@
   align: right;
 }
 
+@media screen and (max-width: 420px) {
+  .inAppNav {
+    display: none;
+  }
+}
+
 #instruction {
     grid-row: 1 / 2;
     display: flex;
