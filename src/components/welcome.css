@@ -55,6 +55,7 @@
     padding: 0.5rem;
     font-size: 1.5rem;
     width: 200px;
+    max-height: 75px;
 }
 
 p {
