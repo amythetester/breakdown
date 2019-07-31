@@ -2,7 +2,7 @@ import './cloud.css';
 import React, {Component} from 'react';
 import { Redirect } from "react-router-dom";
 import TagCloud from 'react-tag-cloud';
-import randomColor from 'randomcolor';
+// import randomColor from 'randomcolor';
 
 // import InAppNav from './inappnav.js';
 
@@ -55,14 +55,14 @@ class Cloud extends Component {
     renderReleaseWords = () => {
         const words = this.state.remainingWords;
         return words.map((word) => {
-            return (<div onClick={() => this.removeWord(word)}>{word}</div>)
+            return (<div id="fireWords" onClick={() => this.removeWord(word)}>{word}</div>)
         });
     }
 
     renderFocusWords = () => {
         const words = this.state.remainingWords;
         return words.map((word) => {
-            return (<div onClick={() => this.focusWord(word)}>{word}</div>)
+            return (<div id="focusWords" onClick={() => this.focusWord(word)}>{word}</div>)
         });
     }
 
@@ -108,24 +108,19 @@ class Cloud extends Component {
             return <Redirect push to={this.props.redirectTo} />;
         }else return (
             <div className="center cloudFadeIn">
-                {/* <div id="inAppNav">
-                    <InAppNav />
-                </div> */}
                 <h1 className="text">
                     {this.props.question}
                 </h1>
                 <section className='app-outer'>
                     <div className='app-inner'>
-                    <TagCloud 
-                        className='tag-cloud'
-                        style={{
+                    <TagCloud className='tag-cloud'
+                      style={{
+                        fontFamily: 'sans-serif',
                         fontSize: 30,
-                        color: () => randomColor({
-                            hue: 'yellow',
-                            luminosity: 'light',
-                        }),
-                        padding: 5,
-                        }}>
+                        padding: 8,
+                        width: '100%',
+                        height: '100%'
+                      }}>
                         {this.renderWords()}
                     </TagCloud>
                     </div>
