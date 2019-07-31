@@ -15,6 +15,8 @@ class Ring extends Component {
 
     componentDidMount(){
         setTimeout(() => this.setState(() => ({redirect: true})), this.getRingDuration());
+
+        window.scrollTo(0, 0);
     }
 
     getRingDuration = () => {
@@ -52,7 +54,6 @@ class Ring extends Component {
 
         return (
             <section id="breathe" className="fadingEffect">
-                {/* <div className="transparentRing"> */}
                     {/* <div id="inAppNav">
                         <InAppNav />
                     </div> */}
@@ -70,7 +71,7 @@ class Ring extends Component {
                         </section> 
                         <Link to={this.props.redirectTo} className="skip">Skip</Link>
                     </div>
-                {/* </div> */}
+        
             </section>
         );
     }
