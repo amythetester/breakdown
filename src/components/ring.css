@@ -11,11 +11,16 @@
     width: 100vw;
 }
 
-.inAppNav{
+.inAppNav {
   display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align: right;
+  justify-content: flex-end;
+  float: right;
+}
+
+.inAppNav img:hover {
+    background: white;
+    opacity: 0.25;
+    border-radius: 0.25rem;
 }
 
 @media screen and (max-width: 420px) {

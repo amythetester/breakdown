@@ -21,13 +21,13 @@ class InAppNav extends Component {
         if (document.fullscreenElement) {
             return(
                 <Link to={() => window.location.reload()} className="full-screen" onClick={this.exitFullScreen}>
-                    <img id="fullscreen" src="/images/breakdown-fullscreen.png" alt="fullscreen" height="50px" tooltiptext="Exit Fullscreen" />
+                    <img id="exit-fullscreen" src="/images/breakdown-fullscreen.png" alt="Exit Fullscreen" height="50px" tooltiptext="Exit Fullscreen" />
                 </Link>
             );
         }else {
             return(
                 <Link to={() => window.location.reload()} className="full-screen" onClick={this.enterFullScreen}>
-                    <img id="fullscreen" src="/images/breakdown-fullscreen.png" alt="fullscreen" height="50px" tooltiptext="Enter Fullscreen" />
+                    <img id="enter-fullscreen" src="/images/breakdown-fullscreen.png" alt="Exit Fullscreen" height="50px" tooltiptext="Enter Fullscreen" />
                 </Link>
             );
         }

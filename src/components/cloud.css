@@ -29,13 +29,8 @@
 
 .inAppNav {
   display: flex;
-  justify-content: center;
-}
-
-@media screen and (max-width: 420px) {
-  .inAppNav {
-    display: none;
-  }
+  justify-content: flex-end;
+  float: right;
 }
 
 @media screen and (max-width: 420px) {
