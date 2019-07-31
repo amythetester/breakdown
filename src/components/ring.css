@@ -6,14 +6,9 @@
     padding: 20px;
     background-image: url('/images/breakdown-ring.jpeg');
     background-position: bottom, right;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
-}
-
-@media screen and (min-width: 2000px) {
-  #breathe {
-    background-image: url('/images/breakdown-ring.jpeg');
-  }
 }
 
 #inAppNav{

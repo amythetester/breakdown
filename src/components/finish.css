@@ -6,6 +6,7 @@
     background-color: #253b56;
     background-image: url('/images/breakdown-finish.jpeg');
     background-position: center, center;
+    background-size: cover;
     color: white;
     height: 100vh;
     width: 100vw;

@@ -6,6 +6,7 @@
   padding: 20px;
   background-image: url('/images/breakdown-question.jpeg');
   background-position: center, center;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 }
