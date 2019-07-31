@@ -17,11 +17,20 @@ class InAppNav extends Component {
 
     render(){
         document.onfullscreenchange = () => this.forceUpdate();
-        return( <nav>
-            {/* {window.history.length > 1 ? <Link to={() => window.history.back()}>Back</Link> : <Link to="/">Home</Link>}
-            <Link to={() => window.location.reload()}>Refresh</Link> */}
-            {document.fullscreenElement ? <Link to={() => window.location.reload()} className="full-screen" onClick={this.exitFullScreen}>Exit Fullscreen</Link> : <Link to={() => window.location.reload()} className="full-screen" onClick={this.enterFullScreen}>Enter Fullscreen</Link>}
-        </nav>);
+
+        if (document.fullscreenElement) {
+            return(
+                <Link to={() => window.location.reload()} className="full-screen" onClick={this.exitFullScreen}>
+                    <img id="fullscreen" src="/images/breakdown-fullscreen.png" alt="fullscreen" height="50px" tooltiptext="Exit Fullscreen" />
+                </Link>
+            );
+        }else {
+            return(
+                <Link to={() => window.location.reload()} className="full-screen" onClick={this.enterFullScreen}>
+                    <img id="fullscreen" src="/images/breakdown-fullscreen.png" alt="fullscreen" height="50px" tooltiptext="Enter Fullscreen" />
+                </Link>
+            );
+        }
     }
 }
 

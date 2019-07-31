@@ -2,9 +2,8 @@ import './cloud.css';
 import React, {Component} from 'react';
 import { Redirect } from "react-router-dom";
 import TagCloud from 'react-tag-cloud';
-// import randomColor from 'randomcolor';
 
-// import InAppNav from './inappnav.js';
+import InAppNav from './inappnav.js';
 
 class Cloud extends Component {
     constructor(props) {
@@ -130,6 +129,9 @@ class Cloud extends Component {
                         <button type="submit" className="btn btn-info fade-button" id="begin-button">Continue</button>
                     </div>
                 </form>
+                <div className="inAppNav">
+                    <InAppNav />
+                </div>
             </div>
         );
     }

@@ -11,10 +11,11 @@
     width: 100vw;
 }
 
-#inAppNav{
-  grid-row: 1 / 2;
+.inAppNav{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: end;
+  align: right;
 }
 
 #instruction {
