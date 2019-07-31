@@ -281,8 +281,8 @@
 }
 
 @keyframes animateWord {
-    0% { color: white; opacity: 1; }
-    100% { color: white; opacity: 0; }
+    0% { color: black; opacity: 1; }
+    100% { color: black; opacity: 0; }
 }
 
 /* inspired by https://codepen.io/artboardartisan/pen/VLzKVN */
