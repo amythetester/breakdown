@@ -90,7 +90,7 @@ textarea:focus {
     border-radius: 0.25rem;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 830px) {
   .inAppNav {
     display: none;
   }
