@@ -84,6 +84,12 @@ textarea:focus {
   float: right;
 }
 
+.inAppNav img:hover {
+    background: white;
+    opacity: 0.25;
+    border-radius: 0.25rem;
+}
+
 @media screen and (max-width: 420px) {
   .inAppNav {
     display: none;
