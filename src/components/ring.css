@@ -113,7 +113,7 @@
   #yellowCircle {
     width:200px;
     height:200px;
-    border-width: 10px;
+    border-width: 15px;
   }
 }
 
@@ -166,7 +166,7 @@
   #fireCircle {
     width:200px;
     height:200px;
-    border-width: 10px;
+    border-width: 15px;
   }
 }
 
@@ -222,7 +222,7 @@
   #calmCircle {
     width:200px;
     height:200px;
-    border-width: 10px;
+    border-width: 15px;
   }
 }
 
