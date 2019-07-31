@@ -2,7 +2,7 @@ import './question.css';
 import React, {Component} from 'react';
 import { Redirect } from "react-router-dom";
 
-// import InAppNav from './inappnav.js';
+import InAppNav from './inappnav.js';
 
 class Question extends Component {
     constructor(props) {
@@ -73,9 +73,6 @@ class Question extends Component {
         if (this.state.redirect) return <Redirect push to={this.props.redirectTo} />;
         else return (
             <section id="mind-question" className="questionFadeIn">
-                {/* <div id="inAppNav">
-                    <InAppNav />
-                </div> */}
                 <h1 id="question">
                     {this.props.question}
                 </h1>
@@ -87,6 +84,9 @@ class Question extends Component {
                        <button type="submit" id="begin-button" className="btn btn-info fade-button">Continue</button>
                     </div>
                 </form>
+                <div className="inAppNav">
+                    <InAppNav />
+                </div>
             </section>
         );
     }
