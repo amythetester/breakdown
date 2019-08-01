@@ -56,8 +56,8 @@ class App extends Component {
     axios.get(url)
       .then((response) => {
         console.log(response);
-        if (Array.isArray(response.data)){
-          this.setState({actions: response.data});
+        if (Array.isArray(response.body) && response.body.length === 3){
+          this.setState({actions: response.body});
         }
       })
       .catch(function (error) {
