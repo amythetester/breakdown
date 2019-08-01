@@ -40,15 +40,15 @@ class Action extends Component {
                 <section className="actions">
                     <section className="action">
                         <h3>Have 1 minute?</h3>
-                        <p>{this.props.actions[0]}</p>
+                        <p>{this.props.action[0]}</p>
                     </section>
                     <section className="action">
                         <h3>Have 5 minutes?</h3>
-                        <p>{this.props.actions[1]}</p>
+                        <p>{this.props.action[1]}</p>
                     </section>
                     <section className="action">
                         <h3>Have 10 minutes?</h3>
-                        <p>{this.props.actions[2]}</p>
+                        <p>{this.props.action[2]}</p>
                     </section>
                 </section>
                 <Footer />

@@ -56,17 +56,33 @@ class App extends Component {
     axios.get(url)
       .then((response) => {
         console.log(response);
-        if (Array.isArray(response.body) && response.body.length === 3){
-          this.setState({actions: response.body});
+        const parsedResponse = JSON.parse(response.data.body);
+        if (Array.isArray(parsedResponse)){
+          this.setState({actions: parsedResponse});
         }
+        console.log(this.state.actions);
       })
       .catch(function (error) {
         console.log(error);
+        this.setState({
+          actions: [ 
+            "Drink some water or have a snack. Remember we are like complex plants with emotions.", 
+            "Take a moment to do some quick stretches. Lower your shoulders from your ears. Relax your jaw. Stand if you are able. Roll your neck a couple of times each direction.",
+            "Go for a walk, jog, or just enjoy time outside. Sometimes we just need a change of scenary to help clear our thoughts. Take in that fresh air, you deserve it.",
+          ]
+        });
       })
   }
 
   error = (geoError) => {
     console.log(geoError);
+    this.setState({
+      actions: [ 
+        "Drink some water or have a snack. Remember we are like complex plants with emotions.", 
+        "Take a moment to do some quick stretches. Lower your shoulders from your ears. Relax your jaw. Stand if you are able. Roll your neck a couple of times each direction.",
+        "Go for a walk, jog, or just enjoy time outside. Sometimes we just need a change of scenary to help clear our thoughts. Take in that fresh air, you deserve it.",
+      ]
+    });
   }
 
   initialWordCloud = ({answer, frequency}) => {
@@ -187,7 +203,7 @@ class App extends Component {
             render={() =>
               <Action
                 redirectTo="/"
-                action={this.state.action}
+                action={this.state.actions}
               />
             }
           />
