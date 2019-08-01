@@ -27,7 +27,7 @@
 }
 
 .hero {
-    background-image: url('/images/breakdown-welcome.jpeg');
+    background-image: url('images/breakdown-welcome.jpeg');
     background-position: center center;
     background-size: cover;
     display: flex;

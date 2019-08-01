@@ -1,6 +1,7 @@
 import './inappnav.css';
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
+import fullscreen from './images/breakdown-fullscreen.png';
 
 class InAppNav extends Component {
     enterFullScreen = () => {
@@ -21,13 +22,13 @@ class InAppNav extends Component {
         if (document.fullscreenElement) {
             return(
                 <Link to={() => window.location.reload()} className="full-screen" onClick={this.exitFullScreen}>
-                    <img id="exit-fullscreen" src="/images/breakdown-fullscreen.png" alt="Exit Fullscreen" height="50px" tooltiptext="Exit Fullscreen" />
+                    <img id="exit-fullscreen" src={fullscreen} alt="Exit Fullscreen" height="50px" tooltiptext="Exit Fullscreen" />
                 </Link>
             );
         }else {
             return(
                 <Link to={() => window.location.reload()} className="full-screen" onClick={this.enterFullScreen}>
-                    <img id="enter-fullscreen" src="/images/breakdown-fullscreen.png" alt="Exit Fullscreen" height="50px" tooltiptext="Enter Fullscreen" />
+                    <img id="enter-fullscreen" src={fullscreen} alt="Exit Fullscreen" height="50px" tooltiptext="Enter Fullscreen" />
                 </Link>
             );
         }

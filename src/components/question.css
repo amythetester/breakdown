@@ -4,7 +4,7 @@
   grid-template-columns: 100%;
   grid-gap: 20px;
   padding: 20px;
-  background-image: url('/images/breakdown-question.jpeg');
+  background-image: url('images/breakdown-question.jpeg');
   background-position: center, center;
   background-size: cover;
   height: 100vh;
