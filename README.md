@@ -6,10 +6,10 @@ Breakdown was created as a Capstone project for Ada Developers Academy in Seattl
 This repository contains the React App while the Lamdba function code is hosted in AWS. The React App serves as the primary user experience while the Lambda function was responsible for taking location data, gathering the current weather information for that location, and providing users with recommended next steps with weather in mind.
 
 ## Tech Stack
-- Frontend
-  - React
-- Backend
-  - Python
+Frontend: React.js, CSS, and HTML
+Backend: API Gateway, AWS Lambda function (Python), and OpenWeather API
+Infrastructure: CircleCI and AWS Amplify (S3 bucket)
+User testing instance: Heroku
 
 ## How to install and run
 - Navigate to the folder that you would like to put the project files.
