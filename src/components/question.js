@@ -78,7 +78,7 @@ class Question extends Component {
                 </h1>
                 <form id="textbox" onSubmit={event => this.handleSubmit(event)}>
                     <div>
-                        <textarea type="text" name="answer" maxlength="400" minlength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
+                        <textarea type="text" name="answer" maxLength="400" minLength="1" required={true} autoFocus={true} onChange={this.onChangeHandler} />
                     </div>
                     <div id="submit">
                        <button type="submit" id="begin-button" className="btn btn-info fade-button">Continue</button>

@@ -41,8 +41,8 @@ class Ring extends Component {
 
     rotateWords = () => {
         const words = this.props.words;
-        return words.map(function(word){
-            return(<span>{word}</span>)
+        return words.map(function(word, index){
+            return(<span key={index}>{word}</span>)
         });
     }
     

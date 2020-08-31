@@ -53,15 +53,15 @@ class Cloud extends Component {
 
     renderReleaseWords = () => {
         const words = this.state.remainingWords;
-        return words.map((word) => {
-            return (<div id="fireWords" onClick={() => this.removeWord(word)}>{word}</div>)
+        return words.map((word, index) => {
+            return (<div id="fireWords" key={index} onClick={() => this.removeWord(word)}>{word}</div>)
         });
     }
 
     renderFocusWords = () => {
         const words = this.state.remainingWords;
-        return words.map((word) => {
-            return (<div id="focusWords" onClick={() => this.focusWord(word)}>{word}</div>)
+        return words.map((word, index) => {
+            return (<div id="focusWords" key={index} onClick={() => this.focusWord(word)}>{word}</div>)
         });
     }
 
