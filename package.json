@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "randomcolor": "^0.5.4",
     "react": "^16.13.1",
     "react-d3-cloud": "^0.7.0",
